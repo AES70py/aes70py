@@ -1,0 +1,52 @@
+from aes70.OCP1.OcaUint8 import OcaUint8
+from ..make_control_class import make_control_class
+from .OcaBasicActuator import OcaBasicActuator
+
+"""
+ * Basic uint8 actuator.
+ * @extends OcaBasicActuator
+ * @class OcaUint8Actuator
+"""
+OcaUint8Actuator = make_control_class(
+    'OcaUint8Actuator',
+    5,
+    '\u0001\u0001\u0001\u0001\u0006',
+    2,
+    OcaBasicActuator,
+    [
+        ['GetSetting', 5, 1, [], [OcaUint8, OcaUint8, OcaUint8]],
+        ['SetSetting', 5, 2, [OcaUint8], []],
+    ],
+    [['Setting', [OcaUint8], 5, 1, False, False, None]],
+    []
+)
+
+"""
+ * Gets the value and limits of the **Setting** property. The return value
+ * indicates whether the data was successfully retrieved.
+ * The return values of this method are
+ *
+ * - Setting of type ``number``
+ * - minSetting of type ``number``
+ * - maxSetting of type ``number``
+ *
+ * @method OcaUint8Actuator#GetSetting
+ * @returns {Promise<Arguments<number,number,number>>}
+ */
+/**
+ * Sets the **Setting** property. The return value indicates whether the
+ * property was successfully set.
+ *
+ * @method OcaUint8Actuator#SetSetting
+ * @param {number} Setting
+ *
+ * @returns {Promise<void>}
+ */
+/**
+ * This event is emitted when the property ``Setting`` changes in the remote object.
+ * The property ``Setting`` is described in the AES70 standard as follows.
+ * Uint8 setting.
+ *
+ * @member {PropertyEvent<number>} OcaUint8Actuator#OnSettingChanged
+ */
+"""
