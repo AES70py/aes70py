@@ -13,6 +13,7 @@ classifiers = [
 ]
 license = "MIT"
 license-files = ["LICEN[CS]E*"]
+dependencies = [ "promise", "zeroconf" ]
 
 [project.urls]
 Homepage = "https://github.com/aes70py"

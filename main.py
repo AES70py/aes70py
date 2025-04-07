@@ -66,7 +66,6 @@ class Main:
        print("demo: exiting")
 
 if __name__ == '__main__':
-    sys.path.append(r'/Users/hww3/aes70.py')
 
     obj = Main()
     asyncio.run(obj.main())
