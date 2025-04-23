@@ -6,7 +6,6 @@ def hasOwnProperty(o, name):
 
 def Enum(values):
     names = None
-
     def getName(value):
         nonlocal names
         if names is None:
@@ -35,6 +34,8 @@ def Enum(values):
             self.name = name
         def __get__(self, instance, owner):
             return owner(values[self.name])
+        def __str__(self):
+            return 'EnumDescriptor:'+self.name
 
     class result:
         @property
@@ -52,7 +53,7 @@ def Enum(values):
                 return blueprints[value]
             # Create a new instance and store its value.
             instance = super(result, cls).__new__(cls)
-            instance.value = value
+            instance._value = value
             setBlueprint(value, instance)
             return instance
 
@@ -62,13 +63,14 @@ def Enum(values):
 
         @property
         def name(self):
-            return getName(self.value)
+            return getName(self._value)
 
-        def valueOf(self):
-            return self.value
+        @property
+        def value(self):
+            return self._value
 
-        def toString(self):
-            return self.name
+        def __str__(self):
+            return getName(self._value)
 
         @staticmethod
         def getName(value):
@@ -92,6 +94,7 @@ def Enum(values):
     for name in values:
         if not hasOwnProperty(values, name):
             continue
-        setattr(result, name, EnumDescriptor(name))
+        descriptor = EnumDescriptor(name)
+        setattr(result, name, descriptor)
 
     return result

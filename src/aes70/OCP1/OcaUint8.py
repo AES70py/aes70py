@@ -3,9 +3,10 @@ from typing import Tuple, Any
 from .createType import create_type, Type
 from struct import pack_into, unpack_from
 
-
-def uint8_decode_from(data: bytearray, pos: int) -> tuple[Any, ...]:
-    return  unpack_from('!B', data, pos)[0]
+# fixed length types just return the value, the wrapper will return the required tuple
+def uint8_decode_from(data: bytearray, pos: int) -> int:
+    res = unpack_from('!B', data, pos)
+    return res[0]
 
 
 def uint8_encode_to(data: bytearray, pos: int, value) -> int:

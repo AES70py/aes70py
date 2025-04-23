@@ -18,8 +18,8 @@ def Enum(data_type: typing.Type, base: Type) -> Type:
         return encode_to(data, pos, value)
 
     def decode_wrapper(data: bytearray, pos: int):
-        value = decode(data, pos)
-        return data_type(value)
+        value = decode_from(data, pos)
+        return data_type(value[1])
 
     type_def = Type(
         is_constant_length =True,

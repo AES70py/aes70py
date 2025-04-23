@@ -22,7 +22,7 @@ def create_type(type):
     encode_to = type.encode_to
 
     def type_decode_from(data: bytearray, pos: int):
-        #print("fixed length decode from")
+#        print("fixed length decode from")
         return pos + encoded_length, decode_from(data, pos)
 
     def type_decode_length(data: bytearray, pos: int) -> int:
