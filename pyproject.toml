@@ -1,6 +1,6 @@
 [project]
 name = "aes70py"
-version = "0.0.1"
+version = "1.0.1"
 authors = [
   { name="William Welliver", email="william@welliver.org" },
 ]
