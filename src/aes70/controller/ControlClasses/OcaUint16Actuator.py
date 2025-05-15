@@ -1,13 +1,10 @@
-from aes70.OCP1.OcaUint16 import OcaUint16
+from ...OCP1.OcaUint16 import OcaUint16
 from ..make_control_class import make_control_class
 from .OcaBasicActuator import OcaBasicActuator
 
-"""
- * Basic uint16 actuator.
- * @extends OcaBasicActuator
- * @class OcaUint16Actuator
- */
-"""
+# Basic uint16 actuator.
+# @extends OcaBasicActuator
+# @class OcaUint16Actuator
 OcaUint16Actuator = make_control_class(
     'OcaUint16Actuator',
     5,
@@ -18,38 +15,31 @@ OcaUint16Actuator = make_control_class(
         ['GetSetting', 5, 1, [], [OcaUint16, OcaUint16, OcaUint16]],
         ['SetSetting', 5, 2, [OcaUint16], []],
     ],
-    [['Setting', [OcaUint16], 5, 1, False, False, None]],
+    [
+      ['Setting', [OcaUint16], 5, 1, False, False, None],
+    ],
     []
 )
 
-"""
- * Gets the value and limits of the Setting property. The return value indicates
- * whether the data was successfully retrieved.
- * The return values of this method are
- *
- * - Setting of type ``number``
- * - minSetting of type ``number``
- * - maxSetting of type ``number``
- *
- * @method OcaUint16Actuator#GetSetting
- * @returns {Promise<Arguments<number,number,number>>}
- */
-
-/**
- * Sets the value of the **Setting** property. The return value indicates
- * whether the property was successfully set.
- *
- * @method OcaUint16Actuator#SetSetting
- * @param {number} Setting
- *
- * @returns {Promise<void>}
- */
-
-/**
- * This event is emitted when the property ``Setting`` changes in the remote object.
- * The property ``Setting`` is described in the AES70 standard as follows.
- * Uint16 setting.
- *
- * @member {PropertyEvent<number>} OcaUint16Actuator#OnSettingChanged
- */
-"""
+# Gets the value and limits of the Setting property. The return value indicates
+# whether the data was successfully retrieved.
+# The return values of this method are
+#
+# - Setting of type ``int``
+# - minSetting of type ``int``
+# - maxSetting of type ``int``
+#
+# @method OcaUint16Actuator#GetSetting
+# @returns {Promise<Arguments[int,int,int]>}
+# Sets the value of the **Setting** property. The return value indicates whether
+# the property was successfully set.
+#
+# @method OcaUint16Actuator#SetSetting
+# @param {int} Setting
+#
+# @returns {Promise<None>}
+# This event is emitted when the property ``Setting`` changes in the remote object.
+# The property ``Setting`` is described in the AES70 standard as follows.
+# Uint16 setting.
+#
+# @member {PropertyEvent<int>} OcaUint16Actuator#OnSettingChanged

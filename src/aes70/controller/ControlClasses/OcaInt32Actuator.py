@@ -1,5 +1,4 @@
-# Required dependencies and imports
-from aes70.OCP1.OcaInt32 import OcaInt32
+from ...OCP1.OcaInt32 import OcaInt32
 from ..make_control_class import make_control_class
 from .OcaBasicActuator import OcaBasicActuator
 
@@ -16,7 +15,9 @@ OcaInt32Actuator = make_control_class(
         ['GetSetting', 5, 1, [], [OcaInt32, OcaInt32, OcaInt32]],
         ['SetSetting', 5, 2, [OcaInt32], []],
     ],
-    [['Setting', [OcaInt32], 5, 1, False, False, None]],
+    [
+      ['Setting', [OcaInt32], 5, 1, False, False, None],
+    ],
     []
 )
 
@@ -24,23 +25,21 @@ OcaInt32Actuator = make_control_class(
 # indicates whether the data was successfully retrieved.
 # The return values of this method are
 #
-# - Setting of type ``number``
-# - minSetting of type ``number``
-# - maxSetting of type ``number``
+# - Setting of type ``int``
+# - minSetting of type ``int``
+# - maxSetting of type ``int``
 #
 # @method OcaInt32Actuator#GetSetting
-# @returns {Promise<Arguments<number,number,number>>}
-
-# Sets the** Setting** property. The return value indicates whether the
-# property was successfully set.
+# @returns {Promise<Arguments[int,int,int]>}
+# Sets the** Setting** property. The return value indicates whether the property
+# was successfully set.
 #
 # @method OcaInt32Actuator#SetSetting
-# @param {number} Setting
+# @param {int} Setting
 #
-# @returns {Promise<void>}
-
+# @returns {Promise<None>}
 # This event is emitted when the property ``Setting`` changes in the remote object.
 # The property ``Setting`` is described in the AES70 standard as follows.
 # Int32 setting.
 #
-# @member {PropertyEvent<number>} OcaInt32Actuator#OnSettingChanged
+# @member {PropertyEvent<int>} OcaInt32Actuator#OnSettingChanged

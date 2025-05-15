@@ -1,12 +1,10 @@
-from aes70.OCP1.OcaInt64 import OcaInt64
+from ...OCP1.OcaInt64 import OcaInt64
 from ..make_control_class import make_control_class
 from .OcaBasicActuator import OcaBasicActuator
 
-"""
-Basic int64 actuator.
-@extends OcaBasicActuator
-@class OcaInt64Actuator
-"""
+# Basic int64 actuator.
+# @extends OcaBasicActuator
+# @class OcaInt64Actuator
 OcaInt64Actuator = make_control_class(
     'OcaInt64Actuator',
     5,
@@ -17,37 +15,31 @@ OcaInt64Actuator = make_control_class(
         ['GetSetting', 5, 1, [], [OcaInt64, OcaInt64, OcaInt64]],
         ['SetSetting', 5, 2, [OcaInt64], []],
     ],
-    [['Setting', [OcaInt64], 5, 1, False, False, None]],
+    [
+      ['Setting', [OcaInt64], 5, 1, False, False, None],
+    ],
     []
 )
 
-"""
-Gets the value and limits of the **Setting** property. The return value
-indicates whether the data was successfully retrieved.
-The return values of this method are
-
-- Setting of type ``number|BigInt``
-- minSetting of type ``number|BigInt``
-- maxSetting of type ``number|BigInt``
-
-@method OcaInt64Actuator#GetSetting
-@returns {Promise<Arguments<number|BigInt,number|BigInt,number|BigInt>}
-"""
-
-"""
-Sets the **Setting** property. The return value indicates whether the
-property was successfully set.
-
-@method OcaInt64Actuator#SetSetting
-@param {number|BigInt} Value
-
-@returns {Promise<void>}
-"""
-
-"""
-This event is emitted when the property ``Setting`` changes in the remote object.
-The property ``Setting`` is described in the AES70 standard as follows.
-Int64 setting.
-
-@member {PropertyEvent<number|BigInt>} OcaInt64Actuator#OnSettingChanged
-"""
+# Gets the value and limits of the **Setting** property. The return value
+# indicates whether the data was successfully retrieved.
+# The return values of this method are
+#
+# - Setting of type ``int``
+# - minSetting of type ``int``
+# - maxSetting of type ``int``
+#
+# @method OcaInt64Actuator#GetSetting
+# @returns {Promise<Arguments[int,int,int]>}
+# Sets the **Setting** property. The return value indicates whether the property
+# was successfully set.
+#
+# @method OcaInt64Actuator#SetSetting
+# @param {int} Value
+#
+# @returns {Promise<None>}
+# This event is emitted when the property ``Setting`` changes in the remote object.
+# The property ``Setting`` is described in the AES70 standard as follows.
+# Int64 setting.
+#
+# @member {PropertyEvent<int>} OcaInt64Actuator#OnSettingChanged

@@ -14,3 +14,4 @@ OcaBasicSensor = make_control_class(
     [],
     []
 )
+

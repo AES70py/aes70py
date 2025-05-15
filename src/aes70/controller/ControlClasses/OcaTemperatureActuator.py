@@ -1,4 +1,4 @@
-from aes70.OCP1.OcaFloat32 import OcaFloat32
+from ...OCP1.OcaFloat32 import OcaFloat32
 from ..make_control_class import make_control_class
 from .OcaActuator import OcaActuator
 
@@ -15,31 +15,31 @@ OcaTemperatureActuator = make_control_class(
         ['GetTemperature', 4, 1, [], [OcaFloat32, OcaFloat32, OcaFloat32]],
         ['SetTemperature', 4, 2, [OcaFloat32], []],
     ],
-    [['Temperature', [OcaFloat32], 4, 1, False, False, None]],
+    [
+      ['Temperature', [OcaFloat32], 4, 1, False, False, None],
+    ],
     []
 )
 
-# Gets the value of the Temperature property. The return value indicates
-# whether the property was successfully retrieved.
-# The return values of this method are:
+# Gets the value of the Temperature property. The return value indicates whether
+# the property was successfully retrieved.
+# The return values of this method are
 #
-# - temperature of type number
-# - minTemperature of type number
-# - maxTemperature of type number
+# - temperature of type ``int``
+# - minTemperature of type ``int``
+# - maxTemperature of type ``int``
 #
 # @method OcaTemperatureActuator#GetTemperature
-# @returns {Promise<Arguments<number,number,number>>}
-
-# Sets the value of the Temperature property. The return value indicates
-# whether the property was successfully set.
+# @returns {Promise<Arguments[int,int,int]>}
+# Sets the value of the Temperature property. The return value indicates whether
+# the property was successfully set.
 #
 # @method OcaTemperatureActuator#SetTemperature
-# @param {number} temperature
+# @param {int} temperature
 #
-# @returns {Promise<void>}
-
-# This event is emitted when the property Temperature changes in the remote object.
-# The property Temperature is described in the AES70 standard as follows:
+# @returns {Promise<None>}
+# This event is emitted when the property ``Temperature`` changes in the remote object.
+# The property ``Temperature`` is described in the AES70 standard as follows.
 # The temperature.
 #
-# @member {PropertyEvent<number>} OcaTemperatureActuator#OnTemperatureChanged
+# @member {PropertyEvent<int>} OcaTemperatureActuator#OnTemperatureChanged

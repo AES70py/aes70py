@@ -1,0 +1,46 @@
+from ....aes70.OCP1.OcaLevelMeterLaw import OcaLevelMeterLaw
+from ....aes70.controller.make_control_class import make_control_class
+from .OcaLevelSensor import OcaLevelSensor
+
+# Child of **OcaLevelSensor** that returns an audio meter reading in dB relative
+# to a known reference level, and whose value has been calculated by the
+# selected averaging algorithm.
+# @extends OcaLevelSensor
+# @class OcaAudioLevelSensor
+OcaAudioLevelSensor = make_control_class(
+  'OcaAudioLevelSensor',
+  5,
+  '\u0001\u0001\u0002\u0002\u0001',
+  2,
+  OcaLevelSensor,
+  [
+    ['GetLaw', 5, 1, [], [OcaLevelMeterLaw]],
+    ['SetLaw', 5, 2, [OcaLevelMeterLaw], []],
+  ],
+  [
+    ['Law', [OcaLevelMeterLaw], 5, 1, false, false, null
+    ],
+  ],
+  []
+);
+
+# Gets the value of the Law property. The return value indicates whether the
+# property was successfully retrieved.
+#
+# @method OcaAudioLevelSensor#GetLaw
+# @returns {Promise<OcaLevelMeterLaw>}
+#   A promise which resolves to a single value of type :class:`OcaLevelMeterLaw`.
+# Sets the value of the Law property. The return value indicates whether the
+# property was successfully set. Only implemented for objects whose Law property
+# is read/write.
+#
+# @method OcaAudioLevelSensor#SetLaw
+# @param {OcaLevelMeterLaw} law
+#
+# @returns {Promise<None>}
+# This event is emitted when the property ``Law`` changes in the remote object.
+# The property ``Law`` is described in the AES70 standard as follows.
+# Enum that defines metering algorithm, including averaging characteristics and,
+# in some cases, reference level. Readonly in some objects.
+#
+# @member {PropertyEvent<OcaLevelMeterLaw>} OcaAudioLevelSensor#OnLawChanged

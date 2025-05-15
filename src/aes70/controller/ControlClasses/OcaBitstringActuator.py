@@ -1,6 +1,6 @@
-from aes70.OCP1.OcaBitstring import OcaBitstring
-from aes70.OCP1.OcaBoolean import OcaBoolean
-from aes70.OCP1.OcaUint16 import OcaUint16
+from ...OCP1.OcaBitstring import OcaBitstring
+from ...OCP1.OcaBoolean import OcaBoolean
+from ...OCP1.OcaUint16 import OcaUint16
 from ..make_control_class import make_control_class
 from .OcaBasicActuator import OcaBasicActuator
 
@@ -8,62 +8,61 @@ from .OcaBasicActuator import OcaBasicActuator
 # @extends OcaBasicActuator
 # @class OcaBitstringActuator
 OcaBitstringActuator = make_control_class(
-    "OcaBitstringActuator",
+    'OcaBitstringActuator',
     5,
-    "\u0001\u0001\u0001\u0001\r",
+    '\u0001\u0001\u0001\u0001\r',
     2,
     OcaBasicActuator,
     [
-        ["GetNrBits", 5, 1, [], [OcaUint16]],
-        ["GetBit", 5, 2, [OcaUint16], [OcaBoolean]],
-        ["SetBit", 5, 3, [OcaUint16, OcaBoolean], []],
-        ["GetBitstring", 5, 4, [], [OcaBitstring]],
-        ["SetBitstring", 5, 5, [OcaBitstring], []],
+        ['GetNrBits', 5, 1, [], [OcaUint16]],
+        ['GetBit', 5, 2, [OcaUint16], [OcaBoolean]],
+        ['SetBit', 5, 3, [OcaUint16, OcaBoolean], []],
+        ['GetBitstring', 5, 4, [], [OcaBitstring]],
+        ['SetBitstring', 5, 5, [OcaBitstring], []],
     ],
-    [["Bitstring", [OcaBitstring], 5, 1, False, False, None]],
+    [
+      ['Bitstring', [OcaBitstring], 5, 1, False, False, None],
+    ],
     []
 )
 
 # Gets the number of bits in the string. The return value indicates whether the
 # property was successfully gathered.
 #
-# @method OcaBitstringActuator.GetNrBits
-# @returns: A promise which resolves to a single value of type number.
-
+# @method OcaBitstringActuator#GetNrBits
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # Gets the bit value of the given bit. The return value indicates whether the
 # property was successfully gathered.
 #
-# @method OcaBitstringActuator.GetBit
-# @param bitNr: number
+# @method OcaBitstringActuator#GetBit
+# @param {int} bitNr
 #
-# @returns: A promise which resolves to a single value of type boolean.
-
+# @returns {Promise<bool>}
+#   A promise which resolves to a single value of type ``bool``.
 # Sets the bit value of the given bit. The return value indicates whether the
 # property was successfully set.
 #
-# @method OcaBitstringActuator.SetBit
-# @param bitNr: number
-# @param Value: boolean
+# @method OcaBitstringActuator#SetBit
+# @param {int} bitNr
+# @param {bool} Value
 #
-# @returns: A promise which resolves to void.
-
-# Gets the entire bitstring. The return value indicates whether the property was
+# @returns {Promise<None>}
+# Gets the entire bitstring.The return value indicates whether the property was
 # successfully gathered.
 #
-# @method OcaBitstringActuator.GetBitstring
-# @returns: A promise which resolves to a single value of type boolean[].
-
-# Sets the entire bitstring. The return value indicates whether the property
-# was successfully set.
+# @method OcaBitstringActuator#GetBitstring
+# @returns {Promise<list[bool]>}
+#   A promise which resolves to a single value of type ``list[bool]``.
+# Sets the entire bitstring. The return value indicates whether the property was
+# successfully set.
 #
-# @method OcaBitstringActuator.SetBitstring
-# @param BitString: boolean[]
+# @method OcaBitstringActuator#SetBitstring
+# @param {list[bool]} BitString
 #
-# @returns: A promise which resolves to void.
-
-# This event is emitted when the property 'Bitstring' changes in the remote object.
-# The property 'Bitstring' is described in the AES70 standard as follows.
+# @returns {Promise<None>}
+# This event is emitted when the property ``Bitstring`` changes in the remote object.
+# The property ``Bitstring`` is described in the AES70 standard as follows.
 # The bitstring data.
 #
-# @member OcaBitstringActuator.OnBitstringChanged
-# @type PropertyEvent[boolean[]]
+# @member {PropertyEvent<list[bool]>} OcaBitstringActuator#OnBitstringChanged

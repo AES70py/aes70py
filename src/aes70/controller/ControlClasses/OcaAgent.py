@@ -1,6 +1,6 @@
-from aes70.OCP1.OcaList import OcaList
-from aes70.OCP1.OcaString import OcaString
-from aes70.OCP1.OcaUint32 import OcaUint32
+from ...OCP1.OcaList import OcaList
+from ...OCP1.OcaString import OcaString
+from ...OCP1.OcaUint32 import OcaUint32
 from ..make_control_class import make_control_class
 from .OcaRoot import OcaRoot
 
@@ -20,8 +20,8 @@ OcaAgent = make_control_class(
         ['GetPath', 2, 4, [], [OcaList(OcaString), OcaList(OcaUint32)]],
     ],
     [
-        ['Label', [OcaString], 2, 1, False, False, None],
-        ['Owner', [OcaUint32], 2, 2, False, False, None],
+      ['Label', [OcaString], 2, 1, False, False, None],
+      ['Owner', [OcaUint32], 2, 2, False, False, None],
     ],
     []
 )
@@ -30,42 +30,37 @@ OcaAgent = make_control_class(
 # property was successfully retrieved.
 #
 # @method OcaAgent#GetLabel
-# @returns {Promise[string]}
-#   A promise which resolves to a single value of type "string".
-
+# @returns {Promise<str>}
+#   A promise which resolves to a single value of type ``str``.
 # Sets the value of the Label property. The return value indicates whether the
 # property was successfully set.
 #
 # @method OcaAgent#SetLabel
-# @param {string} Label
+# @param {str} Label
 #
-# @returns {Promise[None]}
-
+# @returns {Promise<None>}
 # Gets the value of the Owner property. The return value indicates whether the
 # property was successfully retrieved.
 #
 # @method OcaAgent#GetOwner
-# @returns {Promise[int]}
-#   A promise which resolves to a single value of type "number".
-
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # Returns path from the given object down to root. The return value indicates
 # whether the operation succeeded. Added in version 2.
 # The return values of this method are
 #
-# - NamePath of type "string[]"
-# - ONoPath of type "number[]"
+# - NamePath of type ``list[str]``
+# - ONoPath of type ``list[int]``
 #
 # @method OcaAgent#GetPath
-# @returns {Promise[Arguments[string[], int[]]]}
-
-# This event is emitted when the property "Label" changes in the remote object.
-# The property "Label" is described in the AES70 standard as follows.
+# @returns {Promise<Arguments[list[str],list[int]]>}
+# This event is emitted when the property ``Label`` changes in the remote object.
+# The property ``Label`` is described in the AES70 standard as follows.
 # User-specified label.
 #
-# @member {PropertyEvent[string]} OcaAgent#OnLabelChanged
-
-# This event is emitted when the property "Owner" changes in the remote object.
-# The property "Owner" is described in the AES70 standard as follows.
+# @member {PropertyEvent<str>} OcaAgent#OnLabelChanged
+# This event is emitted when the property ``Owner`` changes in the remote object.
+# The property ``Owner`` is described in the AES70 standard as follows.
 # Object number of block that contains this agent.
 #
-# @member {PropertyEvent[int]} OcaAgent#OnOwnerChanged
+# @member {PropertyEvent<int>} OcaAgent#OnOwnerChanged
