@@ -1,26 +1,13 @@
-# Dependencies and Imports
-from enum import Enum
-
-
 """
- * Enum for subscriptions that specifies whether its notification messages are
- * to be delivered by reliable means (e.g. TCP) or fast means (e.g. UDP).
- * @class OcaNotificationDeliveryMode
+This file is part of aes70py.
+This file has been generated.
 """
-class OcaNotificationDeliveryMode(Enum):
-    Reliable = 1
-    Fast = 2
+from aes70.types.Enum import Enum
 
-"""
- * Singleton object corresponding to the entry with value ``1``.
- * @type {OcaNotificationDeliveryMode}
- * @member Reliable
- * @memberof OcaNotificationDeliveryMode
- * @static
-
- * Singleton object corresponding to the entry with value ``2``.
- * @type {OcaNotificationDeliveryMode}
- * @member Fast
- * @memberof OcaNotificationDeliveryMode
- * @static
-"""
+# Enum for subscriptions that specifies whether its notification messages are to
+# be delivered by reliable means (e.g. TCP) or fast means (e.g. UDP).
+# @class OcaNotificationDeliveryMode
+OcaNotificationDeliveryMode = Enum({
+    'Reliable': 1,
+    'Fast': 2,
+})

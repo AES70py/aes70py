@@ -1,9 +1,12 @@
-# This file has been generated.
+"""
+This file is part of aes70py.
+This file has been generated.
+"""
 from .OcaPortMode import OcaPortMode
 from .OcaUint16 import OcaUint16
-from .struct import Struct
+from .Struct import Struct
 
-from ..types.OcaPortId import OcaPortID as type
+ from ..types.OcaPortIDimport { OcaPortID as type }
 
 OcaPortID = Struct(
   {

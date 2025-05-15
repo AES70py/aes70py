@@ -1,11 +1,12 @@
-# /*
-#  * This file has been generated.
-#  */
+"""
+This file is part of aes70py.
+This file has been generated.
+"""
 from .OcaBlobFixedLen import OcaBlobFixedLen
 from .OcaUint32 import OcaUint32
-from .struct import Struct
+from .Struct import Struct
 
-from aes70.types.OcaGlobalTypeIdentifier import OcaGlobalTypeIdentifier as type
+ from ..types.OcaGlobalTypeIdentifierimport { OcaGlobalTypeIdentifier as type }
 
 OcaGlobalTypeIdentifier = Struct(
   {

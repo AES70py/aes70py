@@ -1,8 +1,12 @@
+"""
+This file is part of aes70py.
+This file has been generated.
+"""
+from .OcaObjectIdentification import OcaObjectIdentification
+from .OcaUint32 import OcaUint32
+from .Struct import Struct
 
-from ..types.OcaObjectIdentification import OcaObjectIdentification
-from ..OCP1.OcaUint32 import OcaUint32
-from ..OCP1.struct import Struct
-from ..types.OcaBlockMember import OcaBlockMember as type
+ from ..types.OcaBlockMemberimport { OcaBlockMember as type }
 
 OcaBlockMember = Struct(
   {

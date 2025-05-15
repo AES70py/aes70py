@@ -1,12 +1,16 @@
-
+"""
+This file is part of aes70py.
+This file has been generated.
+"""
 from .OcaUint16 import OcaUint16
-from .struct import Struct
-from ..types.OcaPropertyId import OcaPropertyID as type
+from .Struct import Struct
+
+ from ..types.OcaPropertyIDimport { OcaPropertyID as type }
 
 OcaPropertyID = Struct(
   {
-    'DefLevel': OcaUint16,
-    'PropertyIndex': OcaUint16,
+    "DefLevel": OcaUint16,
+    "PropertyIndex": OcaUint16,
   },
   type
 )

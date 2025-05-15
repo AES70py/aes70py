@@ -1,0 +1,86 @@
+"""
+This file is part of aes70py.
+This file has been generated.
+"""
+from .OcaMediaCoding import IOcaMediaCoding, OcaMediaCoding
+from .OcaMediaConnection import IOcaMediaConnection, OcaMediaConnection
+from .OcaPortID import IOcaPortID, OcaPortID
+
+
+class IOcaMediaSinkConnector:
+    # Since this is an interface, no implementation is provided.
+    # Properties to be implemented by subclasses:
+    # Internal ID.
+    IDInternal: int
+    # Public name of connector. May be published to the media transport network,
+    # depending on the type of network.
+    IDExternal: str
+    # Descriptor of the stream connection to this connector. If there is no
+    # stream connected to this controller, (i.e. property Connected = FALSE),
+    # the value of this property is undefined.
+    Connection: IOcaMediaConnection
+    # List of codings available for this connector.
+    AvailableCodings: list[IOcaMediaCoding]
+    # Number of pins in this connector.
+    PinCount: int
+    # Map of stream pins (sink channels) to OCA ports (output ports) of the
+    # owning **OcaMediaNetwork** object. This defines what pins that are
+    # received from the network are sent to what OCA ports. A pin can only carry
+    # one network channel, but can be sent to multiple ports. That is why this
+    # data member is a multimap, a pin identifier can map to multiple ports. A
+    # pin is identified by an OcaUint16 with value 1..MaxPinCount. Not having a
+    # certain pin identifier in this map means that the pin is empty (i.e. not
+    # carrying a sink channel). A pin identifier cannot be part of the map more
+    # than MaxChannelsPerPin times, unless MaxChannelsPerPin is zero.
+    ChannelPinMap: Dict[<int, list[IOcaPortID]]
+    # Alignment level of the interface. Note that the dBFS value is referenced
+    # to the *interface's* fullscale value, not to device's internal fullscale
+    # value.
+    AlignmentLevel: int
+    # Alignment gain for the connector. This value will be applied to all
+    # signals incoming through all pins.
+    AlignmentGain: int
+    # Coding currently used by this connector.
+    CurrentCoding: IOcaMediaCoding
+
+
+class OcaMediaSinkConnector(IOcaMediaSinkConnector):
+    """
+    # Media sink (i.e. input) connector. Connects to an inbound stream.
+    # Collected by **OcaMediaTransportNetwork**.
+    @class OcaMediaSinkConnector
+    """
+    def __init__(self, IDInternal: int, IDExternal: str, Connection: OcaMediaConnection, AvailableCodings: list[OcaMediaCoding], PinCount: int, ChannelPinMap: Dict[<int, list[OcaPortID]], AlignmentLevel: int, AlignmentGain: int, CurrentCoding: OcaMediaCoding):
+        # Internal ID.
+        self.IDInternal: int = IDInternal
+        # Public name of connector. May be published to the media transport
+        # network, depending on the type of network.
+        self.IDExternal: str = IDExternal
+        # Descriptor of the stream connection to this connector. If there is no
+        # stream connected to this controller, (i.e. property Connected =
+        # FALSE), the value of this property is undefined.
+        self.Connection: OcaMediaConnection = Connection
+        # List of codings available for this connector.
+        self.AvailableCodings: list[OcaMediaCoding] = AvailableCodings
+        # Number of pins in this connector.
+        self.PinCount: int = PinCount
+        # Map of stream pins (sink channels) to OCA ports (output ports) of the
+        # owning **OcaMediaNetwork** object. This defines what pins that are
+        # received from the network are sent to what OCA ports. A pin can only
+        # carry one network channel, but can be sent to multiple ports. That is
+        # why this data member is a multimap, a pin identifier can map to
+        # multiple ports. A pin is identified by an OcaUint16 with value
+        # 1..MaxPinCount. Not having a certain pin identifier in this map means
+        # that the pin is empty (i.e. not carrying a sink channel). A pin
+        # identifier cannot be part of the map more than MaxChannelsPerPin
+        # times, unless MaxChannelsPerPin is zero.
+        self.ChannelPinMap: Dict[<int, list[OcaPortID]] = ChannelPinMap
+        # Alignment level of the interface. Note that the dBFS value is
+        # referenced to the *interface's* fullscale value, not to device's
+        # internal fullscale value.
+        self.AlignmentLevel: int = AlignmentLevel
+        # Alignment gain for the connector. This value will be applied to all
+        # signals incoming through all pins.
+        self.AlignmentGain: int = AlignmentGain
+        # Coding currently used by this connector.
+        self.CurrentCoding: OcaMediaCoding = CurrentCoding

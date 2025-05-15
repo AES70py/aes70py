@@ -1,49 +1,26 @@
-# /*
-#  * This file has been generated.
-#  */
-from typing import Protocol
-from OcaPort import IOcaPort, OcaPort
+"""
+This file is part of aes70py.
+This file has been generated.
+"""
+from .OcaPort import IOcaPort, OcaPort
 
-# export declare interface IOcaSignalPath {
-class IOcaSignalPath(Protocol):
-    """
-    /**
-     * Source port (i.e. output port) of the signal path.
-     * @type OcaPort
-     */
-    """
+
+class IOcaSignalPath:
+    # Since this is an interface, no implementation is provided.
+    # Properties to be implemented by subclasses:
+    # Source port (i.e. output port) of the signal path.
     SourcePort: IOcaPort
-
-    """
-    /**
-     * Sink port (i.e. input port) of the signal path.
-     * @type OcaPort
-     */
-    """
+    # Sink port (i.e. input port) of the signal path.
     SinkPort: IOcaPort
 
-# export declare class OcaSignalPath implements IOcaSignalPath {
+
 class OcaSignalPath(IOcaSignalPath):
     """
-    /**
-     * Signal path between two object ports in the same device.
-     * @class OcaSignalPath
-     */
+    # Signal path between two object ports in the same device.
+    @class OcaSignalPath
     """
-
     def __init__(self, SourcePort: OcaPort, SinkPort: OcaPort):
-        # constructor(SourcePort: OcaPort, SinkPort: OcaPort);
+        # Source port (i.e. output port) of the signal path.
         self.SourcePort: OcaPort = SourcePort
+        # Sink port (i.e. input port) of the signal path.
         self.SinkPort: OcaPort = SinkPort
-
-    # /**
-    #  * Source port (i.e. output port) of the signal path.
-    #  * @type OcaPort
-    #  */
-    SourcePort: OcaPort
-
-    # /**
-    #  * Sink port (i.e. input port) of the signal path.
-    #  * @type OcaPort
-    #  */
-    SinkPort: OcaPort

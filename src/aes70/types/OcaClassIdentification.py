@@ -1,35 +1,25 @@
-from typing import Protocol
+"""
+This file is part of aes70py.
+This file has been generated.
+"""
 
-# Export declare interface IOcaClassIdentification
-class IOcaClassIdentification(Protocol):
-    # /**
-    #  * @type string
-    #  */
+
+class IOcaClassIdentification:
+    # Since this is an interface, no implementation is provided.
+    # Properties to be implemented by subclasses:
+    #
     ClassID: str
-
-    # /**
-    #  * Version number of the class.
-    #  * @type number
-    #  */
+    # Version number of the class.
     ClassVersion: int
 
-# Export declare class OcaClassIdentification implements IOcaClassIdentification
+
 class OcaClassIdentification(IOcaClassIdentification):
-    # /**
-    #  * @class OcaClassIdentification
-    #  */
-    def __init__(self, ClassID: str, ClassVersion: int) -> None:
-        self.ClassID = ClassID
-        self.ClassVersion = ClassVersion
-        #print("-> ClassID: ", len(self.ClassID))
-
-    # /**
-    #  * @type string
-    #  */
-    # The public property 'ClassID' is assigned via the constructor.
-
-    # /**
-    #  * Version number of the class.
-    #  * @type number
-    #  */
-    # The public property 'ClassVersion' is assigned via the constructor.
+    """
+    #
+    @class OcaClassIdentification
+    """
+    def __init__(self, ClassID: str, ClassVersion: int):
+        #
+        self.ClassID: str = ClassID
+        # Version number of the class.
+        self.ClassVersion: int = ClassVersion

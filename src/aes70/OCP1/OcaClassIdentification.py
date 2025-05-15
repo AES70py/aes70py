@@ -1,12 +1,17 @@
-from aes70.OCP1.OcaUint16 import OcaUint16
-from aes70.OCP1.String16 import String16
-from .struct import Struct
-from ..types.OcaClassIdentification import OcaClassIdentification as type
+"""
+This file is part of aes70py.
+This file has been generated.
+"""
+from .OcaUint16 import OcaUint16
+from .String16 import String16
+from .Struct import Struct
+
+ from ..types.OcaClassIdentificationimport { OcaClassIdentification as type }
 
 OcaClassIdentification = Struct(
   {
-    'ClassID': String16,
-    'ClassVersion': OcaUint16,
+    "ClassID": String16,
+    "ClassVersion": OcaUint16,
   },
   type
 )

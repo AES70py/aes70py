@@ -1,6 +1,16 @@
-from aes70.OCP1.OcaUint16 import OcaUint16
-from aes70.OCP1.struct import Struct
+"""
+This file is part of aes70py.
+This file has been generated.
+"""
+from .OcaUint16 import OcaUint16
+from .Struct import Struct
 
-from ..types.OcaEventId import OcaEventId as type
+ from ..types.OcaEventIDimport { OcaEventID as type }
 
-OcaEventId = Struct({'def_level': OcaUint16, 'event_index': OcaUint16}, type)
+OcaEventID = Struct(
+  {
+    "DefLevel": OcaUint16,
+    "EventIndex": OcaUint16,
+  },
+  type
+)

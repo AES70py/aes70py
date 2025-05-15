@@ -1,35 +1,11 @@
-from enum import IntFlag
+"""
+This file is part of aes70py.
+This file has been generated.
+"""
 
+  OcaObjectSearchResultFlags_ONo = 1
+  OcaObjectSearchResultFlags_ClassIdentification = 2
+  OcaObjectSearchResultFlags_ContainerPath = 4
+  OcaObjectSearchResultFlags_Role = 8
+  OcaObjectSearchResultFlags_Label = 16
 
-#  * Bitset that describes the contents of an **OcaSearchResult**
-#  * @enum {number}
-#  * @readonly
-
-class OcaObjectSearchResultFlags(IntFlag):
-    # /**
-    #  * Entry with value ``1``.
-    #  */
-    ONo: int = 1
-
-    # /**
-    #  * Entry with value ``2``.
-    #  */
-    ClassIdentification: int = 2
-
-    # /**
-    #  * Entry with value ``4``.
-    #  */
-    ContainerPath: int = 4
-
-    # /**
-    #  * Entry with value ``8``.
-    #  */
-    Role: int = 8
-
-    # /**
-    #  * Entry with value ``16``.
-    #  */
-    Label: int = 16
-
-# export declare type IOcaObjectSearchResultFlags = number;
-IOcaObjectSearchResultFlags = int

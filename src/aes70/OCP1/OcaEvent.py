@@ -1,7 +1,17 @@
-from aes70.OCP1.OcaEventId import OcaEventId
-from aes70.OCP1.OcaUint32 import OcaUint32
-from aes70.OCP1.struct import Struct
+"""
+This file is part of aes70py.
+This file has been generated.
+"""
+from .OcaEventID import OcaEventID
+from .OcaUint32 import OcaUint32
+from .Struct import Struct
 
-from ..types.OcaEvent import OcaEvent as type
+ from ..types.OcaEventimport { OcaEvent as type }
 
-OcaEvent = Struct({'emitter_o_no': OcaUint32, 'event_id': OcaEventId}, type)
+OcaEvent = Struct(
+  {
+    "EmitterONo": OcaUint32,
+    "EventID": OcaEventID,
+  },
+  type
+)
