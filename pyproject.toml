@@ -3,6 +3,7 @@ name = "aes70py"
 version = "1.0.1"
 authors = [
   { name="William Welliver", email="william@welliver.org" },
+  { name="Arne Goedeke", email="arne@deuso.de" }
 ]
 description = "AES70 controller library"
 readme = "README.md"
