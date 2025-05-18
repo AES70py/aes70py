@@ -1,116 +1,110 @@
-"""
-/*
- * This module contains all control classes generated from .the AES70
- * standards document. It currently contains all classes defined in
- * AES70-2018.
- */
-"""
+# This module contains all control classes generated from .the AES70 standards
+# document. It currently contains all classes defined in AES70-2018.
 
-from .OcaRoot import OcaRoot
-from .OcaWorker import OcaWorker
 from .OcaActuator import OcaActuator
-from .OcaMute import OcaMute
-from .OcaPolarity import OcaPolarity
-from .OcaSwitch import OcaSwitch
-from .OcaGain import OcaGain
-# from .OcaPanBalance import OcaPanBalance
-# from .OcaDelay import OcaDelay
-# from .OcaDelayExtended import OcaDelayExtended
-# from .OcaFrequencyActuator import OcaFrequencyActuator
-# from .OcaFilterClassical import OcaFilterClassical
-# from .OcaFilterParametric import OcaFilterParametric
-# from .OcaFilterPolynomial import OcaFilterPolynomial
-# from .OcaFilterFIR import OcaFilterFIR
-# from .OcaFilterArbitraryCurve import OcaFilterArbitraryCurve
-# from .OcaDynamics import OcaDynamics
-# from .OcaDynamicsDetector import OcaDynamicsDetector
-# from .OcaDynamicsCurve import OcaDynamicsCurve
-# from .OcaSignalGenerator import OcaSignalGenerator
-# from .OcaSignalInput import OcaSignalInput
-# from .OcaSignalOutput import OcaSignalOutput
-from .OcaTemperatureActuator import OcaTemperatureActuator
-# from .OcaIdentificationActuator import OcaIdentificationActuator
-# from .OcaSummingPoint import OcaSummingPoint
-from .OcaBasicActuator import OcaBasicActuator
-from .OcaBooleanActuator import OcaBooleanActuator
-from .OcaInt8Actuator import OcaInt8Actuator
-from .OcaInt16Actuator import OcaInt16Actuator
-from .OcaInt32Actuator import OcaInt32Actuator
-from .OcaInt64Actuator import OcaInt64Actuator
-from .OcaUint8Actuator import OcaUint8Actuator
-from .OcaUint16Actuator import OcaUint16Actuator
-from .OcaUint32Actuator import OcaUint32Actuator
-from .OcaUint64Actuator import OcaUint64Actuator
-from .OcaFloat32Actuator import OcaFloat32Actuator
-from .OcaFloat64Actuator import OcaFloat64Actuator
-from .OcaStringActuator import OcaStringActuator
-from .OcaBitstringActuator import OcaBitstringActuator
-from .OcaSensor import OcaSensor
-from .OcaLevelSensor import OcaLevelSensor
-# from .OcaAudioLevelSensor import OcaAudioLevelSensor
-# from .OcaTimeIntervalSensor import OcaTimeIntervalSensor
-# from .OcaFrequencySensor import OcaFrequencySensor
-from .OcaTemperatureSensor import OcaTemperatureSensor
-# from .OcaIdentificationSensor import OcaIdentificationSensor
-# from .OcaVoltageSensor import OcaVoltageSensor
-# from .OcaCurrentSensor import OcaCurrentSensor
-# from .OcaImpedanceSensor import OcaImpedanceSensor
-from .OcaGainSensor import OcaGainSensor
-from .OcaBasicSensor import OcaBasicSensor
-from .OcaBooleanSensor import OcaBooleanSensor
-from .OcaInt8Sensor import OcaInt8Sensor
-from .OcaInt16Sensor import OcaInt16Sensor
-from .OcaInt32Sensor import OcaInt32Sensor
-from .OcaInt64Sensor import OcaInt64Sensor
-from .OcaUint8Sensor import OcaUint8Sensor
-from .OcaUint16Sensor import OcaUint16Sensor
-from .OcaUint32Sensor import OcaUint32Sensor
-from .OcaFloat32Sensor import OcaFloat32Sensor
-from .OcaFloat64Sensor import OcaFloat64Sensor
-from .OcaStringSensor import OcaStringSensor
-from .OcaBitstringSensor import OcaBitstringSensor
-from .OcaUint64Sensor import OcaUint64Sensor
-from .OcaBlock import OcaBlock
-# from .OcaBlockFactory import OcaBlockFactory
-# from .OcaMatrix import OcaMatrix
 from .OcaAgent import OcaAgent
-# from .OcaGrouper import OcaGrouper
-# from .OcaRamper import OcaRamper
-# from .OcaNumericObserver import OcaNumericObserver
-# from .OcaLibrary import OcaLibrary
-# from .OcaPowerSupply import OcaPowerSupply
-# from .OcaEventHandler import OcaEventHandler
-# from .OcaNumericObserverList import OcaNumericObserverList
-# from .OcaMediaClock3 import OcaMediaClock3
-# from .OcaTimeSource import OcaTimeSource
-# from .OcaPhysicalPosition import OcaPhysicalPosition
-# from .OcaApplicationNetwork import OcaApplicationNetwork
-# from .OcaControlNetwork import OcaControlNetwork
-# from .OcaMediaTransportNetwork import OcaMediaTransportNetwork
-from .OcaManager import OcaManager
+from .OcaApplicationNetwork import OcaApplicationNetwork
+from .OcaAudioLevelSensor import OcaAudioLevelSensor
+from .OcaAudioProcessingManager import OcaAudioProcessingManager
+from .OcaBasicActuator import OcaBasicActuator
+from .OcaBasicSensor import OcaBasicSensor
+from .OcaBitstringActuator import OcaBitstringActuator
+from .OcaBitstringSensor import OcaBitstringSensor
+from .OcaBlock import OcaBlock
+from .OcaBlockFactory import OcaBlockFactory
+from .OcaBooleanActuator import OcaBooleanActuator
+from .OcaBooleanSensor import OcaBooleanSensor
+from .OcaCodingManager import OcaCodingManager
+from .OcaControlNetwork import OcaControlNetwork
+from .OcaCurrentSensor import OcaCurrentSensor
+from .OcaDelay import OcaDelay
+from .OcaDelayExtended import OcaDelayExtended
 from .OcaDeviceManager import OcaDeviceManager
-# from .OcaSecurityManager import OcaSecurityManager
-# from .OcaFirmwareManager import OcaFirmwareManager
-# from .OcaSubscriptionManager import OcaSubscriptionManager
-# from .OcaPowerManager import OcaPowerManager
-# from .OcaNetworkManager import OcaNetworkManager
-# from .OcaMediaClockManager import OcaMediaClockManager
-# from .OcaLibraryManager import OcaLibraryManager
-# from .OcaAudioProcessingManager import OcaAudioProcessingManager
-# from .OcaDeviceTimeManager import OcaDeviceTimeManager
-# from .OcaTaskManager import OcaTaskManager
-# from .OcaCodingManager import OcaCodingManager
-# from .OcaDiagnosticManager import OcaDiagnosticManager
-# from .OcaNetworkSignalChannel import OcaNetworkSignalChannel
-# from .OcaNetwork import OcaNetwork
-# from .OcaMediaClock import OcaMediaClock
-# from .OcaStreamNetwork import OcaStreamNetwork
-# from .OcaStreamConnector import OcaStreamConnector
+from .OcaDeviceTimeManager import OcaDeviceTimeManager
+from .OcaDiagnosticManager import OcaDiagnosticManager
+from .OcaDynamics import OcaDynamics
+from .OcaDynamicsCurve import OcaDynamicsCurve
+from .OcaDynamicsDetector import OcaDynamicsDetector
+from .OcaEventHandler import OcaEventHandler
+from .OcaFilterArbitraryCurve import OcaFilterArbitraryCurve
+from .OcaFilterClassical import OcaFilterClassical
+from .OcaFilterFIR import OcaFilterFIR
+from .OcaFilterParametric import OcaFilterParametric
+from .OcaFilterPolynomial import OcaFilterPolynomial
+from .OcaFirmwareManager import OcaFirmwareManager
+from .OcaFloat32Actuator import OcaFloat32Actuator
+from .OcaFloat32Sensor import OcaFloat32Sensor
+from .OcaFloat64Actuator import OcaFloat64Actuator
+from .OcaFloat64Sensor import OcaFloat64Sensor
+from .OcaFrequencyActuator import OcaFrequencyActuator
+from .OcaFrequencySensor import OcaFrequencySensor
+from .OcaGain import OcaGain
+from .OcaGainSensor import OcaGainSensor
+from .OcaGrouper import OcaGrouper
+from .OcaIdentificationActuator import OcaIdentificationActuator
+from .OcaIdentificationSensor import OcaIdentificationSensor
+from .OcaImpedanceSensor import OcaImpedanceSensor
+from .OcaInt16Actuator import OcaInt16Actuator
+from .OcaInt16Sensor import OcaInt16Sensor
+from .OcaInt32Actuator import OcaInt32Actuator
+from .OcaInt32Sensor import OcaInt32Sensor
+from .OcaInt64Actuator import OcaInt64Actuator
+from .OcaInt64Sensor import OcaInt64Sensor
+from .OcaInt8Actuator import OcaInt8Actuator
+from .OcaInt8Sensor import OcaInt8Sensor
+from .OcaLevelSensor import OcaLevelSensor
+from .OcaLibrary import OcaLibrary
+from .OcaLibraryManager import OcaLibraryManager
+from .OcaManager import OcaManager
+from .OcaMatrix import OcaMatrix
+from .OcaMediaClock import OcaMediaClock
+from .OcaMediaClock3 import OcaMediaClock3
+from .OcaMediaClockManager import OcaMediaClockManager
+from .OcaMediaTransportNetwork import OcaMediaTransportNetwork
+from .OcaMute import OcaMute
+from .OcaNetwork import OcaNetwork
+from .OcaNetworkManager import OcaNetworkManager
+from .OcaNetworkSignalChannel import OcaNetworkSignalChannel
+from .OcaNumericObserver import OcaNumericObserver
+from .OcaNumericObserverList import OcaNumericObserverList
+from .OcaPanBalance import OcaPanBalance
+from .OcaPhysicalPosition import OcaPhysicalPosition
+from .OcaPolarity import OcaPolarity
+from .OcaPowerManager import OcaPowerManager
+from .OcaPowerSupply import OcaPowerSupply
+from .OcaRamper import OcaRamper
+from .OcaRoot import OcaRoot
+from .OcaSecurityManager import OcaSecurityManager
+from .OcaSensor import OcaSensor
+from .OcaSignalGenerator import OcaSignalGenerator
+from .OcaSignalInput import OcaSignalInput
+from .OcaSignalOutput import OcaSignalOutput
+from .OcaStreamConnector import OcaStreamConnector
+from .OcaStreamNetwork import OcaStreamNetwork
+from .OcaStringActuator import OcaStringActuator
+from .OcaStringSensor import OcaStringSensor
+from .OcaSubscriptionManager import OcaSubscriptionManager
+from .OcaSummingPoint import OcaSummingPoint
+from .OcaSwitch import OcaSwitch
+from .OcaTaskManager import OcaTaskManager
+from .OcaTemperatureActuator import OcaTemperatureActuator
+from .OcaTemperatureSensor import OcaTemperatureSensor
+from .OcaTimeIntervalSensor import OcaTimeIntervalSensor
+from .OcaTimeSource import OcaTimeSource
+from .OcaUint16Actuator import OcaUint16Actuator
+from .OcaUint16Sensor import OcaUint16Sensor
+from .OcaUint32Actuator import OcaUint32Actuator
+from .OcaUint32Sensor import OcaUint32Sensor
+from .OcaUint64Actuator import OcaUint64Actuator
+from .OcaUint64Sensor import OcaUint64Sensor
+from .OcaUint8Actuator import OcaUint8Actuator
+from .OcaUint8Sensor import OcaUint8Sensor
+from .OcaVoltageSensor import OcaVoltageSensor
+from .OcaWorker import OcaWorker
 
 __all__ = [
     "OcaRoot",
     "OcaWorker",
-    "OcaBasicActuator",
     "OcaMute",
     "OcaPolarity",
     "OcaSwitch",
@@ -133,7 +127,7 @@ __all__ = [
     "OcaTemperatureActuator",
     "OcaIdentificationActuator",
     "OcaSummingPoint",
-    "OcaBasicActuator",
+    "OcaActuator",
     "OcaBooleanActuator",
     "OcaInt8Actuator",
     "OcaInt16Actuator",
@@ -147,9 +141,9 @@ __all__ = [
     "OcaFloat64Actuator",
     "OcaStringActuator",
     "OcaBitstringActuator",
-    "OcaSensor",
-    "OcaLevelSensor",
+    "OcaBasicActuator",
     "OcaAudioLevelSensor",
+    "OcaLevelSensor",
     "OcaTimeIntervalSensor",
     "OcaFrequencySensor",
     "OcaTemperatureSensor",
@@ -158,7 +152,7 @@ __all__ = [
     "OcaCurrentSensor",
     "OcaImpedanceSensor",
     "OcaGainSensor",
-    "OcaBasicSensor",
+    "OcaSensor",
     "OcaBooleanSensor",
     "OcaInt8Sensor",
     "OcaInt16Sensor",
@@ -171,11 +165,11 @@ __all__ = [
     "OcaFloat64Sensor",
     "OcaStringSensor",
     "OcaBitstringSensor",
+    "OcaBasicSensor",
     "OcaUint64Sensor",
     "OcaBlock",
     "OcaBlockFactory",
     "OcaMatrix",
-    "OcaAgent",
     "OcaGrouper",
     "OcaRamper",
     "OcaNumericObserver",
@@ -186,10 +180,10 @@ __all__ = [
     "OcaMediaClock3",
     "OcaTimeSource",
     "OcaPhysicalPosition",
-    "OcaApplicationNetwork",
+    "OcaAgent",
     "OcaControlNetwork",
     "OcaMediaTransportNetwork",
-    "OcaManager",
+    "OcaApplicationNetwork",
     "OcaDeviceManager",
     "OcaSecurityManager",
     "OcaFirmwareManager",
@@ -203,6 +197,7 @@ __all__ = [
     "OcaTaskManager",
     "OcaCodingManager",
     "OcaDiagnosticManager",
+    "OcaManager",
     "OcaNetworkSignalChannel",
     "OcaNetwork",
     "OcaMediaClock",

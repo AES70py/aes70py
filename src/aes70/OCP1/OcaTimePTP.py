@@ -7,7 +7,7 @@ from .OcaUint32 import OcaUint32
 from .OcaUint64 import OcaUint64
 from .Struct import Struct
 
- from ..types.OcaTimePTPimport { OcaTimePTP as type }
+from ..types.OcaTimePTP import OcaTimePTP as type
 
 OcaTimePTP = Struct(
   {

@@ -5,7 +5,7 @@ This file has been generated.
 from .OcaUint32 import OcaUint32
 from .Struct import Struct
 
- from ..types.OcaLibVolIdentifierimport { OcaLibVolIdentifier as type }
+from ..types.OcaLibVolIdentifier import OcaLibVolIdentifier as type
 
 OcaLibVolIdentifier = Struct(
   {

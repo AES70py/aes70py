@@ -12,7 +12,7 @@ from .OcaUint16 import OcaUint16
 from .OcaUint32 import OcaUint32
 from .Struct import Struct
 
- from ..types.OcaStreamimport { OcaStream as type }
+from ..types.OcaStream import OcaStream as type
 
 OcaStream = Struct(
   {

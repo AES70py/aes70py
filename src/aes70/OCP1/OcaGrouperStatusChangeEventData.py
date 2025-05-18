@@ -6,7 +6,7 @@ from .OcaGrouperStatusChangeType import OcaGrouperStatusChangeType
 from .OcaUint16 import OcaUint16
 from .Struct import Struct
 
- from ..types.OcaGrouperStatusChangeEventDataimport { OcaGrouperStatusChangeEventData as type }
+from ..types.OcaGrouperStatusChangeEventData import OcaGrouperStatusChangeEventData as type
 
 OcaGrouperStatusChangeEventData = Struct(
   {

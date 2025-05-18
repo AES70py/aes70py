@@ -5,7 +5,7 @@ This file has been generated.
 from .OcaBlobFixedLen import OcaBlobFixedLen
 from .Struct import Struct
 
- from ..types.OcaModelGUIDimport { OcaModelGUID as type }
+from ..types.OcaModelGUID import OcaModelGUID as type
 
 OcaModelGUID = Struct(
   {

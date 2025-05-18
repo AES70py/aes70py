@@ -8,7 +8,7 @@ from .OcaPositionCoordinateSystem import OcaPositionCoordinateSystem
 from .OcaPositionDescriptorFieldFlags import OcaPositionDescriptorFieldFlags
 from .Struct import Struct
 
- from ..types.OcaPositionDescriptorimport { OcaPositionDescriptor as type }
+from ..types.OcaPositionDescriptor import OcaPositionDescriptor as type
 
 OcaPositionDescriptor = Struct(
   {

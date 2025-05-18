@@ -6,7 +6,7 @@ from .OcaList import OcaList
 from .OcaUint32 import OcaUint32
 from .Struct import Struct
 
- from ..types.OcaObjectListEventDataimport { OcaObjectListEventData as type }
+from ..types.OcaObjectListEventData import OcaObjectListEventData as type
 
 OcaObjectListEventData = Struct(
   {

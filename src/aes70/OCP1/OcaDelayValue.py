@@ -6,7 +6,7 @@ from .OcaDelayUnit import OcaDelayUnit
 from .OcaFloat32 import OcaFloat32
 from .Struct import Struct
 
- from ..types.OcaDelayValueimport { OcaDelayValue as type }
+from ..types.OcaDelayValue import OcaDelayValue as type
 
 OcaDelayValue = Struct(
   {

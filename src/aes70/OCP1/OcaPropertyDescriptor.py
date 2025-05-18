@@ -7,7 +7,7 @@ from .OcaMethodID import OcaMethodID
 from .OcaPropertyID import OcaPropertyID
 from .Struct import Struct
 
- from ..types.OcaPropertyDescriptorimport { OcaPropertyDescriptor as type }
+from ..types.OcaPropertyDescriptor import OcaPropertyDescriptor as type
 
 OcaPropertyDescriptor = Struct(
   {

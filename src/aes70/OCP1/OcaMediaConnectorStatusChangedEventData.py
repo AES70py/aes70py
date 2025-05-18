@@ -5,7 +5,7 @@ This file has been generated.
 from .OcaMediaConnectorStatus import OcaMediaConnectorStatus
 from .Struct import Struct
 
- from ..types.OcaMediaConnectorStatusChangedEventDataimport { OcaMediaConnectorStatusChangedEventData as type }
+from ..types.OcaMediaConnectorStatusChangedEventData import OcaMediaConnectorStatusChangedEventData as type
 
 OcaMediaConnectorStatusChangedEventData = Struct(
   {

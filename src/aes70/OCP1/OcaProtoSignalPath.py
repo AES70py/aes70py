@@ -5,7 +5,7 @@ This file has been generated.
 from .OcaProtoPort import OcaProtoPort
 from .Struct import Struct
 
- from ..types.OcaProtoSignalPathimport { OcaProtoSignalPath as type }
+from ..types.OcaProtoSignalPath import OcaProtoSignalPath as type
 
 OcaProtoSignalPath = Struct(
   {

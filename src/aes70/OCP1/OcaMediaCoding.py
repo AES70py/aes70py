@@ -7,7 +7,7 @@ from .OcaUint16 import OcaUint16
 from .OcaUint32 import OcaUint32
 from .Struct import Struct
 
- from ..types.OcaMediaCodingimport { OcaMediaCoding as type }
+from ..types.OcaMediaCoding import OcaMediaCoding as type
 
 OcaMediaCoding = Struct(
   {

@@ -6,7 +6,7 @@ from .OcaBlobFixedLen import OcaBlobFixedLen
 from .OcaUint32 import OcaUint32
 from .Struct import Struct
 
- from ..types.OcaLibVolTypeimport { OcaLibVolType as type }
+from ..types.OcaLibVolType import OcaLibVolType as type
 
 OcaLibVolType = Struct(
   {

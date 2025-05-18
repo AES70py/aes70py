@@ -5,7 +5,7 @@ This file has been generated.
 from .OcaFloat32 import OcaFloat32
 from .Struct import Struct
 
- from ..types.OcaImpedanceimport { OcaImpedance as type }
+from ..types.OcaImpedance import OcaImpedance as type
 
 OcaImpedance = Struct(
   {

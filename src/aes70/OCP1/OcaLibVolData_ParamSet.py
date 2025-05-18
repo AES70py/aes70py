@@ -6,7 +6,7 @@ from .OcaBlob import OcaBlob
 from .OcaUint32 import OcaUint32
 from .Struct import Struct
 
- from ..types.OcaLibVolData_ParamSetimport { OcaLibVolData_ParamSet as type }
+from ..types.OcaLibVolData_ParamSet import OcaLibVolData_ParamSet as type
 
 OcaLibVolData_ParamSet = Struct(
   {

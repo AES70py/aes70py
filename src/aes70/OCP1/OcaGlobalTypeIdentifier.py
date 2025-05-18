@@ -6,7 +6,7 @@ from .OcaBlobFixedLen import OcaBlobFixedLen
 from .OcaUint32 import OcaUint32
 from .Struct import Struct
 
- from ..types.OcaGlobalTypeIdentifierimport { OcaGlobalTypeIdentifier as type }
+from ..types.OcaGlobalTypeIdentifier import OcaGlobalTypeIdentifier as type
 
 OcaGlobalTypeIdentifier = Struct(
   {

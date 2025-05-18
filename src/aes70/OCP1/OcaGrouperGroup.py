@@ -7,7 +7,7 @@ from .OcaUint16 import OcaUint16
 from .OcaUint32 import OcaUint32
 from .Struct import Struct
 
- from ..types.OcaGrouperGroupimport { OcaGrouperGroup as type }
+from ..types.OcaGrouperGroup import OcaGrouperGroup as type
 
 OcaGrouperGroup = Struct(
   {

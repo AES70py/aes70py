@@ -8,7 +8,7 @@ from .OcaUint32 import OcaUint32
 from .String16 import String16
 from .Struct import Struct
 
- from ..types.OcaManagerDescriptorimport { OcaManagerDescriptor as type }
+from ..types.OcaManagerDescriptor import OcaManagerDescriptor as type
 
 OcaManagerDescriptor = Struct(
   {

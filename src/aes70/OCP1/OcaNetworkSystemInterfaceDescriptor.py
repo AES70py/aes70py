@@ -5,7 +5,7 @@ This file has been generated.
 from .OcaBlob import OcaBlob
 from .Struct import Struct
 
- from ..types.OcaNetworkSystemInterfaceDescriptorimport { OcaNetworkSystemInterfaceDescriptor as type }
+from ..types.OcaNetworkSystemInterfaceDescriptor import OcaNetworkSystemInterfaceDescriptor as type
 
 OcaNetworkSystemInterfaceDescriptor = Struct(
   {

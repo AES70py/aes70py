@@ -287,31 +287,25 @@ OcaGrouper = make_control_class(
 # by the AdGroup and DeleteGroup methods of OcaGrouper.
 #
 # @member {PropertyEvent<list[OcaGrouperGroup]>} OcaGrouper#OnGroupsChanged
-/**
- * An alias for OnGroupsChanged
- *
- * @member {PropertyEvent<list[OcaGrouperGroup]>} OcaGrouper#OnGroupListChanged
- */
+# An alias for OnGroupsChanged
+#
+# @member {PropertyEvent<list[OcaGrouperGroup]>} OcaGrouper#OnGroupListChanged
 # This event is emitted when the property ``Citizens`` changes in the remote object.
 # The property ``Citizens`` is described in the AES70 standard as follows.
 # List of citizens defined for this grouper.
 #
 # @member {PropertyEvent<list[OcaGrouperCitizen]>} OcaGrouper#OnCitizensChanged
-/**
- * An alias for OnCitizensChanged
- *
- * @member {PropertyEvent<list[OcaGrouperCitizen]>} OcaGrouper#OnCitizenListChanged
- */
+# An alias for OnCitizensChanged
+#
+# @member {PropertyEvent<list[OcaGrouperCitizen]>} OcaGrouper#OnCitizenListChanged
 # This event is emitted when the property ``Enrollments`` changes in the remote object.
 # The property ``Enrollments`` is described in the AES70 standard as follows.
 # List of grouper's enrollments, i.e. which citizen(s) belong to which group(s).
 #
 # @member {PropertyEvent<list[OcaGrouperEnrollment]>} OcaGrouper#OnEnrollmentsChanged
-/**
- * An alias for OnEnrollmentsChanged
- *
- * @member {PropertyEvent<list[OcaGrouperEnrollment]>} OcaGrouper#OnEnrollmentListChanged
- */
+# An alias for OnEnrollmentsChanged
+#
+# @member {PropertyEvent<list[OcaGrouperEnrollment]>} OcaGrouper#OnEnrollmentListChanged
 # This event is emitted when the property ``Mode`` changes in the remote object.
 # The property ``Mode`` is described in the AES70 standard as follows.
 # Switch that determines whether grouper is in master-slave mode or peer-to-peer

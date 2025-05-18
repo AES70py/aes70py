@@ -7,7 +7,7 @@ from .OcaTaskStatus import OcaTaskStatus
 from .OcaUint32 import OcaUint32
 from .Struct import Struct
 
- from ..types.OcaTaskStateChangedEventDataimport { OcaTaskStateChangedEventData as type }
+from ..types.OcaTaskStateChangedEventData import OcaTaskStateChangedEventData as type
 
 OcaTaskStateChangedEventData = Struct(
   {

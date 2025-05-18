@@ -6,7 +6,7 @@ from .OcaObjectIdentification import OcaObjectIdentification
 from .OcaUint32 import OcaUint32
 from .Struct import Struct
 
- from ..types.OcaBlockMemberimport { OcaBlockMember as type }
+from ..types.OcaBlockMember import OcaBlockMember as type
 
 OcaBlockMember = Struct(
   {

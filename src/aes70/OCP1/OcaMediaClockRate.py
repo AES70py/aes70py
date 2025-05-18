@@ -5,7 +5,7 @@ This file has been generated.
 from .OcaFloat32 import OcaFloat32
 from .Struct import Struct
 
- from ..types.OcaMediaClockRateimport { OcaMediaClockRate as type }
+from ..types.OcaMediaClockRate import OcaMediaClockRate as type
 
 OcaMediaClockRate = Struct(
   {

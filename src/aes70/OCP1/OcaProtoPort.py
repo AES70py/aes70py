@@ -7,7 +7,7 @@ from .OcaString import OcaString
 from .OcaUint32 import OcaUint32
 from .Struct import Struct
 
- from ..types.OcaProtoPortimport { OcaProtoPort as type }
+from ..types.OcaProtoPort import OcaProtoPort as type
 
 OcaProtoPort = Struct(
   {

@@ -12,7 +12,7 @@ from .OcaString import OcaString
 from .OcaUint16 import OcaUint16
 from .Struct import Struct
 
- from ..types.OcaMediaSinkConnectorimport { OcaMediaSinkConnector as type }
+from ..types.OcaMediaSinkConnector import OcaMediaSinkConnector as type
 
 OcaMediaSinkConnector = Struct(
   {

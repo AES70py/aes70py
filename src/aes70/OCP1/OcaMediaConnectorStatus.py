@@ -6,7 +6,7 @@ from .OcaMediaConnectorState import OcaMediaConnectorState
 from .OcaUint16 import OcaUint16
 from .Struct import Struct
 
- from ..types.OcaMediaConnectorStatusimport { OcaMediaConnectorStatus as type }
+from ..types.OcaMediaConnectorStatus import OcaMediaConnectorStatus as type
 
 OcaMediaConnectorStatus = Struct(
   {

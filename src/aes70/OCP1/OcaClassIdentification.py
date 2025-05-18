@@ -6,7 +6,7 @@ from .OcaUint16 import OcaUint16
 from .String16 import String16
 from .Struct import Struct
 
- from ..types.OcaClassIdentificationimport { OcaClassIdentification as type }
+from ..types.OcaClassIdentification import OcaClassIdentification as type
 
 OcaClassIdentification = Struct(
   {

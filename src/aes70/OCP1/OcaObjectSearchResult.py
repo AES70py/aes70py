@@ -8,7 +8,7 @@ from .OcaString import OcaString
 from .OcaUint32 import OcaUint32
 from .Struct import Struct
 
- from ..types.OcaObjectSearchResultimport { OcaObjectSearchResult as type }
+from ..types.OcaObjectSearchResult import OcaObjectSearchResult as type
 
 OcaObjectSearchResult = Struct(
   {

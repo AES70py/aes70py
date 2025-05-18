@@ -7,7 +7,7 @@ from .OcaMediaSourceConnector import OcaMediaSourceConnector
 from .OcaPropertyChangeType import OcaPropertyChangeType
 from .Struct import Struct
 
- from ..types.OcaMediaSourceConnectorChangedEventDataimport { OcaMediaSourceConnectorChangedEventData as type }
+from ..types.OcaMediaSourceConnectorChangedEventData import OcaMediaSourceConnectorChangedEventData as type
 
 OcaMediaSourceConnectorChangedEventData = Struct(
   {

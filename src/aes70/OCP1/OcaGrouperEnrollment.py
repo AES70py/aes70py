@@ -5,7 +5,7 @@ This file has been generated.
 from .OcaUint16 import OcaUint16
 from .Struct import Struct
 
- from ..types.OcaGrouperEnrollmentimport { OcaGrouperEnrollment as type }
+from ..types.OcaGrouperEnrollment import OcaGrouperEnrollment as type
 
 OcaGrouperEnrollment = Struct(
   {

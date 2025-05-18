@@ -6,7 +6,7 @@ from .OcaComponent import OcaComponent
 from .OcaUint32 import OcaUint32
 from .Struct import Struct
 
- from ..types.OcaVersionimport { OcaVersion as type }
+from ..types.OcaVersion import OcaVersion as type
 
 OcaVersion = Struct(
   {

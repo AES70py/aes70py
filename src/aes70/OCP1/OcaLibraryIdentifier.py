@@ -6,7 +6,7 @@ from .OcaLibVolType import OcaLibVolType
 from .OcaUint32 import OcaUint32
 from .Struct import Struct
 
- from ..types.OcaLibraryIdentifierimport { OcaLibraryIdentifier as type }
+from ..types.OcaLibraryIdentifier import OcaLibraryIdentifier as type
 
 OcaLibraryIdentifier = Struct(
   {

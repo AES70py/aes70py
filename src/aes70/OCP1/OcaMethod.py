@@ -6,7 +6,7 @@ from .OcaMethodID import OcaMethodID
 from .OcaUint32 import OcaUint32
 from .Struct import Struct
 
- from ..types.OcaMethodimport { OcaMethod as type }
+from ..types.OcaMethod import OcaMethod as type
 
 OcaMethod = Struct(
   {

@@ -6,7 +6,7 @@ from .OcaBlob import OcaBlob
 from .OcaLibVolMetadata import OcaLibVolMetadata
 from .Struct import Struct
 
- from ..types.OcaLibVolimport { OcaLibVol as type }
+from ..types.OcaLibVol import OcaLibVol as type
 
 OcaLibVol = Struct(
   {

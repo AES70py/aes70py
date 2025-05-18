@@ -6,7 +6,7 @@ from .OcaBlob import OcaBlob
 from .OcaUint32 import OcaUint32
 from .Struct import Struct
 
- from ..types.OcaOPathimport { OcaOPath as type }
+from ..types.OcaOPath import OcaOPath as type
 
 OcaOPath = Struct(
   {

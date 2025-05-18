@@ -6,7 +6,7 @@ from .OcaLibVolIdentifier import OcaLibVolIdentifier
 from .OcaUint32 import OcaUint32
 from .Struct import Struct
 
- from ..types.OcaLibParamSetAssignmentimport { OcaLibParamSetAssignment as type }
+from ..types.OcaLibParamSetAssignment import OcaLibParamSetAssignment as type
 
 OcaLibParamSetAssignment = Struct(
   {

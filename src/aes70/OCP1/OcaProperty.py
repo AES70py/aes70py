@@ -6,7 +6,7 @@ from .OcaPropertyDescriptor import OcaPropertyDescriptor
 from .OcaUint32 import OcaUint32
 from .Struct import Struct
 
- from ..types.OcaPropertyimport { OcaProperty as type }
+from ..types.OcaProperty import OcaProperty as type
 
 OcaProperty = Struct(
   {

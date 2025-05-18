@@ -5,7 +5,7 @@ This file has been generated.
 from .OcaUint16 import OcaUint16
 from .Struct import Struct
 
- from ..types.OcaPropertyIDimport { OcaPropertyID as type }
+from ..types.OcaPropertyID import OcaPropertyID as type
 
 OcaPropertyID = Struct(
   {

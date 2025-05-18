@@ -8,7 +8,7 @@ from .OcaMediaStreamCastMode import OcaMediaStreamCastMode
 from .OcaUint16 import OcaUint16
 from .Struct import Struct
 
- from ..types.OcaMediaConnectionimport { OcaMediaConnection as type }
+from ..types.OcaMediaConnection import OcaMediaConnection as type
 
 OcaMediaConnection = Struct(
   {

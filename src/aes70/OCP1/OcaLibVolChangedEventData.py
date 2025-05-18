@@ -6,7 +6,7 @@ from .OcaPropertyChangeType import OcaPropertyChangeType
 from .OcaUint32 import OcaUint32
 from .Struct import Struct
 
- from ..types.OcaLibVolChangedEventDataimport { OcaLibVolChangedEventData as type }
+from ..types.OcaLibVolChangedEventData import OcaLibVolChangedEventData as type
 
 OcaLibVolChangedEventData = Struct(
   {

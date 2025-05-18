@@ -6,7 +6,7 @@ from .OcaFloat32 import OcaFloat32
 from .OcaList import OcaList
 from .Struct import Struct
 
- from ..types.OcaTransferFunctionimport { OcaTransferFunction as type }
+from ..types.OcaTransferFunction import OcaTransferFunction as type
 
 OcaTransferFunction = Struct(
   {

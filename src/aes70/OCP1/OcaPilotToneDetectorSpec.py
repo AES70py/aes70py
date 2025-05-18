@@ -7,7 +7,7 @@ from .OcaFloat32 import OcaFloat32
 from .OcaUint32 import OcaUint32
 from .Struct import Struct
 
- from ..types.OcaPilotToneDetectorSpecimport { OcaPilotToneDetectorSpec as type }
+from ..types.OcaPilotToneDetectorSpec import OcaPilotToneDetectorSpec as type
 
 OcaPilotToneDetectorSpec = Struct(
   {

@@ -7,7 +7,7 @@ from .OcaOPath import OcaOPath
 from .OcaUint16 import OcaUint16
 from .Struct import Struct
 
- from ..types.OcaGrouperCitizenimport { OcaGrouperCitizen as type }
+from ..types.OcaGrouperCitizen import OcaGrouperCitizen as type
 
 OcaGrouperCitizen = Struct(
   {

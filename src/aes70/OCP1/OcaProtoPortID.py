@@ -6,7 +6,7 @@ from .OcaPortMode import OcaPortMode
 from .OcaUint16 import OcaUint16
 from .Struct import Struct
 
- from ..types.OcaProtoPortIDimport { OcaProtoPortID as type }
+from ..types.OcaProtoPortID import OcaProtoPortID as type
 
 OcaProtoPortID = Struct(
   {

@@ -64,11 +64,9 @@ OcaMediaClockManager = make_control_class(
 # this property is empty.
 #
 # @member {PropertyEvent<list[OcaMediaClockType]>} OcaMediaClockManager#OnClockSourceTypesSupportedChanged
-/**
- * An alias for OnClockSourceTypesSupportedChanged
- *
- * @member {PropertyEvent<list[OcaMediaClockType]>} OcaMediaClockManager#OnMediaClockTypesSupportedChanged
- */
+# An alias for OnClockSourceTypesSupportedChanged
+#
+# @member {PropertyEvent<list[OcaMediaClockType]>} OcaMediaClockManager#OnMediaClockTypesSupportedChanged
 # This event is emitted when the property ``Clocks`` changes in the remote object.
 # The property ``Clocks`` is described in the AES70 standard as follows.
 # Object numbers of **OcaMediaClock** objects, one for each clock which this

@@ -9,7 +9,7 @@ from .OcaTimePTP import OcaTimePTP
 from .OcaUint32 import OcaUint32
 from .Struct import Struct
 
- from ..types.OcaLibVolMetadataimport { OcaLibVolMetadata as type }
+from ..types.OcaLibVolMetadata import OcaLibVolMetadata as type
 
 OcaLibVolMetadata = Struct(
   {

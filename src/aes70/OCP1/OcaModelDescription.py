@@ -5,7 +5,7 @@ This file has been generated.
 from .OcaString import OcaString
 from .Struct import Struct
 
- from ..types.OcaModelDescriptionimport { OcaModelDescription as type }
+from ..types.OcaModelDescription import OcaModelDescription as type
 
 OcaModelDescription = Struct(
   {

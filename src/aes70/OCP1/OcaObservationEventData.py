@@ -5,7 +5,7 @@ This file has been generated.
 from .OcaFloat64 import OcaFloat64
 from .Struct import Struct
 
- from ..types.OcaObservationEventDataimport { OcaObservationEventData as type }
+from ..types.OcaObservationEventData import OcaObservationEventData as type
 
 OcaObservationEventData = Struct(
   {

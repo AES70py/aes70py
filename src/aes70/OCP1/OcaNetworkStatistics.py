@@ -5,7 +5,7 @@ This file has been generated.
 from .OcaUint32 import OcaUint32
 from .Struct import Struct
 
- from ..types.OcaNetworkStatisticsimport { OcaNetworkStatistics as type }
+from ..types.OcaNetworkStatistics import OcaNetworkStatistics as type
 
 OcaNetworkStatistics = Struct(
   {

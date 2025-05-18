@@ -296,11 +296,9 @@ OcaMediaTransportNetwork = make_control_class(
 # Type of media transport protocol used by the network.
 #
 # @member {PropertyEvent<OcaNetworkMediaProtocol>} OcaMediaTransportNetwork#OnProtocolChanged
-/**
- * An alias for OnProtocolChanged
- *
- * @member {PropertyEvent<OcaNetworkMediaProtocol>} OcaMediaTransportNetwork#OnMediaProtocolChanged
- */
+# An alias for OnProtocolChanged
+#
+# @member {PropertyEvent<OcaNetworkMediaProtocol>} OcaMediaTransportNetwork#OnMediaProtocolChanged
 # This event is emitted when the property ``Ports`` changes in the remote object.
 # The property ``Ports`` is described in the AES70 standard as follows.
 # The list of ports this network has. Note that these represent network channels

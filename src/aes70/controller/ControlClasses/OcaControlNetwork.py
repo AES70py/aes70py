@@ -30,8 +30,6 @@ OcaControlNetwork = make_control_class(
 # Type of control protocol used by the network (OCAnn). Read-only property.
 #
 # @member {PropertyEvent<OcaNetworkControlProtocol>} OcaControlNetwork#OnProtocolChanged
-/**
- * An alias for OnProtocolChanged
- *
- * @member {PropertyEvent<OcaNetworkControlProtocol>} OcaControlNetwork#OnControlProtocolChanged
- */
+# An alias for OnProtocolChanged
+#
+# @member {PropertyEvent<OcaNetworkControlProtocol>} OcaControlNetwork#OnControlProtocolChanged

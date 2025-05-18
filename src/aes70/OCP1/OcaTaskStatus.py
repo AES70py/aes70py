@@ -7,7 +7,7 @@ from .OcaUint16 import OcaUint16
 from .OcaUint32 import OcaUint32
 from .Struct import Struct
 
- from ..types.OcaTaskStatusimport { OcaTaskStatus as type }
+from ..types.OcaTaskStatus import OcaTaskStatus as type
 
 OcaTaskStatus = Struct(
   {
