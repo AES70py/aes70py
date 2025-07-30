@@ -8,7 +8,7 @@ def toByteLength(length):
 def bitstring_decode_from(data: bytearray, pos: int):
     length = unpack_from('!H', data, pos)[0]
     pos += 2
-    return [pos + toByteLength(length), decodeBitstring(data, pos, length)];
+    return [pos + toByteLength(length), decodeBitstring(data, pos, length)]
 
 
 def bitstring_encode_to(data: bytearray, pos: int, value):
@@ -20,7 +20,7 @@ def bitstring_encoded_length(value):
     if not isinstance(value, list):
         raise TypeError('Expected Array.')
 
-    length = len(value);
+    length = len(value)
 
     if length > 0xffff:
         raise TypeError('Array too long for OcaBlob OCP.1 encoding.')

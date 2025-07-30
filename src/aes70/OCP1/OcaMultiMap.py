@@ -2,8 +2,9 @@ import weakref
 
 from aes70.OCP1.createType import create_type, Type
 from struct import pack_into, unpack_from
+from collections import defaultdict
 
-def OcaMap(KeyType, ValueType):
+def OcaMultiMap(KeyType, ValueType):
     kencodedLength = KeyType.encoded_length
     kencodeTo = KeyType.encode_to
     kdecodeFrom = KeyType.decode_from
@@ -21,38 +22,45 @@ def OcaMap(KeyType, ValueType):
 
         result = 2
 
-        # Iterate over each key-value pair in the map
+        # Iterate over each key-value pair in the map, and create an entry for each value
         for key, val in value.items():
-            result += kencodedLength(key)
-            result += vencodedLength(val)
+            for vval in val.values():
+                result += kencodedLength(key)
+                result += vencodedLength(vval)
 
         return result
 
     def encodeTo(dataView: bytearray, pos: int, value):
         # Write the size of the map as a 16-bit unsigned integer.
-        pack_into('!H', dataView, pos, len(value))
+
+        # TODO consider if there might be a more efficient way to calculate the length
+        l = 0
+        for key, val in value.items():
+            l += len(val)
+
+        pack_into('!H', dataView, pos, l)
         pos += 2
 
         # Encode each key and value, updating the position accordingly.
         for key, val in value.items():
-            pos = kencodeTo(dataView, pos, key)
-            pos = vencodeTo(dataView, pos, val)
+            for vval in val.values():
+                pos = kencodeTo(dataView, pos, key)
+                pos = vencodeTo(dataView, pos, vval)
 
         return pos
 
     def decodeFrom(dataView: bytearray, pos: int):
-        result = dict()
+        result = defaultdict(list)
         length = unpack_from('!H', dataView, pos)[0]
         pos += 2
 
         for i in range(length):
             pos, key = kdecodeFrom(dataView, pos)
             pos, val = vdecodeFrom(dataView, pos)
-            result[key] = val
+            result[key].append(val)
 
-        # If duplicate keys were encountered, the size will be less than expected.
         if len(result) != length:
-            raise Exception('Key appeared twice in decoded Map.')
+            raise Exception('Incorrect length provided for MultiMap')
 
         return pos, result
 
@@ -66,7 +74,7 @@ def OcaMap(KeyType, ValueType):
 
         return pos
 
-    OcaMap = create_type(Type(
+    OcaMultiMap = create_type(Type(
         is_constant_length = False,
         encoded_length = encodedLength,
         encode_to =  encodeTo,

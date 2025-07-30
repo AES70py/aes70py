@@ -33,7 +33,7 @@ def OcaListConstantLength(_type):
         for i in range(length):
             value[i] = decodeFunc(dataView, pos)
             pos += encodedLengthConst
-        return (pos, value)
+        return pos, value
 
     def decode_length(dataView: bytearray, pos):
         length = unpack_from('!H', dataView, pos)[0]

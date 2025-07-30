@@ -9,4 +9,4 @@ from .OcaUint8 import OcaUint8;
  @extends Base
 '''
 
-OcaBitSet8 = OcaUint8;
+OcaBitSet8 = OcaUint8
