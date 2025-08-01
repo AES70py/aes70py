@@ -1,100 +1,21 @@
-# /*
-#  * This file has been generated.
-#  */
-# /**
-#  * Datatype that defines the fixed object numbers assigned to the various
-#  * **OcaManager** objects.
-#  */
+"""
+This file is part of aes70py.
+This file has been generated.
+"""
+# Datatype that defines the fixed object numbers assigned to the various
+# **OcaManager** objects.
 OcaManagerDefaultObjectNumbers = {
-    # /**
-    #  * Object number of the :class:`OcaDeviceManager`.
-    #  * @type {number}
-    #  * @member DeviceManager
-    #  * @static
-    #  */
-    "DeviceManager": 1,
-    # /**
-    #  * Object number of the :class:`OcaSecurityManager`.
-    #  * @type {number}
-    #  * @member SecurityManager
-    #  * @static
-    #  */
-    "SecurityManager": 2,
-    # /**
-    #  * Object number of the :class:`OcaFirmwareManager`.
-    #  * @type {number}
-    #  * @member FirmwareManager
-    #  * @static
-    #  */
-    "FirmwareManager": 3,
-    # /**
-    #  * Object number of the :class:`OcaSubscriptionManager`.
-    #  * @type {number}
-    #  * @member SubscriptionManager
-    #  * @static
-    #  */
-    "SubscriptionManager": 4,
-    # /**
-    #  * Object number of the :class:`OcaPowerManager`.
-    #  * @type {number}
-    #  * @member PowerManager
-    #  * @static
-    #  */
-    "PowerManager": 5,
-    # /**
-    #  * Object number of the :class:`OcaNetworkManager`.
-    #  * @type {number}
-    #  * @member NetworkManager
-    #  * @static
-    #  */
-    "NetworkManager": 6,
-    # /**
-    #  * Object number of the :class:`OcaMediaClockManager`.
-    #  * @type {number}
-    #  * @member MediaClockManager
-    #  * @static
-    #  */
-    "MediaClockManager": 7,
-    # /**
-    #  * Object number of the :class:`OcaLibraryManager`.
-    #  * @type {number}
-    #  * @member LibraryManager
-    #  * @static
-    #  */
-    "LibraryManager": 8,
-    # /**
-    #  * Object number of the :class:`OcaAudioProcessingManager`.
-    #  * @type {number}
-    #  * @member AudioProcessingManager
-    #  * @static
-    #  */
-    "AudioProcessingManager": 9,
-    # /**
-    #  * Object number of the :class:`OcaDeviceTimeManager`.
-    #  * @type {number}
-    #  * @member DeviceTimeManager
-    #  * @static
-    #  */
-    "DeviceTimeManager": 10,
-    # /**
-    #  * Object number of the :class:`OcaTaskManager`.
-    #  * @type {number}
-    #  * @member TaskManager
-    #  * @static
-    #  */
-    "TaskManager": 11,
-    # /**
-    #  * Object number of the :class:`OcaCodingManager`.
-    #  * @type {number}
-    #  * @member CodingManager
-    #  * @static
-    #  */
-    "CodingManager": 12,
-    # /**
-    #  * Object number of the :class:`OcaDiagnosticManager`.
-    #  * @type {number}
-    #  * @member DiagnosticManager
-    #  * @static
-    #  */
-    "DiagnosticManager": 13,
+  "DeviceManager": 1,
+  "SecurityManager": 2,
+  "FirmwareManager": 3,
+  "SubscriptionManager": 4,
+  "PowerManager": 5,
+  "NetworkManager": 6,
+  "MediaClockManager": 7,
+  "LibraryManager": 8,
+  "AudioProcessingManager": 9,
+  "DeviceTimeManager": 10,
+  "TaskManager": 11,
+  "CodingManager": 12,
+  "DiagnosticManager": 13,
 }
