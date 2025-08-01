@@ -164,8 +164,8 @@ OcaDeviceManager = make_control_class(
 # the property was successfully retrieved.
 #
 # @method OcaDeviceManager#GetResetCause
-# @returns {Promise<OcaResetCause>}
-#   A promise which resolves to a single value of type :class:`OcaResetCause`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # Clears the ResetCause property, i.e. resets it to the default value 'PowerOn'.
 # Must be used after the reset cause has been read out to ensure differentation
 # between reconnects due to network loss and reconnects due to external or
@@ -260,7 +260,7 @@ OcaDeviceManager = make_control_class(
 # The property ``ResetCause`` is described in the AES70 standard as follows.
 # Read-only attribute that indicates the reset cause of the last reset.
 #
-# @member {PropertyEvent<OcaResetCause>} OcaDeviceManager#OnResetCauseChanged
+# @member {PropertyEvent<int>} OcaDeviceManager#OnResetCauseChanged
 # This event is emitted when the property ``Message`` changes in the remote object.
 # The property ``Message`` is described in the AES70 standard as follows.
 # Arbitrary text message provided by controller. Display and handling of the

@@ -44,19 +44,19 @@ OcaTimeSource = make_control_class(
 # whether the value was successfully retrieved.
 #
 # @method OcaTimeSource#GetAvailability
-# @returns {Promise<OcaTimeSourceAvailability>}
-#   A promise which resolves to a single value of type :class:`OcaTimeSourceAvailability`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # Gets the value of the **Protocol** property. The return value indicates
 # whether the value was successfully retrieved.
 #
 # @method OcaTimeSource#GetProtocol
-# @returns {Promise<OcaTimeProtocol>}
-#   A promise which resolves to a single value of type :class:`OcaTimeProtocol`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # Sets the value of the **Protocol** property. The return value indicates
 # whether the value was successfully set.
 #
 # @method OcaTimeSource#SetProtocol
-# @param {OcaTimeProtocol} Protocol
+# @param {int} Protocol
 #
 # @returns {Promise<None>}
 # Gets the value of the **Parameters** property. The return value indicates
@@ -77,14 +77,14 @@ OcaTimeSource = make_control_class(
 # successfully retrieved.
 #
 # @method OcaTimeSource#GetReferenceType
-# @returns {Promise<OcaTimeReferenceType>}
-#   A promise which resolves to a single value of type :class:`OcaTimeReferenceType`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # Sets the time reference type. The return value indicates whether the value was
 # successfully set. Optional method, may not be supported in all
 # implementations.
 #
 # @method OcaTimeSource#SetReferenceType
-# @param {OcaTimeReferenceType} ReferenceType
+# @param {int} ReferenceType
 #
 # @returns {Promise<None>}
 # Gets the timing source ID. The return value indicates whether the value was
@@ -105,8 +105,8 @@ OcaTimeSource = make_control_class(
 # indicates whether the value was successfully retrieved.
 #
 # @method OcaTimeSource#GetSyncStatus
-# @returns {Promise<OcaTimeSourceSyncStatus>}
-#   A promise which resolves to a single value of type :class:`OcaTimeSourceSyncStatus`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # Resets this time source. Initiates a new synchronization sequence. The return
 # value indicates whether the reset was successful.
 #
@@ -116,12 +116,12 @@ OcaTimeSource = make_control_class(
 # The property ``Availability`` is described in the AES70 standard as follows.
 # Availability of this time source.
 #
-# @member {PropertyEvent<OcaTimeSourceAvailability>} OcaTimeSource#OnAvailabilityChanged
+# @member {PropertyEvent<int>} OcaTimeSource#OnAvailabilityChanged
 # This event is emitted when the property ``Protocol`` changes in the remote object.
 # The property ``Protocol`` is described in the AES70 standard as follows.
 # Time transport protocol used by this time source
 #
-# @member {PropertyEvent<OcaTimeProtocol>} OcaTimeSource#OnProtocolChanged
+# @member {PropertyEvent<int>} OcaTimeSource#OnProtocolChanged
 # This event is emitted when the property ``Parameters`` changes in the remote object.
 # The property ``Parameters`` is described in the AES70 standard as follows.
 # Parameters (identifiers, modifiers, etc.) for this time source . Content is an
@@ -132,7 +132,7 @@ OcaTimeSource = make_control_class(
 # The property ``ReferenceType`` is described in the AES70 standard as follows.
 # Type of time reference to which this time source is synced, if any.
 #
-# @member {PropertyEvent<OcaTimeReferenceType>} OcaTimeSource#OnReferenceTypeChanged
+# @member {PropertyEvent<int>} OcaTimeSource#OnReferenceTypeChanged
 # This event is emitted when the property ``ReferenceID`` changes in the remote object.
 # The property ``ReferenceID`` is described in the AES70 standard as follows.
 # Identifier of reference to which this time source is synced, if any. Not
@@ -143,4 +143,4 @@ OcaTimeSource = make_control_class(
 # The property ``SyncStatus`` is described in the AES70 standard as follows.
 # Synchronization status of this time source.
 #
-# @member {PropertyEvent<OcaTimeSourceSyncStatus>} OcaTimeSource#OnSyncStatusChanged
+# @member {PropertyEvent<int>} OcaTimeSource#OnSyncStatusChanged

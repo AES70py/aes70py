@@ -46,8 +46,8 @@ OcaMediaClockManager = make_control_class(
 # retrieved. Note : In AES70-2017, this method is deprecated.
 #
 # @method OcaMediaClockManager#GetMediaClockTypesSupported
-# @returns {Promise<list[OcaMediaClockType]>}
-#   A promise which resolves to a single value of type ``list[OcaMediaClockType]``.
+# @returns {Promise<list[int]>}
+#   A promise which resolves to a single value of type ``list[int]``.
 # Gets the list of object numbers of **OcaMediaClock3** instances in this
 # device. Return value indicates whether list was successfully retrieved.
 #
@@ -63,10 +63,10 @@ OcaMediaClockManager = make_control_class(
 # attributes. If the number of **OcaMediaClock** objects in the device is zero,
 # this property is empty.
 #
-# @member {PropertyEvent<list[OcaMediaClockType]>} OcaMediaClockManager#OnClockSourceTypesSupportedChanged
+# @member {PropertyEvent<list[int]>} OcaMediaClockManager#OnClockSourceTypesSupportedChanged
 # An alias for OnClockSourceTypesSupportedChanged
 #
-# @member {PropertyEvent<list[OcaMediaClockType]>} OcaMediaClockManager#OnMediaClockTypesSupportedChanged
+# @member {PropertyEvent<list[int]>} OcaMediaClockManager#OnMediaClockTypesSupportedChanged
 # This event is emitted when the property ``Clocks`` changes in the remote object.
 # The property ``Clocks`` is described in the AES70 standard as follows.
 # Object numbers of **OcaMediaClock** objects, one for each clock which this

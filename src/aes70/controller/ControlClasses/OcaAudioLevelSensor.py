@@ -27,14 +27,14 @@ OcaAudioLevelSensor = make_control_class(
 # property was successfully retrieved.
 #
 # @method OcaAudioLevelSensor#GetLaw
-# @returns {Promise<OcaLevelMeterLaw>}
-#   A promise which resolves to a single value of type :class:`OcaLevelMeterLaw`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # Sets the value of the Law property. The return value indicates whether the
 # property was successfully set. Only implemented for objects whose Law property
 # is read/write.
 #
 # @method OcaAudioLevelSensor#SetLaw
-# @param {OcaLevelMeterLaw} law
+# @param {int} law
 #
 # @returns {Promise<None>}
 # This event is emitted when the property ``Law`` changes in the remote object.
@@ -42,4 +42,4 @@ OcaAudioLevelSensor = make_control_class(
 # Enum that defines metering algorithm, including averaging characteristics and,
 # in some cases, reference level. Readonly in some objects.
 #
-# @member {PropertyEvent<OcaLevelMeterLaw>} OcaAudioLevelSensor#OnLawChanged
+# @member {PropertyEvent<int>} OcaAudioLevelSensor#OnLawChanged

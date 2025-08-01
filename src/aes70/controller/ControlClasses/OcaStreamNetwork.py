@@ -66,8 +66,8 @@ OcaStreamNetwork = make_control_class(
 # indicates whether the operation was successful.
 #
 # @method OcaStreamNetwork#GetLinkType
-# @returns {Promise<OcaNetworkLinkType>}
-#   A promise which resolves to a single value of type :class:`OcaNetworkLinkType`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # Gets the network's IDAdvertised. Return status indicates whether the operation
 # was successful.
 #
@@ -85,20 +85,20 @@ OcaStreamNetwork = make_control_class(
 # the operation was successful.
 #
 # @method OcaStreamNetwork#GetControlProtocol
-# @returns {Promise<OcaNetworkControlProtocol>}
-#   A promise which resolves to a single value of type :class:`OcaNetworkControlProtocol`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # Gets the network's MediaProtocol property. Return status indicates whether the
 # operation was successful.
 #
 # @method OcaStreamNetwork#GetMediaProtocol
-# @returns {Promise<OcaNetworkMediaProtocol>}
-#   A promise which resolves to a single value of type :class:`OcaNetworkMediaProtocol`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # Retrieves the network's status. Return status indicates whether the status was
 # successfully retrieved.
 #
 # @method OcaStreamNetwork#GetStatus
-# @returns {Promise<OcaNetworkStatus>}
-#   A promise which resolves to a single value of type :class:`OcaNetworkStatus`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # Retrieves network error statistics counter values. Return status indicates
 # whether the values were successfully retrieved.
 #
@@ -239,18 +239,18 @@ OcaStreamNetwork = make_control_class(
 # Type of control protocol used by the network (OCAnn) or NONE if this network
 # is not used for control.
 #
-# @member {PropertyEvent<OcaNetworkControlProtocol>} OcaStreamNetwork#OnControlProtocolChanged
+# @member {PropertyEvent<int>} OcaStreamNetwork#OnControlProtocolChanged
 # This event is emitted when the property ``MediaProtocol`` changes in the remote object.
 # The property ``MediaProtocol`` is described in the AES70 standard as follows.
 # Type of media transport protocol used by the network, or NONE if this network
 # is not used for media transport.
 #
-# @member {PropertyEvent<OcaNetworkMediaProtocol>} OcaStreamNetwork#OnMediaProtocolChanged
+# @member {PropertyEvent<int>} OcaStreamNetwork#OnMediaProtocolChanged
 # This event is emitted when the property ``Status`` changes in the remote object.
 # The property ``Status`` is described in the AES70 standard as follows.
 # Operational status of the network.
 #
-# @member {PropertyEvent<OcaNetworkStatus>} OcaStreamNetwork#OnStatusChanged
+# @member {PropertyEvent<int>} OcaStreamNetwork#OnStatusChanged
 # This event is emitted when the property ``SystemInterfaces`` changes in the remote object.
 # The property ``SystemInterfaces`` is described in the AES70 standard as follows.
 # Collection of identifiers of system interface(s) used by the network. A

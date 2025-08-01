@@ -125,14 +125,14 @@ OcaNetworkSignalChannel = make_control_class(
 # of operation.
 #
 # @method OcaNetworkSignalChannel#GetSourceOrSink
-# @returns {Promise<OcaNetworkMediaSourceOrSink>}
-#   A promise which resolves to a single value of type :class:`OcaNetworkMediaSourceOrSink`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # Gets the value of the Status property. Return status indicates success of
 # operation.
 #
 # @method OcaNetworkSignalChannel#GetStatus
-# @returns {Promise<OcaNetworkSignalChannelStatus>}
-#   A promise which resolves to a single value of type :class:`OcaNetworkSignalChannelStatus`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # This event is emitted when the property ``IDAdvertised`` changes in the remote object.
 # The property ``IDAdvertised`` is described in the AES70 standard as follows.
 # Character name or binary identifier of the port that is advertised on the
@@ -172,9 +172,9 @@ OcaNetworkSignalChannel = make_control_class(
 # network) or sink (receives signals from the network). Sources are sometimes
 # called "talkers", and sinks are sometimes called "listeners".
 #
-# @member {PropertyEvent<OcaNetworkMediaSourceOrSink>} OcaNetworkSignalChannel#OnSourceOrSinkChanged
+# @member {PropertyEvent<int>} OcaNetworkSignalChannel#OnSourceOrSinkChanged
 # This event is emitted when the property ``Status`` changes in the remote object.
 # The property ``Status`` is described in the AES70 standard as follows.
 # Status of the port
 #
-# @member {PropertyEvent<OcaNetworkSignalChannelStatus>} OcaNetworkSignalChannel#OnStatusChanged
+# @member {PropertyEvent<int>} OcaNetworkSignalChannel#OnStatusChanged

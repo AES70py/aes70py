@@ -73,7 +73,7 @@ OcaBlockFactory = make_control_class(
 #
 # @method OcaBlockFactory#DefineProtoPort
 # @param {str} name
-# @param {OcaPortMode} portmode
+# @param {int} portmode
 #
 # @returns {Promise<OcaProtoPortID>}
 #   A promise which resolves to a single value of type :class:`OcaProtoPortID`.

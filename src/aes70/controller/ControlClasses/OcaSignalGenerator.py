@@ -103,26 +103,26 @@ OcaSignalGenerator = make_control_class(
 # the property was successfully retrieved.
 #
 # @method OcaSignalGenerator#GetWaveform
-# @returns {Promise<OcaWaveformType>}
-#   A promise which resolves to a single value of type :class:`OcaWaveformType`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # Sets the value of the Waveform property. The return value indicates whether
 # the property was successfully set.
 #
 # @method OcaSignalGenerator#SetWaveform
-# @param {OcaWaveformType} waveform
+# @param {int} waveform
 #
 # @returns {Promise<None>}
 # Gets the value of the SweepType property. The return value indicates whether
 # the property was successfully retrieved.
 #
 # @method OcaSignalGenerator#GetSweepType
-# @returns {Promise<OcaSweepType>}
-#   A promise which resolves to a single value of type :class:`OcaSweepType`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # Sets the value of the SweepType property. The return value indicates whether
 # the property was successfully set.
 #
 # @method OcaSignalGenerator#SetSweepType
-# @param {OcaSweepType} sweepType
+# @param {int} sweepType
 #
 # @returns {Promise<None>}
 # Gets the value of the SweepTime property. The return value indicates whether
@@ -180,8 +180,8 @@ OcaSignalGenerator = make_control_class(
 # @param {int} Frequency1
 # @param {int} Frequency2
 # @param {int} Level
-# @param {OcaWaveformType} Waveform
-# @param {OcaSweepType} SweepType
+# @param {int} Waveform
+# @param {int} SweepType
 # @param {int} SweepTime
 # @param {bool} SweepRepeat
 #
@@ -205,13 +205,13 @@ OcaSignalGenerator = make_control_class(
 # The property ``Waveform`` is described in the AES70 standard as follows.
 # The waveform type this generator generates (e.g. sine, square, noise, etc.).
 #
-# @member {PropertyEvent<OcaWaveformType>} OcaSignalGenerator#OnWaveformChanged
+# @member {PropertyEvent<int>} OcaSignalGenerator#OnWaveformChanged
 # This event is emitted when the property ``SweepType`` changes in the remote object.
 # The property ``SweepType`` is described in the AES70 standard as follows.
 # The sweep type of the signal generator: None for no sweep, linear or
 # logarithmic if sweep is generated.
 #
-# @member {PropertyEvent<OcaSweepType>} OcaSignalGenerator#OnSweepTypeChanged
+# @member {PropertyEvent<int>} OcaSignalGenerator#OnSweepTypeChanged
 # This event is emitted when the property ``SweepTime`` changes in the remote object.
 # The property ``SweepTime`` is described in the AES70 standard as follows.
 # Duration of sweep in seconds.

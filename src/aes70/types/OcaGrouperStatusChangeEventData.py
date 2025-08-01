@@ -2,7 +2,6 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from .OcaGrouperStatusChangeType import OcaGrouperStatusChangeType
 
 
 class IOcaGrouperStatusChangeEventData:
@@ -14,7 +13,7 @@ class IOcaGrouperStatusChangeEventData:
     # non-citizen-specific.
     citizenIndex: int
     # Type of change.
-    changeType: OcaGrouperStatusChangeType
+    changeType: int
 
 
 class OcaGrouperStatusChangeEventData(IOcaGrouperStatusChangeEventData):
@@ -23,11 +22,11 @@ class OcaGrouperStatusChangeEventData(IOcaGrouperStatusChangeEventData):
     # defined in **OcaGrouper**.
     @class OcaGrouperStatusChangeEventData
     """
-    def __init__(self, groupIndex: int, citizenIndex: int, changeType: OcaGrouperStatusChangeType):
+    def __init__(self, groupIndex: int, citizenIndex: int, changeType: int):
         # Index of relevant group, or zero if event is non-group-specific.
         self.groupIndex: int = groupIndex
         # Index of citizen within given grouper, or zero if event is
         # non-citizen-specific.
         self.citizenIndex: int = citizenIndex
         # Type of change.
-        self.changeType: OcaGrouperStatusChangeType = changeType
+        self.changeType: int = changeType

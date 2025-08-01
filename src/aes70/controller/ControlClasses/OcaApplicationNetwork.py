@@ -92,8 +92,8 @@ OcaApplicationNetwork = make_control_class(
 # successfully retrieved.
 #
 # @method OcaApplicationNetwork#GetState
-# @returns {Promise<OcaApplicationNetworkState>}
-#   A promise which resolves to a single value of type :class:`OcaApplicationNetworkState`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # Retrieves the most recent error code. Return status indicates whether the
 # operation was successful. Note that a second parameter 'Reset' is removed in
 # v02 of this class.
@@ -105,7 +105,7 @@ OcaApplicationNetwork = make_control_class(
 # execution.
 #
 # @method OcaApplicationNetwork#Control
-# @param {OcaApplicationNetworkCommand} Command
+# @param {int} Command
 #
 # @returns {Promise<None>}
 # Returns path from given object down to root. The return value indicates
@@ -139,7 +139,7 @@ OcaApplicationNetwork = make_control_class(
 # The property ``State`` is described in the AES70 standard as follows.
 # Operational state of the network.
 #
-# @member {PropertyEvent<OcaApplicationNetworkState>} OcaApplicationNetwork#OnStateChanged
+# @member {PropertyEvent<int>} OcaApplicationNetwork#OnStateChanged
 # This event is emitted when the property ``ErrorCode`` changes in the remote object.
 # The property ``ErrorCode`` is described in the AES70 standard as follows.
 # Most recent error code. 0=no error.

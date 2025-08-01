@@ -3,7 +3,6 @@ This file is part of aes70py.
 This file has been generated.
 """
 from .OcaLibVolIdentifier import IOcaLibVolIdentifier, OcaLibVolIdentifier
-from .OcaTimeMode import OcaTimeMode
 from .OcaTimePTP import IOcaTimePTP, OcaTimePTP
 
 
@@ -19,7 +18,7 @@ class IOcaTask:
     # ID of group the task is in, or zero if it isn't in a group
     GroupID: int
     # Absolute or Relative time.
-    TimeMode: OcaTimeMode
+    TimeMode: int
     # ONo of relevant **OcaTimeSource** object or zero to use device time (see
     # **OcaDeviceTimeManager**).
     TimeSourceONo: int
@@ -44,7 +43,7 @@ class OcaTask(IOcaTask):
     # volumes that contain application-specific execution instructions.
     @class OcaTask
     """
-    def __init__(self, ID: int, Label: str, ProgramID: OcaLibVolIdentifier, GroupID: int, TimeMode: OcaTimeMode, TimeSourceONo: int, StartTime: OcaTimePTP, Duration: OcaTimePTP, ApplicationSpecificParameters: bytes):
+    def __init__(self, ID: int, Label: str, ProgramID: OcaLibVolIdentifier, GroupID: int, TimeMode: int, TimeSourceONo: int, StartTime: OcaTimePTP, Duration: OcaTimePTP, ApplicationSpecificParameters: bytes):
         # Task ID - assigned by OcaTaskManager
         self.ID: int = ID
         #
@@ -54,7 +53,7 @@ class OcaTask(IOcaTask):
         # ID of group the task is in, or zero if it isn't in a group
         self.GroupID: int = GroupID
         # Absolute or Relative time.
-        self.TimeMode: OcaTimeMode = TimeMode
+        self.TimeMode: int = TimeMode
         # ONo of relevant **OcaTimeSource** object or zero to use device time
         # (see **OcaDeviceTimeManager**).
         self.TimeSourceONo: int = TimeSourceONo

@@ -62,7 +62,7 @@ OcaWorker = make_control_class(
 #
 # @method OcaWorker#AddPort
 # @param {str} Label
-# @param {OcaPortMode} Mode
+# @param {int} Mode
 #
 # @returns {Promise<OcaPortID>}
 #   A promise which resolves to a single value of type :class:`OcaPortID`.

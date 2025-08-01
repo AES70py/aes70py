@@ -61,26 +61,26 @@ OcaFilterClassical = make_control_class(
 # indicates if the specification was successfully retrieved.
 #
 # @method OcaFilterClassical#GetPassband
-# @returns {Promise<OcaFilterPassband>}
-#   A promise which resolves to a single value of type :class:`OcaFilterPassband`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # Sets the passband specification of the filter object. The return value
 # indicates if the specification was successfully set.
 #
 # @method OcaFilterClassical#SetPassband
-# @param {OcaFilterPassband} Passband
+# @param {int} Passband
 #
 # @returns {Promise<None>}
 # Returns the Shape property of the filter. The return value indicates if the
 # property was successfully retrieved.
 #
 # @method OcaFilterClassical#GetShape
-# @returns {Promise<OcaClassicalFilterShape>}
-#   A promise which resolves to a single value of type :class:`OcaClassicalFilterShape`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # Sets the Shape property of the filter. The return value indicates if the
 # property was successfully set.
 #
 # @method OcaFilterClassical#SetShape
-# @param {OcaClassicalFilterShape} Shape
+# @param {int} Shape
 #
 # @returns {Promise<None>}
 # Returns the order of the filter. The return value indicates if the property
@@ -124,8 +124,8 @@ OcaFilterClassical = make_control_class(
 # @method OcaFilterClassical#SetMultiple
 # @param {int} Mask
 # @param {int} Frequency
-# @param {OcaFilterPassband} Passband
-# @param {OcaClassicalFilterShape} Shape
+# @param {int} Passband
+# @param {int} Shape
 # @param {int} Order
 # @param {int} Parameter
 #
@@ -139,12 +139,12 @@ OcaFilterClassical = make_control_class(
 # The property ``Passband`` is described in the AES70 standard as follows.
 # Lowpass, highpass, bandpass, bandreject
 #
-# @member {PropertyEvent<OcaFilterPassband>} OcaFilterClassical#OnPassbandChanged
+# @member {PropertyEvent<int>} OcaFilterClassical#OnPassbandChanged
 # This event is emitted when the property ``Shape`` changes in the remote object.
 # The property ``Shape`` is described in the AES70 standard as follows.
 # Shape family - Butterworth, Bessell, etc.
 #
-# @member {PropertyEvent<OcaClassicalFilterShape>} OcaFilterClassical#OnShapeChanged
+# @member {PropertyEvent<int>} OcaFilterClassical#OnShapeChanged
 # This event is emitted when the property ``Order`` changes in the remote object.
 # The property ``Order`` is described in the AES70 standard as follows.
 # Filter order

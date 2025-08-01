@@ -2,7 +2,6 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from .OcaPropertyChangeType import OcaPropertyChangeType
 
 
 class IOcaLibVolChangedEventData:
@@ -11,7 +10,7 @@ class IOcaLibVolChangedEventData:
     # ID of library volume that changed.
     VolumeID: int
     # Type of change : Will be either itemChanged, itemAdded, or itemDeleted.
-    ChangeType: OcaPropertyChangeType
+    ChangeType: int
 
 
 class OcaLibVolChangedEventData(IOcaLibVolChangedEventData):
@@ -20,9 +19,9 @@ class OcaLibVolChangedEventData(IOcaLibVolChangedEventData):
     # an **OcaLibrary.Volumes** property.
     @class OcaLibVolChangedEventData
     """
-    def __init__(self, VolumeID: int, ChangeType: OcaPropertyChangeType):
+    def __init__(self, VolumeID: int, ChangeType: int):
         # ID of library volume that changed.
         self.VolumeID: int = VolumeID
         # Type of change : Will be either itemChanged, itemAdded, or
         # itemDeleted.
-        self.ChangeType: OcaPropertyChangeType = ChangeType
+        self.ChangeType: int = ChangeType

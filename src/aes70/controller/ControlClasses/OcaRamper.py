@@ -66,15 +66,15 @@ OcaRamper = make_control_class(
 # command was successfully executed.
 #
 # @method OcaRamper#Control
-# @param {OcaRamperCommand} Command
+# @param {int} Command
 #
 # @returns {Promise<None>}
 # Gets current state of ramper. The return value indicates whether the state was
 # successfully retrieved.
 #
 # @method OcaRamper#GetState
-# @returns {Promise<OcaRamperState>}
-#   A promise which resolves to a single value of type :class:`OcaRamperState`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # Gets definition of ramped property. The return value indicates whether the
 # object number was successfully retrieved.
 #
@@ -92,13 +92,13 @@ OcaRamper = make_control_class(
 # whether the time mode was successfully retrieved.
 #
 # @method OcaRamper#GetTimeMode
-# @returns {Promise<OcaTimeMode>}
-#   A promise which resolves to a single value of type :class:`OcaTimeMode`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # Sets ramper time mode (absolute or relative). The return value indicates
 # whether the time mode was successfully set.
 #
 # @method OcaRamper#SetTimeMode
-# @param {OcaTimeMode} TimeMode
+# @param {int} TimeMode
 #
 # @returns {Promise<None>}
 # Gets ramp start time. The return value indicates whether the start time was
@@ -135,13 +135,13 @@ OcaRamper = make_control_class(
 # setting was successfully retrieved.
 #
 # @method OcaRamper#GetInterpolationLaw
-# @returns {Promise<OcaRamperInterpolationLaw>}
-#   A promise which resolves to a single value of type :class:`OcaRamperInterpolationLaw`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # Sets ramp interpolation law. The return value indicates whether the law was
 # successfully set.
 #
 # @method OcaRamper#SetInterpolationLaw
-# @param {OcaRamperInterpolationLaw} law
+# @param {int} law
 #
 # @returns {Promise<None>}
 # Retrieves ramp goal value. The return value indicates whether the duration was
@@ -161,7 +161,7 @@ OcaRamper = make_control_class(
 # The property ``State`` is described in the AES70 standard as follows.
 # {Ready, Ramping, Paused, Completed, Disabled} Readonly.
 #
-# @member {PropertyEvent<OcaRamperState>} OcaRamper#OnStateChanged
+# @member {PropertyEvent<int>} OcaRamper#OnStateChanged
 # This event is emitted when the property ``RampedProperty`` changes in the remote object.
 # The property ``RampedProperty`` is described in the AES70 standard as follows.
 # Identification of the property being ramped.
@@ -171,7 +171,7 @@ OcaRamper = make_control_class(
 # The property ``TimeMode`` is described in the AES70 standard as follows.
 # Absolute or Relative time.
 #
-# @member {PropertyEvent<OcaTimeMode>} OcaRamper#OnTimeModeChanged
+# @member {PropertyEvent<int>} OcaRamper#OnTimeModeChanged
 # This event is emitted when the property ``StartTime`` changes in the remote object.
 # The property ``StartTime`` is described in the AES70 standard as follows.
 # Time at which to start ramp. If **TimeMode=Relative**, the actual event start
@@ -189,7 +189,7 @@ OcaRamper = make_control_class(
 # The property ``InterpolationLaw`` is described in the AES70 standard as follows.
 # Ramper interpolation law
 #
-# @member {PropertyEvent<OcaRamperInterpolationLaw>} OcaRamper#OnInterpolationLawChanged
+# @member {PropertyEvent<int>} OcaRamper#OnInterpolationLawChanged
 # This event is emitted when the property ``Goal`` changes in the remote object.
 # The property ``Goal`` is described in the AES70 standard as follows.
 # Final value of ramp. Datatype is target property's datatype.

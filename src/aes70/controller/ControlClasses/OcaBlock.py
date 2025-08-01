@@ -177,7 +177,7 @@ OcaBlock = make_control_class(
 #
 # @method OcaBlock#FindObjectsByRole
 # @param {str} SearchName
-# @param {OcaStringComparisonType} NameComparisonType
+# @param {int} NameComparisonType
 # @param {str} SearchClassID
 # @param {int} ResultFlags
 #
@@ -189,7 +189,7 @@ OcaBlock = make_control_class(
 #
 # @method OcaBlock#FindObjectsByRoleRecursive
 # @param {str} SearchName
-# @param {OcaStringComparisonType} NameComparisonType
+# @param {int} NameComparisonType
 # @param {str} SearchClassID
 # @param {int} ResultFlags
 #
@@ -201,7 +201,7 @@ OcaBlock = make_control_class(
 #
 # @method OcaBlock#FindObjectsByLabelRecursive
 # @param {str} SearchName
-# @param {OcaStringComparisonType} NameComparisonType
+# @param {int} NameComparisonType
 # @param {str} SearchClassID
 # @param {int} ResultFlags
 #

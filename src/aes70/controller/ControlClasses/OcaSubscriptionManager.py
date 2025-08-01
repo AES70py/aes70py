@@ -58,7 +58,7 @@ OcaSubscriptionManager = make_control_class(
 # @param {IOcaEvent} Event
 # @param {IOcaMethod} Subscriber
 # @param {bytes} SubscriberContext
-# @param {OcaNotificationDeliveryMode} NotificationDeliveryMode
+# @param {int} NotificationDeliveryMode
 # @param {bytes} DestinationInformation
 #
 # @returns {Promise<None>}
@@ -111,7 +111,7 @@ OcaSubscriptionManager = make_control_class(
 # @param {IOcaPropertyID} Property
 # @param {IOcaMethod} Subscriber
 # @param {bytes} SubscriberContext
-# @param {OcaNotificationDeliveryMode} NotificationDeliveryMode
+# @param {int} NotificationDeliveryMode
 # @param {bytes} DestinationInformation
 #
 # @returns {Promise<None>}
@@ -151,4 +151,4 @@ OcaSubscriptionManager = make_control_class(
 # while notifications are disabled. The saved numbers are eventually returned by
 # the **SynchronizeState** event that occurs when notifications are re-enabled.
 #
-# @member {PropertyEvent<OcaSubscriptionManagerState>} OcaSubscriptionManager#OnStateChanged
+# @member {PropertyEvent<int>} OcaSubscriptionManager#OnStateChanged

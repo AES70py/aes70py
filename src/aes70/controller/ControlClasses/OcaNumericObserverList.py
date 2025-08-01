@@ -109,8 +109,8 @@ OcaNumericObserverList = make_control_class(
 # successfully retrieved.
 #
 # @method OcaNumericObserverList#GetState
-# @returns {Promise<OcaObserverState>}
-#   A promise which resolves to a single value of type :class:`OcaObserverState`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # Gets the identifications of the properties that the observer observes. The
 # order of property identifications in the returned list is determined by the
 # order of property identifications set by SetObservedProperties, and is the
@@ -148,13 +148,13 @@ OcaNumericObserverList = make_control_class(
 # whether the property was successfully retrieved.
 #
 # @method OcaNumericObserverList#GetOperator
-# @returns {Promise<OcaRelationalOperator>}
-#   A promise which resolves to a single value of type :class:`OcaRelationalOperator`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # Sets the value of the **Operator** property. The return value indicates
 # whether the operator was successfully set.
 #
 # @method OcaNumericObserverList#SetOperator
-# @param {OcaRelationalOperator} operator
+# @param {int} operator
 #
 # @returns {Promise<None>}
 # Gets the value of the **TwoWay** property. The return value indicates whether
@@ -208,7 +208,7 @@ OcaNumericObserverList = make_control_class(
 # The property ``State`` is described in the AES70 standard as follows.
 # State: triggered, not triggered
 #
-# @member {PropertyEvent<OcaObserverState>} OcaNumericObserverList#OnStateChanged
+# @member {PropertyEvent<int>} OcaNumericObserverList#OnStateChanged
 # This event is emitted when the property ``ObservedProperties`` changes in the remote object.
 # The property ``ObservedProperties`` is described in the AES70 standard as follows.
 # List of identifiers of the properties are being observed.
@@ -224,7 +224,7 @@ OcaNumericObserverList = make_control_class(
 # Relational operator used when comparing the value of the observed property to
 # the threshold value.
 #
-# @member {PropertyEvent<OcaRelationalOperator>} OcaNumericObserverList#OnOperatorChanged
+# @member {PropertyEvent<int>} OcaNumericObserverList#OnOperatorChanged
 # This event is emitted when the property ``TwoWay`` changes in the remote object.
 # The property ``TwoWay`` is described in the AES70 standard as follows.
 # True to emit a **Triggered** event upon crossing the threshold in either

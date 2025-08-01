@@ -57,13 +57,13 @@ OcaFilterParametric = make_control_class(
 # data was successfully retrieved.
 #
 # @method OcaFilterParametric#GetShape
-# @returns {Promise<OcaParametricEQShape>}
-#   A promise which resolves to a single value of type :class:`OcaParametricEQShape`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # Sets the curve shape shape of the equalizer. The return value indicates
 # whether the shape was successfully set.
 #
 # @method OcaFilterParametric#SetShape
-# @param {OcaParametricEQShape} type
+# @param {int} type
 #
 # @returns {Promise<None>}
 # Gets the width parameter property of the equalizer. The return value indicates
@@ -124,7 +124,7 @@ OcaFilterParametric = make_control_class(
 # @method OcaFilterParametric#SetMultiple
 # @param {int} Mask
 # @param {int} Frequency
-# @param {OcaParametricEQShape} Shape
+# @param {int} Shape
 # @param {int} WidthParameter
 # @param {int} InBandGain
 # @param {int} ShapeParameter
@@ -139,7 +139,7 @@ OcaFilterParametric = make_control_class(
 # The property ``Shape`` is described in the AES70 standard as follows.
 # The shape of the parametric filter - peak, shelf, etc.
 #
-# @member {PropertyEvent<OcaParametricEQShape>} OcaFilterParametric#OnShapeChanged
+# @member {PropertyEvent<int>} OcaFilterParametric#OnShapeChanged
 # This event is emitted when the property ``WidthParameter`` changes in the remote object.
 # The property ``WidthParameter`` is described in the AES70 standard as follows.
 # Width parameter. For normal parametric implementations, this is the Q of the

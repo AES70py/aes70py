@@ -40,14 +40,14 @@ OcaMediaClock3 = make_control_class(
 # whether the value was successfully retrieved.
 #
 # @method OcaMediaClock3#GetAvailability
-# @returns {Promise<OcaMediaClockAvailability>}
-#   A promise which resolves to a single value of type :class:`OcaMediaClockAvailability`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # Sets the value of the **Availability** property. The return value indicates
 # whether the value was successfully set. Optional method, may not be supported
 # in all implementations.
 #
 # @method OcaMediaClock3#SetAvailability
-# @param {OcaMediaClockAvailability} Availability
+# @param {int} Availability
 #
 # @returns {Promise<None>}
 # Gets the current clock rate and the ONo of the associated **OcaTimeSource**
@@ -95,7 +95,7 @@ OcaMediaClock3 = make_control_class(
 # The property ``Availability`` is described in the AES70 standard as follows.
 # Availability of media clock.
 #
-# @member {PropertyEvent<OcaMediaClockAvailability>} OcaMediaClock3#OnAvailabilityChanged
+# @member {PropertyEvent<int>} OcaMediaClock3#OnAvailabilityChanged
 # This event is emitted when the property ``TimeSourceONo`` changes in the remote object.
 # The property ``TimeSourceONo`` is described in the AES70 standard as follows.
 # ONo of time source that drives this media clock.

@@ -78,7 +78,7 @@ OcaFirmwareManager = make_control_class(
 # The return value indicates if starting the active update succeeded.
 #
 # @method OcaFirmwareManager#BeginActiveImageUpdate
-# @param {OcaComponent} component
+# @param {int} component
 #
 # @returns {Promise<None>}
 # Adds a new part of the software/firmware image to the upgrade memory as part
@@ -119,7 +119,7 @@ OcaFirmwareManager = make_control_class(
 # interface is standardized.
 #
 # @method OcaFirmwareManager#BeginPassiveComponentUpdate
-# @param {OcaComponent} component
+# @param {int} component
 # @param {bytes} serverAddress
 # @param {str} updateFileName
 #

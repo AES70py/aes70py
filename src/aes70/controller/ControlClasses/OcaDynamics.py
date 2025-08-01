@@ -85,13 +85,13 @@ OcaDynamics = make_control_class(
 # the property was successfully retrieved.
 #
 # @method OcaDynamics#GetFunction
-# @returns {Promise<OcaDynamicsFunction>}
-#   A promise which resolves to a single value of type :class:`OcaDynamicsFunction`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # Sets the value of the Function property. The return value indicates whether
 # the property was successfully set.
 #
 # @method OcaDynamics#SetFunction
-# @param {OcaDynamicsFunction} Func
+# @param {int} Func
 #
 # @returns {Promise<None>}
 # Gets the value of the Ratio property. The return value indicates whether the
@@ -134,26 +134,26 @@ OcaDynamics = make_control_class(
 # indicates if the value was successfully retrieved.
 #
 # @method OcaDynamics#GetThresholdPresentationUnits
-# @returns {Promise<OcaPresentationUnit>}
-#   A promise which resolves to a single value of type :class:`OcaPresentationUnit`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # Sets the value of the ThresholdPresentationUnits property. The return value
 # indicates if the value was successfully set.
 #
 # @method OcaDynamics#SetThresholdPresentationUnits
-# @param {OcaPresentationUnit} Units
+# @param {int} Units
 #
 # @returns {Promise<None>}
 # Sets the value of the DetectorLaw property. The return value indicates if the
 # value was successfully set.
 #
 # @method OcaDynamics#GetDetectorLaw
-# @returns {Promise<OcaLevelDetectionLaw>}
-#   A promise which resolves to a single value of type :class:`OcaLevelDetectionLaw`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # Sets the value of the DetectorLaw property. The return value indicates if the
 # value was successfully set.
 #
 # @method OcaDynamics#SetDetectorLaw
-# @param {OcaLevelDetectionLaw} Law
+# @param {int} Law
 #
 # @returns {Promise<None>}
 # Gets the value of the AttackTime property. The return value indicates if the
@@ -281,10 +281,10 @@ OcaDynamics = make_control_class(
 #
 # @method OcaDynamics#SetMultiple
 # @param {int} Mask
-# @param {OcaDynamicsFunction} Function
+# @param {int} Function
 # @param {IOcaDBr} Threshold
-# @param {OcaPresentationUnit} ThresholdPresentationUnits
-# @param {OcaLevelDetectionLaw} DetectorLaw
+# @param {int} ThresholdPresentationUnits
+# @param {int} DetectorLaw
 # @param {int} AttackTime
 # @param {int} ReleaseTime
 # @param {int} HoldTime
@@ -310,7 +310,7 @@ OcaDynamics = make_control_class(
 # The property ``Function`` is described in the AES70 standard as follows.
 # Dynamics element function - compressor, limiter, expander, etc.
 #
-# @member {PropertyEvent<OcaDynamicsFunction>} OcaDynamics#OnFunctionChanged
+# @member {PropertyEvent<int>} OcaDynamics#OnFunctionChanged
 # This event is emitted when the property ``Ratio`` changes in the remote object.
 # The property ``Ratio`` is described in the AES70 standard as follows.
 # DEPRECATED PROPERTY - please use property **Slope** instead. Compression or
@@ -328,11 +328,11 @@ OcaDynamics = make_control_class(
 # The property ``ThresholdPresentationUnits`` is described in the AES70 standard as follows.
 # Compression or expansion threshold presentation units.
 #
-# @member {PropertyEvent<OcaPresentationUnit>} OcaDynamics#OnThresholdPresentationUnitsChanged
+# @member {PropertyEvent<int>} OcaDynamics#OnThresholdPresentationUnitsChanged
 # This event is emitted when the property ``DetectorLaw`` changes in the remote object.
 # The property ``DetectorLaw`` is described in the AES70 standard as follows.
 #
-# @member {PropertyEvent<OcaLevelDetectionLaw>} OcaDynamics#OnDetectorLawChanged
+# @member {PropertyEvent<int>} OcaDynamics#OnDetectorLawChanged
 # This event is emitted when the property ``AttackTime`` changes in the remote object.
 # The property ``AttackTime`` is described in the AES70 standard as follows.
 # Attack time in seconds.

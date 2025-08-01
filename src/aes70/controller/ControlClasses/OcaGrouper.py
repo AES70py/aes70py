@@ -248,13 +248,13 @@ OcaGrouper = make_control_class(
 # value was successfully retrieved.
 #
 # @method OcaGrouper#GetMode
-# @returns {Promise<OcaGrouperMode>}
-#   A promise which resolves to a single value of type :class:`OcaGrouperMode`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # Sets the value of the Mode property. The return value indicates whether the
 # value was successfully set.
 #
 # @method OcaGrouper#SetMode
-# @param {OcaGrouperMode} Mode
+# @param {int} Mode
 #
 # @returns {Promise<None>}
 # Event that is emitted whenever key aspects of a group's status change. Status
@@ -311,4 +311,4 @@ OcaGrouper = make_control_class(
 # Switch that determines whether grouper is in master-slave mode or peer-to-peer
 # mode.
 #
-# @member {PropertyEvent<OcaGrouperMode>} OcaGrouper#OnModeChanged
+# @member {PropertyEvent<int>} OcaGrouper#OnModeChanged

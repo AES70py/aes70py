@@ -99,15 +99,15 @@ OcaStreamConnector = make_control_class(
 # of operation.
 #
 # @method OcaStreamConnector#GetSourceOrSink
-# @returns {Promise<OcaNetworkMediaSourceOrSink>}
-#   A promise which resolves to a single value of type :class:`OcaNetworkMediaSourceOrSink`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # Sets the value of the SourceOrSink property. Return status indicates success
 # of operation. Only implemented for reconfigurable devices. Note that this
 # method can only be called when the SignalChannels property is empty, i.e. does
 # not contain any actual channels.
 #
 # @method OcaStreamConnector#SetSourceOrSink
-# @param {OcaNetworkMediaSourceOrSink} SourceOrSink
+# @param {int} SourceOrSink
 #
 # @returns {Promise<None>}
 # Connects a stream to this connector. Return status indicates success of
@@ -141,8 +141,8 @@ OcaStreamConnector = make_control_class(
 # operation.
 #
 # @method OcaStreamConnector#GetStatus
-# @returns {Promise<OcaStreamConnectorStatus>}
-#   A promise which resolves to a single value of type :class:`OcaStreamConnectorStatus`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # This event is emitted when the property ``OwnerNetwork`` changes in the remote object.
 # The property ``OwnerNetwork`` is described in the AES70 standard as follows.
 # Object number of stream network object (**OcaStreamNetwork** or one of its
@@ -164,7 +164,7 @@ OcaStreamConnector = make_control_class(
 # Specifies whether this connector is for output (source) or input (sink) signal
 # channels.
 #
-# @member {PropertyEvent<OcaNetworkMediaSourceOrSink>} OcaStreamConnector#OnSourceOrSinkChanged
+# @member {PropertyEvent<int>} OcaStreamConnector#OnSourceOrSinkChanged
 # This event is emitted when the property ``Streams`` changes in the remote object.
 # The property ``Streams`` is described in the AES70 standard as follows.
 # The list of **OcaStream** data objects contained in (i.e. connected to) this
@@ -184,4 +184,4 @@ OcaStreamConnector = make_control_class(
 # The property ``Status`` is described in the AES70 standard as follows.
 # Status of this terminus.
 #
-# @member {PropertyEvent<OcaStreamConnectorStatus>} OcaStreamConnector#OnStatusChanged
+# @member {PropertyEvent<int>} OcaStreamConnector#OnStatusChanged

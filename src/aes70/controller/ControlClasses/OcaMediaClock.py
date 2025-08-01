@@ -40,14 +40,14 @@ OcaMediaClock = make_control_class(
 # the value was successfully retrieved.
 #
 # @method OcaMediaClock#GetType
-# @returns {Promise<OcaMediaClockType>}
-#   A promise which resolves to a single value of type :class:`OcaMediaClockType`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # Sets the value of the **Type** property. The return value indicates whether
 # the value was successfully set. Optional method, may not be supported in all
 # implementations.
 #
 # @method OcaMediaClock#SetType
-# @param {OcaMediaClockType} Type
+# @param {int} Type
 #
 # @returns {Promise<None>}
 # Gets the value of the **DomainID** property. The return value indicates
@@ -87,13 +87,13 @@ OcaMediaClock = make_control_class(
 # the value was successfully retrieved.
 #
 # @method OcaMediaClock#GetLockState
-# @returns {Promise<OcaMediaClockLockState>}
-#   A promise which resolves to a single value of type :class:`OcaMediaClockLockState`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # This event is emitted when the property ``Type`` changes in the remote object.
 # The property ``Type`` is described in the AES70 standard as follows.
 # Type of clock.
 #
-# @member {PropertyEvent<OcaMediaClockType>} OcaMediaClock#OnTypeChanged
+# @member {PropertyEvent<int>} OcaMediaClock#OnTypeChanged
 # This event is emitted when the property ``DomainID`` changes in the remote object.
 # The property ``DomainID`` is described in the AES70 standard as follows.
 # Clock domain ID. Arbitrary value.
@@ -113,4 +113,4 @@ OcaMediaClock = make_control_class(
 # The property ``LockState`` is described in the AES70 standard as follows.
 # Lock state of clock.
 #
-# @member {PropertyEvent<OcaMediaClockLockState>} OcaMediaClock#OnLockStateChanged
+# @member {PropertyEvent<int>} OcaMediaClock#OnLockStateChanged

@@ -42,8 +42,8 @@ OcaPowerSupply = make_control_class(
 # successfully retrieved.
 #
 # @method OcaPowerSupply#GetType
-# @returns {Promise<OcaPowerSupplyType>}
-#   A promise which resolves to a single value of type :class:`OcaPowerSupplyType`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # Gets the power supply's model information text. Return value indicates whether
 # the data was successfully retrieved.
 #
@@ -54,13 +54,13 @@ OcaPowerSupply = make_control_class(
 # was successfully retrieved.
 #
 # @method OcaPowerSupply#GetState
-# @returns {Promise<OcaPowerSupplyState>}
-#   A promise which resolves to a single value of type :class:`OcaPowerSupplyState`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # Changes the power supply's state. Return value indicates whether the state was
 # successfully changed.
 #
 # @method OcaPowerSupply#SetState
-# @param {OcaPowerSupplyState} state
+# @param {int} state
 #
 # @returns {Promise<None>}
 # Gets the value of property **Charging**. Return value indicates whether the
@@ -85,13 +85,13 @@ OcaPowerSupply = make_control_class(
 # data was successfully retrieved.
 #
 # @method OcaPowerSupply#GetLocation
-# @returns {Promise<OcaPowerSupplyLocation>}
-#   A promise which resolves to a single value of type :class:`OcaPowerSupplyLocation`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # This event is emitted when the property ``Type`` changes in the remote object.
 # The property ``Type`` is described in the AES70 standard as follows.
 # Type of power supply.
 #
-# @member {PropertyEvent<OcaPowerSupplyType>} OcaPowerSupply#OnTypeChanged
+# @member {PropertyEvent<int>} OcaPowerSupply#OnTypeChanged
 # This event is emitted when the property ``ModelInfo`` changes in the remote object.
 # The property ``ModelInfo`` is described in the AES70 standard as follows.
 # Model information for power supply. Text; content is implementation-dependent.
@@ -101,7 +101,7 @@ OcaPowerSupply = make_control_class(
 # The property ``State`` is described in the AES70 standard as follows.
 # State of power supply: off, unavailable, available, active.
 #
-# @member {PropertyEvent<OcaPowerSupplyState>} OcaPowerSupply#OnStateChanged
+# @member {PropertyEvent<int>} OcaPowerSupply#OnStateChanged
 # This event is emitted when the property ``Charging`` changes in the remote object.
 # The property ``Charging`` is described in the AES70 standard as follows.
 # True iff charging. For rechargable supplies (obviously).

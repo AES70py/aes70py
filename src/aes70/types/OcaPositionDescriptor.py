@@ -2,14 +2,13 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from .OcaPositionCoordinateSystem import OcaPositionCoordinateSystem
 
 
 class IOcaPositionDescriptor:
     # Since this is an interface, no implementation is provided.
     # Properties to be implemented by subclasses:
     # Type of position coordinate system - see AES70-1, section 5.5.9.
-    CoordinateSystem: OcaPositionCoordinateSystem
+    CoordinateSystem: int
     # Which fields of the Values[] array contain valid values.
     FieldFlags: int
     # The coordinates
@@ -55,9 +54,9 @@ class OcaPositionDescriptor(IOcaPositionDescriptor):
     #
     @class OcaPositionDescriptor
     """
-    def __init__(self, CoordinateSystem: OcaPositionCoordinateSystem, FieldFlags: int, Values: list[int]):
+    def __init__(self, CoordinateSystem: int, FieldFlags: int, Values: list[int]):
         # Type of position coordinate system - see AES70-1, section 5.5.9.
-        self.CoordinateSystem: OcaPositionCoordinateSystem = CoordinateSystem
+        self.CoordinateSystem: int = CoordinateSystem
         # Which fields of the Values[] array contain valid values.
         self.FieldFlags: int = FieldFlags
         # The coordinates

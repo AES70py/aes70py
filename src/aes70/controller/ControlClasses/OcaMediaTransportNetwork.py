@@ -77,8 +77,8 @@ OcaMediaTransportNetwork = make_control_class(
 # operation was successful.
 #
 # @method OcaMediaTransportNetwork#GetMediaProtocol
-# @returns {Promise<OcaNetworkMediaProtocol>}
-#   A promise which resolves to a single value of type :class:`OcaNetworkMediaProtocol`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # Gets the list of ports owned by the MediaTransportNetwork object (representing
 # the source and sink network channels). The return value indicates whether the
 # list was successfully retrieved.
@@ -176,7 +176,7 @@ OcaMediaTransportNetwork = make_control_class(
 #
 # @method OcaMediaTransportNetwork#AddSourceConnector
 # @param {IOcaMediaSourceConnector} Connector
-# @param {OcaMediaConnectorState} InitialStatus
+# @param {int} InitialStatus
 #
 # @returns {Promise<OcaMediaSourceConnector>}
 #   A promise which resolves to a single value of type :class:`OcaMediaSourceConnector`.
@@ -199,7 +199,7 @@ OcaMediaTransportNetwork = make_control_class(
 #
 # @method OcaMediaTransportNetwork#ControlConnector
 # @param {int} ConnectorID
-# @param {OcaMediaConnectorCommand} Command
+# @param {int} Command
 #
 # @returns {Promise<None>}
 # Sets a source connector's channel pin map. Return status indicates the success
@@ -295,10 +295,10 @@ OcaMediaTransportNetwork = make_control_class(
 # The property ``Protocol`` is described in the AES70 standard as follows.
 # Type of media transport protocol used by the network.
 #
-# @member {PropertyEvent<OcaNetworkMediaProtocol>} OcaMediaTransportNetwork#OnProtocolChanged
+# @member {PropertyEvent<int>} OcaMediaTransportNetwork#OnProtocolChanged
 # An alias for OnProtocolChanged
 #
-# @member {PropertyEvent<OcaNetworkMediaProtocol>} OcaMediaTransportNetwork#OnMediaProtocolChanged
+# @member {PropertyEvent<int>} OcaMediaTransportNetwork#OnMediaProtocolChanged
 # This event is emitted when the property ``Ports`` changes in the remote object.
 # The property ``Ports`` is described in the AES70 standard as follows.
 # The list of ports this network has. Note that these represent network channels

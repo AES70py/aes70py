@@ -24,11 +24,11 @@ OcaSensor = make_control_class(
 # whether the state was successfully retrived.
 #
 # @method OcaSensor#GetReadingState
-# @returns {Promise<OcaSensorReadingState>}
-#   A promise which resolves to a single value of type :class:`OcaSensorReadingState`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # This event is emitted when the property ``ReadingState`` changes in the remote object.
 # The property ``ReadingState`` is described in the AES70 standard as follows.
 # Enum that describes whether current reading value is valid and if not, why
 # not. Readonly.
 #
-# @member {PropertyEvent<OcaSensorReadingState>} OcaSensor#OnReadingStateChanged
+# @member {PropertyEvent<int>} OcaSensor#OnReadingStateChanged

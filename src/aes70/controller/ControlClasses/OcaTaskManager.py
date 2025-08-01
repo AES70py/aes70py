@@ -78,7 +78,7 @@ OcaTaskManager = make_control_class(
 # successfully controlled.
 #
 # @method OcaTaskManager#ControlAllTasks
-# @param {OcaTaskCommand} Command
+# @param {int} Command
 # @param {bytes} ApplicationTaskParameter
 #
 # @returns {Promise<None>}
@@ -87,7 +87,7 @@ OcaTaskManager = make_control_class(
 #
 # @method OcaTaskManager#ControlTaskGroup
 # @param {int} GroupID
-# @param {OcaTaskCommand} Command
+# @param {int} Command
 # @param {bytes} ApplicationTaskParameter
 #
 # @returns {Promise<None>}
@@ -96,7 +96,7 @@ OcaTaskManager = make_control_class(
 #
 # @method OcaTaskManager#ControlTask
 # @param {int} TaskID
-# @param {OcaTaskCommand} Command
+# @param {int} Command
 # @param {bytes} ApplicationTaskParameter
 #
 # @returns {Promise<None>}
@@ -104,8 +104,8 @@ OcaTaskManager = make_control_class(
 # successfully retrieved.
 #
 # @method OcaTaskManager#GetState
-# @returns {Promise<OcaTaskManagerState>}
-#   A promise which resolves to a single value of type :class:`OcaTaskManagerState`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 #
 # @method OcaTaskManager#GetTaskStatuses
 # @returns {Promise<OcaTaskStatus>}
@@ -160,7 +160,7 @@ OcaTaskManager = make_control_class(
 # Current state of task processing. State is Disabled after a Disable command
 # has been received, Enabled otherwise.
 #
-# @member {PropertyEvent<OcaTaskManagerState>} OcaTaskManager#OnStateChanged
+# @member {PropertyEvent<int>} OcaTaskManager#OnStateChanged
 # This event is emitted when the property ``Tasks`` changes in the remote object.
 # The property ``Tasks`` is described in the AES70 standard as follows.
 # Task collection

@@ -3,8 +3,6 @@ This file is part of aes70py.
 This file has been generated.
 """
 from .OcaStreamConnectorIdentification import IOcaStreamConnectorIdentification, OcaStreamConnectorIdentification
-from .OcaStreamStatus import OcaStreamStatus
-from .OcaStreamType import OcaStreamType
 
 
 class IOcaStream:
@@ -29,11 +27,11 @@ class IOcaStream:
     # True iff connection is secure.
     Secure: bool
     # Current status of the stream.
-    Status: OcaStreamStatus
+    Status: int
     # Stream parameters (encoding, sampling, etc). Details TBD
     StreamParameters: bytes
     # Unicast or multicast
-    StreamType: OcaStreamType
+    StreamType: int
 
 
 class OcaStream(IOcaStream):
@@ -57,7 +55,7 @@ class OcaStream(IOcaStream):
     # outbound flows, but not multiple inbound flows.
     @class OcaStream
     """
-    def __init__(self, ErrorNumber: int, IDAdvertised: bytes, Index: int, Label: str, LocalConnectorONo: int, Priority: int, RemoteConnectorIdentification: OcaStreamConnectorIdentification, Secure: bool, Status: OcaStreamStatus, StreamParameters: bytes, StreamType: OcaStreamType):
+    def __init__(self, ErrorNumber: int, IDAdvertised: bytes, Index: int, Label: str, LocalConnectorONo: int, Priority: int, RemoteConnectorIdentification: OcaStreamConnectorIdentification, Secure: bool, Status: int, StreamParameters: bytes, StreamType: int):
         # Index of most recent error encountered.
         self.ErrorNumber: int = ErrorNumber
         # Public identifier of this stream.
@@ -78,8 +76,8 @@ class OcaStream(IOcaStream):
         # True iff connection is secure.
         self.Secure: bool = Secure
         # Current status of the stream.
-        self.Status: OcaStreamStatus = Status
+        self.Status: int = Status
         # Stream parameters (encoding, sampling, etc). Details TBD
         self.StreamParameters: bytes = StreamParameters
         # Unicast or multicast
-        self.StreamType: OcaStreamType = StreamType
+        self.StreamType: int = StreamType

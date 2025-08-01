@@ -42,13 +42,13 @@ OcaPowerManager = make_control_class(
 # device. Return value indicates whether the value was successfully retrieved.
 #
 # @method OcaPowerManager#GetState
-# @returns {Promise<OcaPowerState>}
-#   A promise which resolves to a single value of type :class:`OcaPowerState`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # Change the device power state. The return value indicates whether the
 # requested change has been successfully made.
 #
 # @method OcaPowerManager#SetState
-# @param {OcaPowerState} State
+# @param {int} State
 #
 # @returns {Promise<None>}
 # Retrieves list of object number(s) of all power supply(ies). Return value
@@ -84,7 +84,7 @@ OcaPowerManager = make_control_class(
 # The property ``State`` is described in the AES70 standard as follows.
 # Current power state of device. Readonly.
 #
-# @member {PropertyEvent<OcaPowerState>} OcaPowerManager#OnStateChanged
+# @member {PropertyEvent<int>} OcaPowerManager#OnStateChanged
 # This event is emitted when the property ``PowerSupplies`` changes in the remote object.
 # The property ``PowerSupplies`` is described in the AES70 standard as follows.
 # List of object numbers of available power supplies.
@@ -105,4 +105,4 @@ OcaPowerManager = make_control_class(
 # Power state to which the device is transitioning. If no transition is in
 # progress, has value None. Readonly.
 #
-# @member {PropertyEvent<OcaPowerState>} OcaPowerManager#OnTargetStateChanged
+# @member {PropertyEvent<int>} OcaPowerManager#OnTargetStateChanged

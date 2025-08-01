@@ -2,7 +2,6 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from .OcaMediaStreamCastMode import OcaMediaStreamCastMode
 
 
 class IOcaMediaConnection:
@@ -14,7 +13,7 @@ class IOcaMediaConnection:
     # dependent.
     StreamParameters: bytes
     # Unicast or multicast
-    StreamCastMode: OcaMediaStreamCastMode
+    StreamCastMode: int
     # Number of channels in connected stream
     StreamChannelCount: int
 
@@ -43,13 +42,13 @@ class OcaMediaConnection(IOcaMediaConnection):
     # *streams* or *flows.*
     @class OcaMediaConnection
     """
-    def __init__(self, Secure: bool, StreamParameters: bytes, StreamCastMode: OcaMediaStreamCastMode, StreamChannelCount: int):
+    def __init__(self, Secure: bool, StreamParameters: bytes, StreamCastMode: int, StreamChannelCount: int):
         # True iff connection is secure.
         self.Secure: bool = Secure
         # Stream parameters (encoding, sampling, etc). Format is media network
         # type dependent.
         self.StreamParameters: bytes = StreamParameters
         # Unicast or multicast
-        self.StreamCastMode: OcaMediaStreamCastMode = StreamCastMode
+        self.StreamCastMode: int = StreamCastMode
         # Number of channels in connected stream
         self.StreamChannelCount: int = StreamChannelCount

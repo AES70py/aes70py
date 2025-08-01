@@ -46,7 +46,7 @@ OcaDelayExtended = make_control_class(
 # indicates whether the method has succeeded.
 #
 # @method OcaDelayExtended#GetDelayValueConverted
-# @param {OcaDelayUnit} UoM
+# @param {int} UoM
 #
 # @returns {Promise<OcaDelayValue>}
 #   A promise which resolves to a single value of type :class:`OcaDelayValue`.

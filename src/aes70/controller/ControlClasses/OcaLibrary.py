@@ -105,14 +105,14 @@ OcaLibrary = make_control_class(
 # the property was successfully retrieved.
 #
 # @method OcaLibrary#GetAccess
-# @returns {Promise<OcaLibAccess>}
-#   A promise which resolves to a single value of type :class:`OcaLibAccess`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # Sets allowed access mode for this library. The return value indicates whether
 # the property was successfully set. Not implemented for static,
 # manufacturer-supplied libraries.
 #
 # @method OcaLibrary#SetAccess
-# @param {OcaLibAccess} Access
+# @param {int} Access
 #
 # @returns {Promise<None>}
 # Event that is raised whenever private property **Volumes** changes. Added in
@@ -127,7 +127,7 @@ OcaLibrary = make_control_class(
 # The property ``Access`` is described in the AES70 standard as follows.
 # Readonly, read-expand, or full.
 #
-# @member {PropertyEvent<OcaLibAccess>} OcaLibrary#OnAccessChanged
+# @member {PropertyEvent<int>} OcaLibrary#OnAccessChanged
 # This event is emitted when the property ``Volumes`` changes in the remote object.
 # The property ``Volumes`` is described in the AES70 standard as follows.
 # Map of volumes held in the Library. Changed in version 2 because the

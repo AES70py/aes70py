@@ -25,17 +25,17 @@ OcaPolarity = make_control_class(
 # was successfully retrieved.
 #
 # @method OcaPolarity#GetState
-# @returns {Promise<OcaPolarityState>}
-#   A promise which resolves to a single value of type :class:`OcaPolarityState`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # Sets the inversion state (i.e. value of the State property). The return value
 # indicates whether the state was successfully set.
 #
 # @method OcaPolarity#SetState
-# @param {OcaPolarityState} state
+# @param {int} state
 #
 # @returns {Promise<None>}
 # This event is emitted when the property ``State`` changes in the remote object.
 # The property ``State`` is described in the AES70 standard as follows.
 # Current state of the inverter - {noninverted, inverted].
 #
-# @member {PropertyEvent<OcaPolarityState>} OcaPolarity#OnStateChanged
+# @member {PropertyEvent<int>} OcaPolarity#OnStateChanged

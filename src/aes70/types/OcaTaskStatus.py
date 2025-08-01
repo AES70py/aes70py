@@ -2,7 +2,6 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from .OcaTaskState import OcaTaskState
 
 
 class IOcaTaskStatus:
@@ -11,7 +10,7 @@ class IOcaTaskStatus:
     # ID of the task to which this state descriptor applies.
     ID: int
     # State of the task - running, stopped, etc.
-    State: OcaTaskState
+    State: int
     # Error code. Value is application-specific.
     ErrorCode: int
 
@@ -32,10 +31,10 @@ class OcaTaskStatus(IOcaTaskStatus):
     #
     @class OcaTaskStatus
     """
-    def __init__(self, ID: int, State: OcaTaskState, ErrorCode: int):
+    def __init__(self, ID: int, State: int, ErrorCode: int):
         # ID of the task to which this state descriptor applies.
         self.ID: int = ID
         # State of the task - running, stopped, etc.
-        self.State: OcaTaskState = State
+        self.State: int = State
         # Error code. Value is application-specific.
         self.ErrorCode: int = ErrorCode

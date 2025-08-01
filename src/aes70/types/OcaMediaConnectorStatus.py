@@ -2,7 +2,6 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from .OcaMediaConnectorState import OcaMediaConnectorState
 
 
 class IOcaMediaConnectorStatus:
@@ -11,7 +10,7 @@ class IOcaMediaConnectorStatus:
     # ID of the connector for which this status is valid
     ConnectorID: int
     # Connector state
-    State: OcaMediaConnectorState
+    State: int
     # Indicates what type of error the connector is in (only relevant if the
     # State is Fault).
     ErrorCode: int
@@ -22,11 +21,11 @@ class OcaMediaConnectorStatus(IOcaMediaConnectorStatus):
     # Represents the current status of a media (source or sink) connector.
     @class OcaMediaConnectorStatus
     """
-    def __init__(self, ConnectorID: int, State: OcaMediaConnectorState, ErrorCode: int):
+    def __init__(self, ConnectorID: int, State: int, ErrorCode: int):
         # ID of the connector for which this status is valid
         self.ConnectorID: int = ConnectorID
         # Connector state
-        self.State: OcaMediaConnectorState = State
+        self.State: int = State
         # Indicates what type of error the connector is in (only relevant if the
         # State is Fault).
         self.ErrorCode: int = ErrorCode

@@ -23,13 +23,13 @@ OcaControlNetwork = make_control_class(
 # operation was successful.
 #
 # @method OcaControlNetwork#GetControlProtocol
-# @returns {Promise<OcaNetworkControlProtocol>}
-#   A promise which resolves to a single value of type :class:`OcaNetworkControlProtocol`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # This event is emitted when the property ``Protocol`` changes in the remote object.
 # The property ``Protocol`` is described in the AES70 standard as follows.
 # Type of control protocol used by the network (OCAnn). Read-only property.
 #
-# @member {PropertyEvent<OcaNetworkControlProtocol>} OcaControlNetwork#OnProtocolChanged
+# @member {PropertyEvent<int>} OcaControlNetwork#OnProtocolChanged
 # An alias for OnProtocolChanged
 #
-# @member {PropertyEvent<OcaNetworkControlProtocol>} OcaControlNetwork#OnControlProtocolChanged
+# @member {PropertyEvent<int>} OcaControlNetwork#OnControlProtocolChanged

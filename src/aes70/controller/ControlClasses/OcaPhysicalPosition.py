@@ -32,8 +32,8 @@ OcaPhysicalPosition = make_control_class(
 # retrieval was successful.
 #
 # @method OcaPhysicalPosition#GetCoordinateSystem
-# @returns {Promise<OcaPositionCoordinateSystem>}
-#   A promise which resolves to a single value of type :class:`OcaPositionCoordinateSystem`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # Retrieves value of property **PositionDescriptorFieldFlags**. Result indicates
 # whether retrieval was successful.
 #

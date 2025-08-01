@@ -2,7 +2,6 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from .OcaComponent import OcaComponent
 
 
 class IOcaVersion:
@@ -16,7 +15,7 @@ class IOcaVersion:
     # component).
     Build: int
     # The component.
-    Component: OcaComponent
+    Component: int
 
 
 class OcaVersion(IOcaVersion):
@@ -25,7 +24,7 @@ class OcaVersion(IOcaVersion):
     # device in the form of Major.Minor.Build (e.g. 1.0.123).
     @class OcaVersion
     """
-    def __init__(self, Major: int, Minor: int, Build: int, Component: OcaComponent):
+    def __init__(self, Major: int, Minor: int, Build: int, Component: int):
         # The major version number.
         self.Major: int = Major
         # The minor version number.
@@ -34,4 +33,4 @@ class OcaVersion(IOcaVersion):
         # component).
         self.Build: int = Build
         # The component.
-        self.Component: OcaComponent = Component
+        self.Component: int = Component

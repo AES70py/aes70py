@@ -37,13 +37,13 @@ OcaDynamicsDetector = make_control_class(
 # was successfully retrieved.
 #
 # @method OcaDynamicsDetector#GetLaw
-# @returns {Promise<OcaLevelDetectionLaw>}
-#   A promise which resolves to a single value of type :class:`OcaLevelDetectionLaw`.
+# @returns {Promise<int>}
+#   A promise which resolves to a single value of type ``int``.
 # Sets the value of the Law property. Return status indicates whether the value
 # was successfully set.
 #
 # @method OcaDynamicsDetector#SetLaw
-# @param {OcaLevelDetectionLaw} Law
+# @param {int} Law
 #
 # @returns {Promise<None>}
 # Gets the value of the AttackTime property. The return value indicates if the
@@ -103,7 +103,7 @@ OcaDynamicsDetector = make_control_class(
 #
 # @method OcaDynamicsDetector#SetMultiple
 # @param {int} Mask
-# @param {OcaLevelDetectionLaw} Law
+# @param {int} Law
 # @param {int} AttackTime
 # @param {int} ReleaseTime
 # @param {int} HoldTime
@@ -113,7 +113,7 @@ OcaDynamicsDetector = make_control_class(
 # The property ``Law`` is described in the AES70 standard as follows.
 # Level detection law: RMS, Peak, possibly others
 #
-# @member {PropertyEvent<OcaLevelDetectionLaw>} OcaDynamicsDetector#OnLawChanged
+# @member {PropertyEvent<int>} OcaDynamicsDetector#OnLawChanged
 # This event is emitted when the property ``AttackTime`` changes in the remote object.
 # The property ``AttackTime`` is described in the AES70 standard as follows.
 # Detector attack time in seconds.
