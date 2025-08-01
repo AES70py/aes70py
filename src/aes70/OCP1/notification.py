@@ -2,7 +2,7 @@ from typing import Optional
 from struct import pack, unpack
 
 from aes70.OCP1.pdu import PDU
-from aes70.OCP1.OcaEvent import OcaEvent
+from aes70.types.OcaEvent import OcaEvent
 from aes70.OCP1.encoded_arguments import EncodedArguments
 
 class Notification(PDU):
