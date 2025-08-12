@@ -1,5 +1,5 @@
 from typing import Any, Dict
-from aes70.ocp1.createType import create_type, Type
+from aes70.ocp1.createtype import create_type, Type
 
 
 def Struct(types: Dict[str, Any], data_type: Any = None) -> Any:

@@ -1,6 +1,6 @@
 from typing import Any
 
-from aes70.ocp1.createType import create_type, Type
+from aes70.ocp1.createtype import create_type, Type
 from struct import pack_into, unpack_from
 
 
