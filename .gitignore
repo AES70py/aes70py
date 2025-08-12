@@ -4,3 +4,4 @@ Pipfile.lock
 dist
 .idea
 .DS_Store
+__pycache__
