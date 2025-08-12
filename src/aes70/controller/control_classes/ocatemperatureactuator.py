@@ -1,6 +1,6 @@
-from ...OCP1.OcaFloat32 import OcaFloat32
+from ...ocp1.ocafloat32 import OcaFloat32
 from ..make_control_class import make_control_class
-from .OcaActuator import OcaActuator
+from .ocaactuator import OcaActuator
 
 # A temperature actuator. Works in Celsius.
 # @extends OcaActuator

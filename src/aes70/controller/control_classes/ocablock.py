@@ -1,20 +1,20 @@
-from ...OCP1.OcaBlockMember import OcaBlockMember
-from ...OCP1.OcaGlobalTypeIdentifier import OcaGlobalTypeIdentifier
-from ...OCP1.OcaLibVolData_ParamSet import OcaLibVolData_ParamSet
-from ...OCP1.OcaLibVolIdentifier import OcaLibVolIdentifier
-from ...OCP1.OcaList import OcaList
-from ...OCP1.OcaMap import OcaMap
-from ...OCP1.OcaObjectIdentification import OcaObjectIdentification
-from ...OCP1.OcaObjectSearchResult import OcaObjectSearchResult
-from ...OCP1.OcaObjectSearchResultFlags import OcaObjectSearchResultFlags
-from ...OCP1.OcaSignalPath import OcaSignalPath
-from ...OCP1.OcaString import OcaString
-from ...OCP1.OcaStringComparisonType import OcaStringComparisonType
-from ...OCP1.OcaUint16 import OcaUint16
-from ...OCP1.OcaUint32 import OcaUint32
-from ...OCP1.String16 import String16
+from ...ocp1.String16 import String16
+from ...ocp1.ocablockmember import OcaBlockMember
+from ...ocp1.ocaglobaltypeidentifier import OcaGlobalTypeIdentifier
+from ...ocp1.ocalibvoldata_paramset import OcaLibVolData_ParamSet
+from ...ocp1.ocalibvolidentifier import OcaLibVolIdentifier
+from ...ocp1.ocalist import OcaList
+from ...ocp1.ocamap import OcaMap
+from ...ocp1.ocaobjectidentification import OcaObjectIdentification
+from ...ocp1.ocaobjectsearchresult import OcaObjectSearchResult
+from ...ocp1.ocaobjectsearchresultflags import OcaObjectSearchResultFlags
+from ...ocp1.ocasignalpath import OcaSignalPath
+from ...ocp1.ocastring import OcaString
+from ...ocp1.ocastringcomparisontype import OcaStringComparisonType
+from ...ocp1.ocauint16 import OcaUint16
+from ...ocp1.ocauint32 import OcaUint32
 from ..make_control_class import make_control_class
-from .OcaWorker import OcaWorker
+from .ocaworker import OcaWorker
 
 # A block is an object with three aspects: - It can contain other blocks. - It
 # can contain workers. - It can contain agents. - It can contain data networks.

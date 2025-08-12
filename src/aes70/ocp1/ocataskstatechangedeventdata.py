@@ -2,12 +2,12 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from .OcaLibVolIdentifier import OcaLibVolIdentifier
-from .OcaTaskStatus import OcaTaskStatus
-from .OcaUint32 import OcaUint32
-from .Struct import Struct
+from .ocalibvolidentifier import OcaLibVolIdentifier
+from .ocataskstatus import OcaTaskStatus
+from .ocauint32 import OcaUint32
+from .struct import Struct
 
-from ..types.OcaTaskStateChangedEventData import OcaTaskStateChangedEventData as type
+from ..types.ocataskstatechangedeventdata import OcaTaskStateChangedEventData as type
 
 OcaTaskStateChangedEventData = Struct(
   {

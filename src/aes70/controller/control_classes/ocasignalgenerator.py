@@ -1,10 +1,10 @@
-from ...OCP1.OcaBoolean import OcaBoolean
-from ...OCP1.OcaFloat32 import OcaFloat32
-from ...OCP1.OcaParameterMask import OcaParameterMask
-from ...OCP1.OcaSweepType import OcaSweepType
-from ...OCP1.OcaWaveformType import OcaWaveformType
+from ...ocp1.ocaboolean import OcaBoolean
+from ...ocp1.ocafloat32 import OcaFloat32
+from ...ocp1.ocaparametermask import OcaParameterMask
+from ...ocp1.ocasweeptype import OcaSweepType
+from ...ocp1.ocawaveformtype import OcaWaveformType
 from ..make_control_class import make_control_class
-from .OcaActuator import OcaActuator
+from .ocaactuator import OcaActuator
 
 # Multiwaveform signal generator with optional sweep capability.
 # @extends OcaActuator

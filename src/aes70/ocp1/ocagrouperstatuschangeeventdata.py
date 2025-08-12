@@ -2,11 +2,11 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from .OcaGrouperStatusChangeType import OcaGrouperStatusChangeType
-from .OcaUint16 import OcaUint16
-from .Struct import Struct
+from .ocagrouperstatuschangetype import OcaGrouperStatusChangeType
+from .ocauint16 import OcaUint16
+from .struct import Struct
 
-from ..types.OcaGrouperStatusChangeEventData import OcaGrouperStatusChangeEventData as type
+from ..types.ocagrouperstatuschangeeventdata import OcaGrouperStatusChangeEventData as type
 
 OcaGrouperStatusChangeEventData = Struct(
   {

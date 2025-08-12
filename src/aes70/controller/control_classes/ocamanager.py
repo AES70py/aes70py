@@ -1,5 +1,5 @@
 from ..make_control_class import make_control_class
-from .OcaRoot import OcaRoot
+from .ocaroot import OcaRoot
 
 # Abstract base class for classes that represent non-audio (i.e. control and
 # monitoring) functions. All concrete manager objects are lockable (the

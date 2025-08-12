@@ -2,10 +2,10 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from .OcaBlob import OcaBlob
-from .Struct import Struct
+from .ocablob import OcaBlob
+from .struct import Struct
 
-from ..types.OcaNetworkSystemInterfaceDescriptor import OcaNetworkSystemInterfaceDescriptor as type
+from ..types.ocanetworksysteminterfacedescriptor import OcaNetworkSystemInterfaceDescriptor as type
 
 OcaNetworkSystemInterfaceDescriptor = Struct(
   {

@@ -1,6 +1,6 @@
-from ...OCP1.OcaUint16 import OcaUint16
+from ...ocp1.ocauint16 import OcaUint16
 from ..make_control_class import make_control_class
-from .OcaBasicSensor import OcaBasicSensor
+from .ocabasicsensor import OcaBasicSensor
 
 # Basic uint16 sensor.
 # @extends OcaBasicSensor

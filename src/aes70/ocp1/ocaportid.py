@@ -2,11 +2,11 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from .OcaPortMode import OcaPortMode
-from .OcaUint16 import OcaUint16
-from .Struct import Struct
+from .ocaportmode import OcaPortMode
+from .ocauint16 import OcaUint16
+from .struct import Struct
 
-from ..types.OcaPortID import OcaPortID as type
+from ..types.ocaportid import OcaPortID as type
 
 OcaPortID = Struct(
   {

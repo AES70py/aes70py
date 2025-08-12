@@ -1,6 +1,6 @@
-from ...OCP1.OcaMuteState import OcaMuteState
+from ...ocp1.ocamutestate import OcaMuteState
 from ..make_control_class import make_control_class
-from .OcaActuator import OcaActuator
+from .ocaactuator import OcaActuator
 
 # Signal mute.
 # @extends OcaActuator

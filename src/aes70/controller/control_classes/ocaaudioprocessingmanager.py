@@ -1,5 +1,5 @@
 from ..make_control_class import make_control_class
-from .OcaManager import OcaManager
+from .ocamanager import OcaManager
 
 # Placeholder for optional manager that in future versions of the standard will
 # hold various global audio processing parameters.

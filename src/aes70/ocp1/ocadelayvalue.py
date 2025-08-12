@@ -2,11 +2,11 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from .OcaDelayUnit import OcaDelayUnit
-from .OcaFloat32 import OcaFloat32
-from .Struct import Struct
+from .ocadelayunit import OcaDelayUnit
+from .ocafloat32 import OcaFloat32
+from .struct import Struct
 
-from ..types.OcaDelayValue import OcaDelayValue as type
+from ..types.ocadelayvalue import OcaDelayValue as type
 
 OcaDelayValue = Struct(
   {

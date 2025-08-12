@@ -1,9 +1,9 @@
-from ...OCP1.OcaList2D import OcaList2D
-from ...OCP1.OcaUint16 import OcaUint16
-from ...OCP1.OcaUint32 import OcaUint32
-from ...OCP1.OcaUint8 import OcaUint8
+from ...ocp1.ocalist2d import OcaList2D
+from ...ocp1.ocauint16 import OcaUint16
+from ...ocp1.ocauint32 import OcaUint32
+from ...ocp1.ocauint8 import OcaUint8
 from ..make_control_class import make_control_class
-from .OcaWorker import OcaWorker
+from .ocaworker import OcaWorker
 
 # A matrix is a rectangular array of identical objects ("**members**") that is
 # coordinate addressable and has sets of common input and output ports. The

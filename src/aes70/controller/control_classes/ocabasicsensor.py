@@ -1,5 +1,5 @@
 from ..make_control_class import make_control_class
-from .OcaSensor import OcaSensor
+from .ocasensor import OcaSensor
 
 # Abstract base class for weakly typed sensors.
 # @extends OcaSensor

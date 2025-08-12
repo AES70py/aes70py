@@ -1,11 +1,11 @@
-from ...OCP1.OcaLibVolIdentifier import OcaLibVolIdentifier
-from ...OCP1.OcaLibVolType import OcaLibVolType
-from ...OCP1.OcaLibraryIdentifier import OcaLibraryIdentifier
-from ...OCP1.OcaList import OcaList
-from ...OCP1.OcaUint16 import OcaUint16
-from ...OCP1.OcaUint32 import OcaUint32
+from ...ocp1.ocalibraryidentifier import OcaLibraryIdentifier
+from ...ocp1.ocalibvolidentifier import OcaLibVolIdentifier
+from ...ocp1.ocalibvoltype import OcaLibVolType
+from ...ocp1.ocalist import OcaList
+from ...ocp1.ocauint16 import OcaUint16
+from ...ocp1.ocauint32 import OcaUint32
 from ..make_control_class import make_control_class
-from .OcaManager import OcaManager
+from .ocamanager import OcaManager
 
 # Optional manager for handling device presets -- Patch and ParamSet libraries.
 #

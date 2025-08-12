@@ -2,7 +2,7 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from aes70.types.Enum import Enum
+from aes70.types.enum import Enum
 
 # Types of time sources. See RFC7273 particularly sections 4.4-4.8 .
 # @class OcaTimeProtocol

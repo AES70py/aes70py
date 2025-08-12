@@ -2,7 +2,7 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from aes70.types.Enum import Enum
+from aes70.types.enum import Enum
 
 # States of **OcaTaskManager** object. These states represent the overall state
 # of task processing in the device.

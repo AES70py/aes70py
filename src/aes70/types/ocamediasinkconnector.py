@@ -2,9 +2,9 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from .OcaMediaCoding import IOcaMediaCoding, OcaMediaCoding
-from .OcaMediaConnection import IOcaMediaConnection, OcaMediaConnection
-from .OcaPortID import IOcaPortID, OcaPortID
+from .ocamediacoding import IOcaMediaCoding, OcaMediaCoding
+from .ocamediaconnection import IOcaMediaConnection, OcaMediaConnection
+from .ocaportid import IOcaPortID, OcaPortID
 
 
 class IOcaMediaSinkConnector:

@@ -1,7 +1,7 @@
 from typing import Callable
 from dataclasses import dataclass
 
-from aes70.OCP1.encode_message import encode_message_to, MESSAGE_HEADER_SIZE
+from aes70.ocp1.encode_message import encode_message_to, MESSAGE_HEADER_SIZE
 
 pduTypeKeepAlive = 4
 

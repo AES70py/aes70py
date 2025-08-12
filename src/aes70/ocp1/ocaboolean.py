@@ -1,4 +1,4 @@
-from aes70.OCP1.createType import create_type, Type
+from aes70.ocp1.createType import create_type, Type
 from struct import pack_into, unpack_from
 
 def encode_to(dataView: bytearray, pos: int, value):

@@ -1,9 +1,9 @@
-from ...OCP1.OcaList import OcaList
-from ...OCP1.OcaTimePTP import OcaTimePTP
-from ...OCP1.OcaUint32 import OcaUint32
-from ...OCP1.OcaUint64 import OcaUint64
+from ...ocp1.ocalist import OcaList
+from ...ocp1.ocatimeptp import OcaTimePTP
+from ...ocp1.ocauint32 import OcaUint32
+from ...ocp1.ocauint64 import OcaUint64
 from ..make_control_class import make_control_class
-from .OcaManager import OcaManager
+from .ocamanager import OcaManager
 
 # Manager that allows controlling and monitoring a device's time-of-day clock,
 # and that collects the device's time source objects.

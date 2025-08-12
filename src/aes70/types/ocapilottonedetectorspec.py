@@ -2,7 +2,7 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from .OcaDBr import IOcaDBr, OcaDBr
+from .ocadbr import IOcaDBr, OcaDBr
 
 
 class IOcaPilotToneDetectorSpec:

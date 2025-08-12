@@ -1,7 +1,7 @@
-from ...OCP1.OcaList import OcaList
-from ...OCP1.OcaUint32 import OcaUint32
+from ...ocp1.ocalist import OcaList
+from ...ocp1.ocauint32 import OcaUint32
 from ..make_control_class import make_control_class
-from .OcaManager import OcaManager
+from .ocamanager import OcaManager
 
 # Optional manager that collects all media transport and control networks to
 # which the device belongs.

@@ -2,8 +2,8 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from .OcaMethodID import IOcaMethodID, OcaMethodID
-from .OcaPropertyID import IOcaPropertyID, OcaPropertyID
+from .ocamethodid import IOcaMethodID, OcaMethodID
+from .ocapropertyid import IOcaPropertyID, OcaPropertyID
 
 
 class IOcaPropertyDescriptor:

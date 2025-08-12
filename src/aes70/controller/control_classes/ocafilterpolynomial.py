@@ -1,8 +1,8 @@
-from ...OCP1.OcaFloat32 import OcaFloat32
-from ...OCP1.OcaList import OcaList
-from ...OCP1.OcaUint8 import OcaUint8
+from ...ocp1.ocafloat32 import OcaFloat32
+from ...ocp1.ocalist import OcaList
+from ...ocp1.ocauint8 import OcaUint8
 from ..make_control_class import make_control_class
-from .OcaActuator import OcaActuator
+from .ocaactuator import OcaActuator
 
 # A generic Z-domain rational polynomial filter section: A(0) + A(1)z + A(2)z^2
 # + A(3)z^3 + ... B(0) + B(1)z + B(2)z^2 + B(3)z^3 + ...

@@ -2,7 +2,7 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from .OcaEventID import IOcaEventID, OcaEventID
+from .ocaeventid import IOcaEventID, OcaEventID
 
 
 class IOcaEvent:

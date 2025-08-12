@@ -2,14 +2,14 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from .OcaLibAccess import OcaLibAccess
-from .OcaLibVolType import OcaLibVolType
-from .OcaString import OcaString
-from .OcaTimePTP import OcaTimePTP
-from .OcaUint32 import OcaUint32
-from .Struct import Struct
+from .ocalibaccess import OcaLibAccess
+from .ocalibvoltype import OcaLibVolType
+from .ocastring import OcaString
+from .ocatimeptp import OcaTimePTP
+from .ocauint32 import OcaUint32
+from .struct import Struct
 
-from ..types.OcaLibVolMetadata import OcaLibVolMetadata as type
+from ..types.ocalibvolmetadata import OcaLibVolMetadata as type
 
 OcaLibVolMetadata = Struct(
   {

@@ -2,12 +2,12 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from .OcaBoolean import OcaBoolean
-from .OcaUint32 import OcaUint32
-from .OcaUint64 import OcaUint64
-from .Struct import Struct
+from .ocaboolean import OcaBoolean
+from .ocauint32 import OcaUint32
+from .ocauint64 import OcaUint64
+from .struct import Struct
 
-from ..types.OcaTimePTP import OcaTimePTP as type
+from ..types.ocatimeptp import OcaTimePTP as type
 
 OcaTimePTP = Struct(
   {

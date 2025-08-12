@@ -1,10 +1,10 @@
-from ...OCP1.OcaList import OcaList
-from ...OCP1.OcaMediaClockLockState import OcaMediaClockLockState
-from ...OCP1.OcaMediaClockRate import OcaMediaClockRate
-from ...OCP1.OcaMediaClockType import OcaMediaClockType
-from ...OCP1.OcaUint16 import OcaUint16
+from ...ocp1.ocalist import OcaList
+from ...ocp1.ocamediaclocklockstate import OcaMediaClockLockState
+from ...ocp1.ocamediaclockrate import OcaMediaClockRate
+from ...ocp1.ocamediaclocktype import OcaMediaClockType
+from ...ocp1.ocauint16 import OcaUint16
 from ..make_control_class import make_control_class
-from .OcaAgent import OcaAgent
+from .ocaagent import OcaAgent
 
 # **DEPRECATED CLASS** *Replaced by* **OcaMediaClock3** A media clock, internal
 # or external.

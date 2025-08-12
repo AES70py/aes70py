@@ -1,6 +1,6 @@
 import asyncio
 from .arguments import Arguments
-from ..types.OcaPropertyChangeType import OcaPropertyChangeType
+from ..types.ocapropertychangetype import OcaPropertyChangeType
 
 
 class PropertySync:

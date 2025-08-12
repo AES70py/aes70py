@@ -1,7 +1,7 @@
 from typing import Optional
 from dataclasses import dataclass
-from aes70.OCP1.pdu import PDU
-from aes70.OCP1.encoded_arguments import EncodedArguments
+from aes70.ocp1.pdu import PDU
+from aes70.ocp1.encoded_arguments import EncodedArguments
 from struct import  pack_into, unpack_from
 
 @dataclass

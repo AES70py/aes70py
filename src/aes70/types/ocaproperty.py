@@ -2,7 +2,7 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from .OcaPropertyDescriptor import IOcaPropertyDescriptor, OcaPropertyDescriptor
+from .ocapropertydescriptor import IOcaPropertyDescriptor, OcaPropertyDescriptor
 
 
 class IOcaProperty:

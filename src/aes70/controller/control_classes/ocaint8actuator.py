@@ -1,6 +1,6 @@
-from ...OCP1.OcaInt8 import OcaInt8
+from ...ocp1.ocaint8 import OcaInt8
 from ..make_control_class import make_control_class
-from .OcaBasicActuator import OcaBasicActuator
+from .ocabasicactuator import OcaBasicActuator
 
 # Basic int8 actuator.
 # @extends OcaBasicActuator

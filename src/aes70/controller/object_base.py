@@ -1,4 +1,4 @@
-from ..OCP1.commandrrq import CommandRrq
+from ..ocp1.commandrrq import CommandRrq
 
 """
 Base class for all client-side control classes.

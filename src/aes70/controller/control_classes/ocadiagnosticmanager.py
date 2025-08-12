@@ -1,7 +1,7 @@
-from ...OCP1.OcaString import OcaString
-from ...OCP1.OcaUint32 import OcaUint32
+from ...ocp1.ocastring import OcaString
+from ...ocp1.ocauint32 import OcaUint32
 from ..make_control_class import make_control_class
-from .OcaManager import OcaManager
+from .ocamanager import OcaManager
 
 # Optional manager that provides application diagnostic aids. Unlike other
 # manager classes, OcaDiagnosticManager may be subclassed to provide proprietary

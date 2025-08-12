@@ -2,11 +2,11 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from .OcaEventID import OcaEventID
-from .OcaUint32 import OcaUint32
-from .Struct import Struct
+from .ocaeventid import OcaEventID
+from .ocauint32 import OcaUint32
+from .struct import Struct
 
-from ..types.OcaEvent import OcaEvent as type
+from ..types.ocaevent import OcaEvent as type
 
 OcaEvent = Struct(
   {

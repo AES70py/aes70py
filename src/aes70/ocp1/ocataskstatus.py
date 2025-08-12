@@ -2,12 +2,12 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from .OcaTaskState import OcaTaskState
-from .OcaUint16 import OcaUint16
-from .OcaUint32 import OcaUint32
-from .Struct import Struct
+from .ocataskstate import OcaTaskState
+from .ocauint16 import OcaUint16
+from .ocauint32 import OcaUint32
+from .struct import Struct
 
-from ..types.OcaTaskStatus import OcaTaskStatus as type
+from ..types.ocataskstatus import OcaTaskStatus as type
 
 OcaTaskStatus = Struct(
   {

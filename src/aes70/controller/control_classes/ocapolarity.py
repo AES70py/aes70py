@@ -1,6 +1,6 @@
-from ...OCP1.OcaPolarityState import OcaPolarityState
+from ...ocp1.ocapolaritystate import OcaPolarityState
 from ..make_control_class import make_control_class
-from .OcaActuator import OcaActuator
+from .ocaactuator import OcaActuator
 
 # Signal inverter
 # @extends OcaActuator

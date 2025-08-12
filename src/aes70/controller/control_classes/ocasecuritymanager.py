@@ -1,8 +1,8 @@
-from ...OCP1.OcaBlob import OcaBlob
-from ...OCP1.OcaBoolean import OcaBoolean
-from ...OCP1.OcaString import OcaString
+from ...ocp1.ocablob import OcaBlob
+from ...ocp1.ocaboolean import OcaBoolean
+from ...ocp1.ocastring import OcaString
 from ..make_control_class import make_control_class
-from .OcaManager import OcaManager
+from .ocamanager import OcaManager
 
 # Manager that collects and controls security settings (including security
 # keys).

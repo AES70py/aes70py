@@ -2,7 +2,7 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from .OcaLibVolType import IOcaLibVolType, OcaLibVolType
+from .ocalibvoltype import IOcaLibVolType, OcaLibVolType
 
 
 class IOcaLibraryIdentifier:

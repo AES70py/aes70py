@@ -1,6 +1,6 @@
-from ...OCP1.OcaNetworkControlProtocol import OcaNetworkControlProtocol
+from ...ocp1.ocanetworkcontrolprotocol import OcaNetworkControlProtocol
 from ..make_control_class import make_control_class
-from .OcaApplicationNetwork import OcaApplicationNetwork
+from .ocaapplicationnetwork import OcaApplicationNetwork
 
 # @extends OcaApplicationNetwork
 # @class OcaControlNetwork

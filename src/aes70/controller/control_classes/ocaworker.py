@@ -1,13 +1,13 @@
-from ...OCP1.OcaBoolean import OcaBoolean
-from ...OCP1.OcaFloat32 import OcaFloat32
-from ...OCP1.OcaList import OcaList
-from ...OCP1.OcaPort import OcaPort
-from ...OCP1.OcaPortID import OcaPortID
-from ...OCP1.OcaPortMode import OcaPortMode
-from ...OCP1.OcaString import OcaString
-from ...OCP1.OcaUint32 import OcaUint32
+from ...ocp1.ocaboolean import OcaBoolean
+from ...ocp1.ocafloat32 import OcaFloat32
+from ...ocp1.ocalist import OcaList
+from ...ocp1.ocaport import OcaPort
+from ...ocp1.ocaportid import OcaPortID
+from ...ocp1.ocaportmode import OcaPortMode
+from ...ocp1.ocastring import OcaString
+from ...ocp1.ocauint32 import OcaUint32
 from ..make_control_class import make_control_class
-from .OcaRoot import OcaRoot
+from .ocaroot import OcaRoot
 
 # Abstract base class for classes that represent the device's application and
 # support functions.

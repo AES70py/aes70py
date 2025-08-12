@@ -1,14 +1,14 @@
-from ...OCP1.OcaBlob import OcaBlob
-from ...OCP1.OcaEvent import OcaEvent
-from ...OCP1.OcaMethod import OcaMethod
-from ...OCP1.OcaNotificationDeliveryMode import OcaNotificationDeliveryMode
-from ...OCP1.OcaObjectListEventData import OcaObjectListEventData
-from ...OCP1.OcaPropertyID import OcaPropertyID
-from ...OCP1.OcaSubscriptionManagerState import OcaSubscriptionManagerState
-from ...OCP1.OcaUint16 import OcaUint16
-from ...OCP1.OcaUint32 import OcaUint32
+from ...ocp1.ocablob import OcaBlob
+from ...ocp1.ocaevent import OcaEvent
+from ...ocp1.ocamethod import OcaMethod
+from ...ocp1.ocanotificationdeliverymode import OcaNotificationDeliveryMode
+from ...ocp1.ocaobjectlisteventdata import OcaObjectListEventData
+from ...ocp1.ocapropertyid import OcaPropertyID
+from ...ocp1.ocasubscriptionmanagerstate import OcaSubscriptionManagerState
+from ...ocp1.ocauint16 import OcaUint16
+from ...ocp1.ocauint32 import OcaUint32
 from ..make_control_class import make_control_class
-from .OcaManager import OcaManager
+from .ocamanager import OcaManager
 
 # Manager that collects and controls the event subscriptions of the device.
 #

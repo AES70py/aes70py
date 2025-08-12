@@ -1,7 +1,7 @@
-from ...OCP1.OcaBlob import OcaBlob
-from ...OCP1.OcaEvent import OcaEvent
+from ...ocp1.ocablob import OcaBlob
+from ...ocp1.ocaevent import OcaEvent
 from ..make_control_class import make_control_class
-from .OcaAgent import OcaAgent
+from .ocaagent import OcaAgent
 
 # Base class for event handler objects. This class applies to controllers that
 # subscribe to events and receive notifications for them. Controller developers

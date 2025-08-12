@@ -2,7 +2,7 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from .OcaProtoPortID import IOcaProtoPortID, OcaProtoPortID
+from .ocaprotoportid import IOcaProtoPortID, OcaProtoPortID
 
 
 class IOcaProtoPort:

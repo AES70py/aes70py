@@ -1,5 +1,5 @@
 from ..make_control_class import make_control_class
-from .OcaActuator import OcaActuator
+from .ocaactuator import OcaActuator
 
 # A set of one or more non-network signal inputs. Number of channels is set at
 # construction time. This class has no native properties or methods - they are

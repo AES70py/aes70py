@@ -1,9 +1,9 @@
-from ...OCP1.OcaBoolean import OcaBoolean
-from ...OCP1.OcaList import OcaList
-from ...OCP1.OcaPowerState import OcaPowerState
-from ...OCP1.OcaUint32 import OcaUint32
+from ...ocp1.ocaboolean import OcaBoolean
+from ...ocp1.ocalist import OcaList
+from ...ocp1.ocapowerstate import OcaPowerState
+from ...ocp1.ocauint32 import OcaUint32
 from ..make_control_class import make_control_class
-from .OcaManager import OcaManager
+from .ocamanager import OcaManager
 
 # Optional manager that manages power settings and state.
 #

@@ -1,13 +1,13 @@
-from ...OCP1.OcaApplicationNetworkCommand import OcaApplicationNetworkCommand
-from ...OCP1.OcaApplicationNetworkState import OcaApplicationNetworkState
-from ...OCP1.OcaBlob import OcaBlob
-from ...OCP1.OcaList import OcaList
-from ...OCP1.OcaNetworkSystemInterfaceDescriptor import OcaNetworkSystemInterfaceDescriptor
-from ...OCP1.OcaString import OcaString
-from ...OCP1.OcaUint16 import OcaUint16
-from ...OCP1.OcaUint32 import OcaUint32
+from ...ocp1.ocaapplicationnetworkcommand import OcaApplicationNetworkCommand
+from ...ocp1.ocaapplicationnetworkstate import OcaApplicationNetworkState
+from ...ocp1.ocablob import OcaBlob
+from ...ocp1.ocalist import OcaList
+from ...ocp1.ocanetworksysteminterfacedescriptor import OcaNetworkSystemInterfaceDescriptor
+from ...ocp1.ocastring import OcaString
+from ...ocp1.ocauint16 import OcaUint16
+from ...ocp1.ocauint32 import OcaUint32
 from ..make_control_class import make_control_class
-from .OcaRoot import OcaRoot
+from .ocaroot import OcaRoot
 
 # Abstract base class from which the application network classes inherit.
 # @extends OcaRoot

@@ -1,5 +1,5 @@
 from ..make_control_class import make_control_class
-from .OcaSensor import OcaSensor
+from .ocasensor import OcaSensor
 
 # Sensor for device identification mechanism. The idea of this mechanism is that
 # there is some kind of control -- a pushbutton, for instance -- that the user

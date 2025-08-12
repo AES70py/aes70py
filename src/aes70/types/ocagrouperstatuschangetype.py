@@ -2,7 +2,7 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from aes70.types.Enum import Enum
+from aes70.types.enum import Enum
 
 # Enum describing status change types, as used in **OcaGrouper's StatusChange**
 # event.

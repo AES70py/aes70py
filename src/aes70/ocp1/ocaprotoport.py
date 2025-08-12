@@ -2,12 +2,12 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from .OcaProtoPortID import OcaProtoPortID
-from .OcaString import OcaString
-from .OcaUint32 import OcaUint32
-from .Struct import Struct
+from .ocaprotoportid import OcaProtoPortID
+from .ocastring import OcaString
+from .ocauint32 import OcaUint32
+from .struct import Struct
 
-from ..types.OcaProtoPort import OcaProtoPort as type
+from ..types.ocaprotoport import OcaProtoPort as type
 
 OcaProtoPort = Struct(
   {

@@ -2,7 +2,7 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from aes70.types.Enum import Enum
+from aes70.types.enum import Enum
 
 # Enumeration that designates the type of position coordinate system used. For
 # details, see the AES70-1 description of the **OcaPhysicalPosition** class.

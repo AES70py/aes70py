@@ -1,15 +1,15 @@
-from ...OCP1.OcaBlob import OcaBlob
-from ...OCP1.OcaBoolean import OcaBoolean
-from ...OCP1.OcaMap import OcaMap
-from ...OCP1.OcaTask import OcaTask
-from ...OCP1.OcaTaskCommand import OcaTaskCommand
-from ...OCP1.OcaTaskManagerState import OcaTaskManagerState
-from ...OCP1.OcaTaskStateChangedEventData import OcaTaskStateChangedEventData
-from ...OCP1.OcaTaskStatus import OcaTaskStatus
-from ...OCP1.OcaUint16 import OcaUint16
-from ...OCP1.OcaUint32 import OcaUint32
+from ...ocp1.ocablob import OcaBlob
+from ...ocp1.ocaboolean import OcaBoolean
+from ...ocp1.ocamap import OcaMap
+from ...ocp1.ocatask import OcaTask
+from ...ocp1.ocataskcommand import OcaTaskCommand
+from ...ocp1.ocataskmanagerstate import OcaTaskManagerState
+from ...ocp1.ocataskstatechangedeventdata import OcaTaskStateChangedEventData
+from ...ocp1.ocataskstatus import OcaTaskStatus
+from ...ocp1.ocauint16 import OcaUint16
+from ...ocp1.ocauint32 import OcaUint32
 from ..make_control_class import make_control_class
-from .OcaManager import OcaManager
+from .ocamanager import OcaManager
 
 # Optional manager that collects OcaTask and OcaProgram objects.
 #

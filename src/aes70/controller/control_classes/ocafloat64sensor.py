@@ -1,6 +1,6 @@
-from ...OCP1.OcaFloat64 import OcaFloat64
+from ...ocp1.ocafloat64 import OcaFloat64
 from ..make_control_class import make_control_class
-from .OcaBasicSensor import OcaBasicSensor
+from .ocabasicsensor import OcaBasicSensor
 
 # Basic Float64 sensor.
 # @extends OcaBasicSensor

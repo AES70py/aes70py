@@ -1,8 +1,8 @@
-from ...OCP1.OcaBitstring import OcaBitstring
-from ...OCP1.OcaUint16 import OcaUint16
-from ...OCP1.OcaUint8 import OcaUint8
+from ...ocp1.ocabitstring import OcaBitstring
+from ...ocp1.ocauint16 import OcaUint16
+from ...ocp1.ocauint8 import OcaUint8
 from ..make_control_class import make_control_class
-from .OcaBasicSensor import OcaBasicSensor
+from .ocabasicsensor import OcaBasicSensor
 
 # Bit string sensor.
 # @extends OcaBasicSensor

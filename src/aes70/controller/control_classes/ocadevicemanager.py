@@ -1,16 +1,16 @@
-from ...OCP1.OcaBlob import OcaBlob
-from ...OCP1.OcaBlobFixedLen import OcaBlobFixedLen
-from ...OCP1.OcaBoolean import OcaBoolean
-from ...OCP1.OcaDeviceState import OcaDeviceState
-from ...OCP1.OcaList import OcaList
-from ...OCP1.OcaManagerDescriptor import OcaManagerDescriptor
-from ...OCP1.OcaModelDescription import OcaModelDescription
-from ...OCP1.OcaModelGUID import OcaModelGUID
-from ...OCP1.OcaResetCause import OcaResetCause
-from ...OCP1.OcaString import OcaString
-from ...OCP1.OcaUint16 import OcaUint16
+from ...ocp1.ocablob import OcaBlob
+from ...ocp1.ocablobfixedlen import OcaBlobFixedLen
+from ...ocp1.ocaboolean import OcaBoolean
+from ...ocp1.ocadevicestate import OcaDeviceState
+from ...ocp1.ocalist import OcaList
+from ...ocp1.ocamanagerdescriptor import OcaManagerDescriptor
+from ...ocp1.ocamodeldescription import OcaModelDescription
+from ...ocp1.ocamodelguid import OcaModelGUID
+from ...ocp1.ocaresetcause import OcaResetCause
+from ...ocp1.ocastring import OcaString
+from ...ocp1.ocauint16 import OcaUint16
 from ..make_control_class import make_control_class
-from .OcaManager import OcaManager
+from .ocamanager import OcaManager
 
 # Mandatory manager that contains information relevant to the whole device.
 #

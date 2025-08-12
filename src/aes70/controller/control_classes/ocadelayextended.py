@@ -1,7 +1,7 @@
-from ...OCP1.OcaDelayUnit import OcaDelayUnit
-from ...OCP1.OcaDelayValue import OcaDelayValue
+from ...ocp1.ocadelayunit import OcaDelayUnit
+from ...ocp1.ocadelayvalue import OcaDelayValue
 from ..make_control_class import make_control_class
-from .OcaDelay import OcaDelay
+from .ocadelay import OcaDelay
 
 # Signal delay - extended version. Allows setting delay value in various units.
 # Note that the inherited property 04p01 DelayTime is also supported by this

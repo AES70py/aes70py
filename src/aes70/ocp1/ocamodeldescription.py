@@ -2,10 +2,10 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from .OcaString import OcaString
-from .Struct import Struct
+from .ocastring import OcaString
+from .struct import Struct
 
-from ..types.OcaModelDescription import OcaModelDescription as type
+from ..types.ocamodeldescription import OcaModelDescription as type
 
 OcaModelDescription = Struct(
   {

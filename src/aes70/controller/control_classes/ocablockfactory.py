@@ -1,16 +1,16 @@
-from ...OCP1.OcaGlobalTypeIdentifier import OcaGlobalTypeIdentifier
-from ...OCP1.OcaList import OcaList
-from ...OCP1.OcaMap import OcaMap
-from ...OCP1.OcaPortMode import OcaPortMode
-from ...OCP1.OcaProtoObjectIdentification import OcaProtoObjectIdentification
-from ...OCP1.OcaProtoPort import OcaProtoPort
-from ...OCP1.OcaProtoPortID import OcaProtoPortID
-from ...OCP1.OcaProtoSignalPath import OcaProtoSignalPath
-from ...OCP1.OcaString import OcaString
-from ...OCP1.OcaUint16 import OcaUint16
-from ...OCP1.OcaUint32 import OcaUint32
+from ...ocp1.ocaglobaltypeidentifier import OcaGlobalTypeIdentifier
+from ...ocp1.ocalist import OcaList
+from ...ocp1.ocamap import OcaMap
+from ...ocp1.ocaportmode import OcaPortMode
+from ...ocp1.ocaprotoobjectidentification import OcaProtoObjectIdentification
+from ...ocp1.ocaprotoport import OcaProtoPort
+from ...ocp1.ocaprotoportid import OcaProtoPortID
+from ...ocp1.ocaprotosignalpath import OcaProtoSignalPath
+from ...ocp1.ocastring import OcaString
+from ...ocp1.ocauint16 import OcaUint16
+from ...ocp1.ocauint32 import OcaUint32
 from ..make_control_class import make_control_class
-from .OcaWorker import OcaWorker
+from .ocaworker import OcaWorker
 
 # Factory to create custom block instances. Used only in reconfigurable devices.
 # The idea is that you instantiate a factory once, populate it with

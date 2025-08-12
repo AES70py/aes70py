@@ -1,9 +1,9 @@
-from ...OCP1.OcaBoolean import OcaBoolean
-from ...OCP1.OcaClassIdentification import OcaClassIdentification
-from ...OCP1.OcaString import OcaString
-from ...OCP1.OcaUint16 import OcaUint16
-from ...OCP1.OcaUint32 import OcaUint32
-from ...OCP1.String16 import String16
+from ...ocp1.String16 import String16
+from ...ocp1.ocaboolean import OcaBoolean
+from ...ocp1.ocaclassidentification import OcaClassIdentification
+from ...ocp1.ocastring import OcaString
+from ...ocp1.ocauint16 import OcaUint16
+from ...ocp1.ocauint32 import OcaUint32
 from ..make_control_class import make_control_class
 from ..object_base.js import ObjectBase
 

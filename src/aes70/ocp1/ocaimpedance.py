@@ -2,10 +2,10 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from .OcaFloat32 import OcaFloat32
-from .Struct import Struct
+from .ocafloat32 import OcaFloat32
+from .struct import Struct
 
-from ..types.OcaImpedance import OcaImpedance as type
+from ..types.ocaimpedance import OcaImpedance as type
 
 OcaImpedance = Struct(
   {

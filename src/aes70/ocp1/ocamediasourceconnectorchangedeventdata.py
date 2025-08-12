@@ -2,12 +2,12 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from .OcaMediaConnectorElement import OcaMediaConnectorElement
-from .OcaMediaSourceConnector import OcaMediaSourceConnector
-from .OcaPropertyChangeType import OcaPropertyChangeType
-from .Struct import Struct
+from .ocamediaconnectorelement import OcaMediaConnectorElement
+from .ocamediasourceconnector import OcaMediaSourceConnector
+from .ocapropertychangetype import OcaPropertyChangeType
+from .struct import Struct
 
-from ..types.OcaMediaSourceConnectorChangedEventData import OcaMediaSourceConnectorChangedEventData as type
+from ..types.ocamediasourceconnectorchangedeventdata import OcaMediaSourceConnectorChangedEventData as type
 
 OcaMediaSourceConnectorChangedEventData = Struct(
   {

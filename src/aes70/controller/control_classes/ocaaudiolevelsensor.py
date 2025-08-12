@@ -1,6 +1,6 @@
-from ...OCP1.OcaLevelMeterLaw import OcaLevelMeterLaw
+from ...ocp1.ocalevelmeterlaw import OcaLevelMeterLaw
 from ..make_control_class import make_control_class
-from .OcaLevelSensor import OcaLevelSensor
+from .ocalevelsensor import OcaLevelSensor
 
 # Child of **OcaLevelSensor** that returns an audio meter reading in dB relative
 # to a known reference level, and whose value has been calculated by the

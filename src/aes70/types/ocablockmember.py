@@ -2,7 +2,7 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from .OcaObjectIdentification import IOcaObjectIdentification, OcaObjectIdentification
+from .ocaobjectidentification import IOcaObjectIdentification, OcaObjectIdentification
 
 
 class IOcaBlockMember:

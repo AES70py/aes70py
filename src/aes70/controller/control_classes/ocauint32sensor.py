@@ -1,6 +1,6 @@
-from ...OCP1.OcaUint32 import OcaUint32
+from ...ocp1.ocauint32 import OcaUint32
 from ..make_control_class import make_control_class
-from .OcaBasicSensor import OcaBasicSensor
+from .ocabasicsensor import OcaBasicSensor
 
 # Basic uint32 sensor.
 # @extends OcaBasicSensor

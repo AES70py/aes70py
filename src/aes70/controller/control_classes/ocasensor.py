@@ -1,6 +1,6 @@
-from ...OCP1.OcaSensorReadingState import OcaSensorReadingState
+from ...ocp1.ocasensorreadingstate import OcaSensorReadingState
 from ..make_control_class import make_control_class
-from .OcaWorker import OcaWorker
+from .ocaworker import OcaWorker
 
 # Abstract base class for all sensor classes.
 # @extends OcaWorker

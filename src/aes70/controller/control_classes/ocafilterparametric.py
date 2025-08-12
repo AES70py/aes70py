@@ -1,8 +1,8 @@
-from ...OCP1.OcaFloat32 import OcaFloat32
-from ...OCP1.OcaParameterMask import OcaParameterMask
-from ...OCP1.OcaParametricEQShape import OcaParametricEQShape
+from ...ocp1.ocafloat32 import OcaFloat32
+from ...ocp1.ocaparametermask import OcaParameterMask
+from ...ocp1.ocaparametriceqshape import OcaParametricEQShape
 from ..make_control_class import make_control_class
-from .OcaActuator import OcaActuator
+from .ocaactuator import OcaActuator
 
 # A parametric equalizer section with various shape options.
 # @extends OcaActuator

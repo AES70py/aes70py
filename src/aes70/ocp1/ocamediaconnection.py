@@ -2,13 +2,13 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from .OcaBlob import OcaBlob
-from .OcaBoolean import OcaBoolean
-from .OcaMediaStreamCastMode import OcaMediaStreamCastMode
-from .OcaUint16 import OcaUint16
-from .Struct import Struct
+from .ocablob import OcaBlob
+from .ocaboolean import OcaBoolean
+from .ocamediastreamcastmode import OcaMediaStreamCastMode
+from .ocauint16 import OcaUint16
+from .struct import Struct
 
-from ..types.OcaMediaConnection import OcaMediaConnection as type
+from ..types.ocamediaconnection import OcaMediaConnection as type
 
 OcaMediaConnection = Struct(
   {

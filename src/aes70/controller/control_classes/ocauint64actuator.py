@@ -1,6 +1,6 @@
-from ...OCP1.OcaUint64 import OcaUint64
+from ...ocp1.ocauint64 import OcaUint64
 from ..make_control_class import make_control_class
-from .OcaBasicActuator import OcaBasicActuator
+from .ocabasicactuator import OcaBasicActuator
 
 # Basic Uint64 actuator.
 # @extends OcaBasicActuator

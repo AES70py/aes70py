@@ -1,4 +1,4 @@
-from ..types.OcaStatus import OcaStatus
+from ..types.ocastatus import OcaStatus
 
 
 class RemoteError(Exception):

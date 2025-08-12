@@ -1,11 +1,11 @@
-from ...OCP1.OcaBlob import OcaBlob
-from ...OCP1.OcaComponent import OcaComponent
-from ...OCP1.OcaList import OcaList
-from ...OCP1.OcaString import OcaString
-from ...OCP1.OcaUint32 import OcaUint32
-from ...OCP1.OcaVersion import OcaVersion
+from ...ocp1.ocablob import OcaBlob
+from ...ocp1.ocacomponent import OcaComponent
+from ...ocp1.ocalist import OcaList
+from ...ocp1.ocastring import OcaString
+from ...ocp1.ocauint32 import OcaUint32
+from ...ocp1.ocaversion import OcaVersion
 from ..make_control_class import make_control_class
-from .OcaManager import OcaManager
+from .ocamanager import OcaManager
 
 # Optional manager that manages versions of the different firmware and software
 # images of the device.

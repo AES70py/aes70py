@@ -2,13 +2,13 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from .OcaClassIdentification import OcaClassIdentification
-from .OcaList import OcaList
-from .OcaString import OcaString
-from .OcaUint32 import OcaUint32
-from .Struct import Struct
+from .ocaclassidentification import OcaClassIdentification
+from .ocalist import OcaList
+from .ocastring import OcaString
+from .ocauint32 import OcaUint32
+from .struct import Struct
 
-from ..types.OcaObjectSearchResult import OcaObjectSearchResult as type
+from ..types.ocaobjectsearchresult import OcaObjectSearchResult as type
 
 OcaObjectSearchResult = Struct(
   {

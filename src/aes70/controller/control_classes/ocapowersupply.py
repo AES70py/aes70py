@@ -1,11 +1,11 @@
-from ...OCP1.OcaBoolean import OcaBoolean
-from ...OCP1.OcaFloat32 import OcaFloat32
-from ...OCP1.OcaPowerSupplyLocation import OcaPowerSupplyLocation
-from ...OCP1.OcaPowerSupplyState import OcaPowerSupplyState
-from ...OCP1.OcaPowerSupplyType import OcaPowerSupplyType
-from ...OCP1.OcaString import OcaString
+from ...ocp1.ocaboolean import OcaBoolean
+from ...ocp1.ocafloat32 import OcaFloat32
+from ...ocp1.ocapowersupplylocation import OcaPowerSupplyLocation
+from ...ocp1.ocapowersupplystate import OcaPowerSupplyState
+from ...ocp1.ocapowersupplytype import OcaPowerSupplyType
+from ...ocp1.ocastring import OcaString
 from ..make_control_class import make_control_class
-from .OcaAgent import OcaAgent
+from .ocaagent import OcaAgent
 
 # A power supply.
 # @extends OcaAgent

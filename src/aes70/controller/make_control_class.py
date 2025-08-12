@@ -2,11 +2,11 @@ from .event import Event
 from .property_event import PropertyEvent
 from .property_sync import PropertySync
 from .properties import Properties
-from ..OCP1.commandrrq import CommandRrq
-from ..OCP1.OcaEventId import OcaEventId
-from aes70.types.OcaPropertyId import OcaPropertyID
-from ..OCP1.encoded_arguments import EncodedArguments
-from ..OCP1.make_encoder import makeEncoder
+from ..ocp1.commandrrq import CommandRrq
+from ..ocp1.ocaeventid import OcaEventId
+from aes70.types.ocapropertyid import OcaPropertyID
+from ..ocp1.encoded_arguments import EncodedArguments
+from ..ocp1.make_encoder import makeEncoder
 from .property import Property
 
 def createPropertySync(control_class):

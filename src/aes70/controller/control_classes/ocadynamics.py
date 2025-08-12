@@ -1,12 +1,12 @@
-from ...OCP1.OcaBoolean import OcaBoolean
-from ...OCP1.OcaDBr import OcaDBr
-from ...OCP1.OcaDynamicsFunction import OcaDynamicsFunction
-from ...OCP1.OcaFloat32 import OcaFloat32
-from ...OCP1.OcaLevelDetectionLaw import OcaLevelDetectionLaw
-from ...OCP1.OcaParameterMask import OcaParameterMask
-from ...OCP1.OcaPresentationUnit import OcaPresentationUnit
+from ...ocp1.ocaboolean import OcaBoolean
+from ...ocp1.ocadbr import OcaDBr
+from ...ocp1.ocadynamicsfunction import OcaDynamicsFunction
+from ...ocp1.ocafloat32 import OcaFloat32
+from ...ocp1.ocaleveldetectionlaw import OcaLevelDetectionLaw
+from ...ocp1.ocaparametermask import OcaParameterMask
+from ...ocp1.ocapresentationunit import OcaPresentationUnit
 from ..make_control_class import make_control_class
-from .OcaActuator import OcaActuator
+from .ocaactuator import OcaActuator
 
 # A multipurpose dynamics processor. Can be configured as compressor, limiter,
 # expander, or gate. This class is expected to handle the majority of the basic

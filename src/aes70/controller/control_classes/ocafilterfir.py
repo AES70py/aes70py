@@ -1,8 +1,8 @@
-from ...OCP1.OcaFloat32 import OcaFloat32
-from ...OCP1.OcaList import OcaList
-from ...OCP1.OcaUint32 import OcaUint32
+from ...ocp1.ocafloat32 import OcaFloat32
+from ...ocp1.ocalist import OcaList
+from ...ocp1.ocauint32 import OcaUint32
 from ..make_control_class import make_control_class
-from .OcaActuator import OcaActuator
+from .ocaactuator import OcaActuator
 
 # A finite impulse response (FIR) filter.
 # @extends OcaActuator

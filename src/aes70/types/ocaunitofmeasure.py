@@ -2,7 +2,7 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from aes70.types.Enum import Enum
+from aes70.types.enum import Enum
 
 # Enumeration of units of measure that can be used in OCA classes. Only SI (base
 # or derived) units are specified, so that internal calculations will not need

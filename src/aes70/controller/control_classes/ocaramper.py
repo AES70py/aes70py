@@ -1,13 +1,13 @@
-from ...OCP1.OcaFloat32 import OcaFloat32
-from ...OCP1.OcaFloat64 import OcaFloat64
-from ...OCP1.OcaProperty import OcaProperty
-from ...OCP1.OcaRamperCommand import OcaRamperCommand
-from ...OCP1.OcaRamperInterpolationLaw import OcaRamperInterpolationLaw
-from ...OCP1.OcaRamperState import OcaRamperState
-from ...OCP1.OcaTimeMode import OcaTimeMode
-from ...OCP1.OcaUint64 import OcaUint64
+from ...ocp1.ocafloat32 import OcaFloat32
+from ...ocp1.ocafloat64 import OcaFloat64
+from ...ocp1.ocaproperty import OcaProperty
+from ...ocp1.ocarampercommand import OcaRamperCommand
+from ...ocp1.ocaramperinterpolationlaw import OcaRamperInterpolationLaw
+from ...ocp1.ocaramperstate import OcaRamperState
+from ...ocp1.ocatimemode import OcaTimeMode
+from ...ocp1.ocauint64 import OcaUint64
 from ..make_control_class import make_control_class
-from .OcaAgent import OcaAgent
+from .ocaagent import OcaAgent
 
 # Agent that gradually changes a property setting from one value to another.
 # Works on a scalar numeric or boolean property of a specified object. Does not

@@ -1,5 +1,5 @@
 from ..make_control_class import make_control_class
-from .OcaActuator import OcaActuator
+from .ocaactuator import OcaActuator
 
 # Abstract base class for weakly typed actuators.
 # @extends OcaActuator

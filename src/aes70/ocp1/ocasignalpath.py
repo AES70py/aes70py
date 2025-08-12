@@ -2,10 +2,10 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from .OcaPort import OcaPort
-from .Struct import Struct
+from .ocaport import OcaPort
+from .struct import Struct
 
-from ..types.OcaSignalPath import OcaSignalPath as type
+from ..types.ocasignalpath import OcaSignalPath as type
 
 OcaSignalPath = Struct(
   {

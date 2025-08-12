@@ -1,6 +1,6 @@
-from ...OCP1.OcaBoolean import OcaBoolean
+from ...ocp1.ocaboolean import OcaBoolean
 from ..make_control_class import make_control_class
-from .OcaBasicActuator import OcaBasicActuator
+from .ocabasicactuator import OcaBasicActuator
 
 # Basic boolean actuator.
 # @extends OcaBasicActuator

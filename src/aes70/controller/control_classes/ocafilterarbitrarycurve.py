@@ -1,8 +1,8 @@
-from ...OCP1.OcaFloat32 import OcaFloat32
-from ...OCP1.OcaTransferFunction import OcaTransferFunction
-from ...OCP1.OcaUint16 import OcaUint16
+from ...ocp1.ocafloat32 import OcaFloat32
+from ...ocp1.ocatransferfunction import OcaTransferFunction
+from ...ocp1.ocauint16 import OcaUint16
 from ..make_control_class import make_control_class
-from .OcaActuator import OcaActuator
+from .ocaactuator import OcaActuator
 
 # An arbitrary-curve filter, with transfer function specified as amplitude and
 # phase versus frequency.

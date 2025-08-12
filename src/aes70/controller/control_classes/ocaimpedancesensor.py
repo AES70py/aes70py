@@ -1,6 +1,6 @@
-from ...OCP1.OcaImpedance import OcaImpedance
+from ...ocp1.ocaimpedance import OcaImpedance
 from ..make_control_class import make_control_class
-from .OcaSensor import OcaSensor
+from .ocasensor import OcaSensor
 
 # Basic impedance sensor. Value is complex (magnitude and phase).
 # @extends OcaSensor

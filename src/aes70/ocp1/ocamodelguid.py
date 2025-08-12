@@ -2,10 +2,10 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from .OcaBlobFixedLen import OcaBlobFixedLen
-from .Struct import Struct
+from .ocablobfixedlen import OcaBlobFixedLen
+from .struct import Struct
 
-from ..types.OcaModelGUID import OcaModelGUID as type
+from ..types.ocamodelguid import OcaModelGUID as type
 
 OcaModelGUID = Struct(
   {

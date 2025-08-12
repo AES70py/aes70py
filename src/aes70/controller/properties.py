@@ -1,4 +1,4 @@
-from ..types.OcaPropertyId import OcaPropertyID
+from ..types.ocapropertyid import OcaPropertyID
 
 # /**
 #  * Class representing the collection of all properties in a remote object.

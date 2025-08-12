@@ -2,7 +2,7 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from .OcaMediaSinkConnector import IOcaMediaSinkConnector, OcaMediaSinkConnector
+from .ocamediasinkconnector import IOcaMediaSinkConnector, OcaMediaSinkConnector
 
 
 class IOcaMediaSinkConnectorChangedEventData:

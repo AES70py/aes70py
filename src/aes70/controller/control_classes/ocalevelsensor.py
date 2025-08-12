@@ -1,6 +1,6 @@
-from ...OCP1.OcaFloat32 import OcaFloat32
+from ...ocp1.ocafloat32 import OcaFloat32
 from ..make_control_class import make_control_class
-from .OcaSensor import OcaSensor
+from .ocasensor import OcaSensor
 
 # Signal level sensor.
 # @extends OcaSensor

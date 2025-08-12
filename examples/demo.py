@@ -2,7 +2,7 @@ import asyncio
 
 from aes70.controller import tcp_connection
 from aes70.controller.remote_device import RemoteDevice
-from aes70.types.OcaMuteState import OcaMuteState
+from aes70.types.ocamutestate import OcaMuteState
 import sys
 
 class Main:

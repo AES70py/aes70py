@@ -2,7 +2,7 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from .OcaStreamConnectorIdentification import IOcaStreamConnectorIdentification, OcaStreamConnectorIdentification
+from .ocastreamconnectoridentification import IOcaStreamConnectorIdentification, OcaStreamConnectorIdentification
 
 
 class IOcaStream:

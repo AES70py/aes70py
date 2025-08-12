@@ -1,15 +1,15 @@
-from ...OCP1.OcaBoolean import OcaBoolean
-from ...OCP1.OcaGrouperCitizen import OcaGrouperCitizen
-from ...OCP1.OcaGrouperEnrollment import OcaGrouperEnrollment
-from ...OCP1.OcaGrouperGroup import OcaGrouperGroup
-from ...OCP1.OcaGrouperMode import OcaGrouperMode
-from ...OCP1.OcaGrouperStatusChangeEventData import OcaGrouperStatusChangeEventData
-from ...OCP1.OcaList import OcaList
-from ...OCP1.OcaString import OcaString
-from ...OCP1.OcaUint16 import OcaUint16
-from ...OCP1.OcaUint32 import OcaUint32
+from ...ocp1.ocaboolean import OcaBoolean
+from ...ocp1.ocagroupercitizen import OcaGrouperCitizen
+from ...ocp1.ocagrouperenrollment import OcaGrouperEnrollment
+from ...ocp1.ocagroupergroup import OcaGrouperGroup
+from ...ocp1.ocagroupermode import OcaGrouperMode
+from ...ocp1.ocagrouperstatuschangeeventdata import OcaGrouperStatusChangeEventData
+from ...ocp1.ocalist import OcaList
+from ...ocp1.ocastring import OcaString
+from ...ocp1.ocauint16 import OcaUint16
+from ...ocp1.ocauint32 import OcaUint32
 from ..make_control_class import make_control_class
-from .OcaAgent import OcaAgent
+from .ocaagent import OcaAgent
 
 # **Concept** ** **A **grouper** is an object responsible for aggregating
 # property values. An **actuator grouper** allows control of many actuator

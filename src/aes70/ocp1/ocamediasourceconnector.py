@@ -2,17 +2,17 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from .OcaFloat32 import OcaFloat32
-from .OcaList import OcaList
-from .OcaMap import OcaMap
-from .OcaMediaCoding import OcaMediaCoding
-from .OcaMediaConnection import OcaMediaConnection
-from .OcaPortID import OcaPortID
-from .OcaString import OcaString
-from .OcaUint16 import OcaUint16
-from .Struct import Struct
+from .ocafloat32 import OcaFloat32
+from .ocalist import OcaList
+from .ocamap import OcaMap
+from .ocamediacoding import OcaMediaCoding
+from .ocamediaconnection import OcaMediaConnection
+from .ocaportid import OcaPortID
+from .ocastring import OcaString
+from .ocauint16 import OcaUint16
+from .struct import Struct
 
-from ..types.OcaMediaSourceConnector import OcaMediaSourceConnector as type
+from ..types.ocamediasourceconnector import OcaMediaSourceConnector as type
 
 OcaMediaSourceConnector = Struct(
   {

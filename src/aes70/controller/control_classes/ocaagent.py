@@ -1,8 +1,8 @@
-from ...OCP1.OcaList import OcaList
-from ...OCP1.OcaString import OcaString
-from ...OCP1.OcaUint32 import OcaUint32
+from ...ocp1.ocalist import OcaList
+from ...ocp1.ocastring import OcaString
+from ...ocp1.ocauint32 import OcaUint32
 from ..make_control_class import make_control_class
-from .OcaRoot import OcaRoot
+from .ocaroot import OcaRoot
 
 # Abstract base class for defining agents.
 # @extends OcaRoot

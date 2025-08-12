@@ -6,11 +6,11 @@ import inspect
 from .client_connection import ClientConnection
 from ..events import Events
 from .object_base import ObjectBase
-from .ControlClasses.OcaDeviceManager import OcaDeviceManager
-from  .ControlClasses.OcaBlock import OcaBlock
+from .control_classes.ocadevicemanager import OcaDeviceManager
+from  .control_classes.ocablock import OcaBlock
 from .tree_to_rolemap import tree_to_rolemap
-from ..types.OcaManagerDefaultObjectNumbers import OcaManagerDefaultObjectNumbers
-import aes70.controller.ControlClasses as RemoteControlClasses
+from ..types.ocamanagerdefaultobjectnumbers import OcaManagerDefaultObjectNumbers
+import aes70.controller.control_classes as RemoteControlClasses
 import logging
 
 logger = logging.getLogger(__name__)

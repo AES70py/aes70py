@@ -2,17 +2,17 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from .OcaBlob import OcaBlob
-from .OcaBoolean import OcaBoolean
-from .OcaStreamConnectorIdentification import OcaStreamConnectorIdentification
-from .OcaStreamStatus import OcaStreamStatus
-from .OcaStreamType import OcaStreamType
-from .OcaString import OcaString
-from .OcaUint16 import OcaUint16
-from .OcaUint32 import OcaUint32
-from .Struct import Struct
+from .ocablob import OcaBlob
+from .ocaboolean import OcaBoolean
+from .ocastreamconnectoridentification import OcaStreamConnectorIdentification
+from .ocastreamstatus import OcaStreamStatus
+from .ocastreamtype import OcaStreamType
+from .ocastring import OcaString
+from .ocauint16 import OcaUint16
+from .ocauint32 import OcaUint32
+from .struct import Struct
 
-from ..types.OcaStream import OcaStream as type
+from ..types.ocastream import OcaStream as type
 
 OcaStream = Struct(
   {

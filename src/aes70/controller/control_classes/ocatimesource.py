@@ -1,10 +1,10 @@
-from ...OCP1.OcaString import OcaString
-from ...OCP1.OcaTimeProtocol import OcaTimeProtocol
-from ...OCP1.OcaTimeReferenceType import OcaTimeReferenceType
-from ...OCP1.OcaTimeSourceAvailability import OcaTimeSourceAvailability
-from ...OCP1.OcaTimeSourceSyncStatus import OcaTimeSourceSyncStatus
+from ...ocp1.ocastring import OcaString
+from ...ocp1.ocatimeprotocol import OcaTimeProtocol
+from ...ocp1.ocatimereferencetype import OcaTimeReferenceType
+from ...ocp1.ocatimesourceavailability import OcaTimeSourceAvailability
+from ...ocp1.ocatimesourcesyncstatus import OcaTimeSourceSyncStatus
 from ..make_control_class import make_control_class
-from .OcaAgent import OcaAgent
+from .ocaagent import OcaAgent
 
 # A time source, internal or external. See RFC 7273 for a detailed discussion of
 # time sources.

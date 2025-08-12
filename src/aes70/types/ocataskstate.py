@@ -2,7 +2,7 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from aes70.types.Enum import Enum
+from aes70.types.enum import Enum
 
 # States of OcaTask object. State values change as a result of the object's
 # having received a comment or encountering processing events (e.g. completion).

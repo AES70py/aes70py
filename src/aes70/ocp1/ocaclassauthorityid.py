@@ -2,12 +2,12 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from .OcaBlobFixedLen import OcaBlobFixedLen
-from .OcaUint16 import OcaUint16
-from .OcaUint8 import OcaUint8
-from .Struct import Struct
+from .ocablobfixedlen import OcaBlobFixedLen
+from .ocauint16 import OcaUint16
+from .ocauint8 import OcaUint8
+from .struct import Struct
 
-from ..types.OcaClassAuthorityID import OcaClassAuthorityID as type
+from ..types.ocaclassauthorityid import OcaClassAuthorityID as type
 
 OcaClassAuthorityID = Struct(
   {

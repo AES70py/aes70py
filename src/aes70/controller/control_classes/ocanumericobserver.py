@@ -1,12 +1,12 @@
-from ...OCP1.OcaBoolean import OcaBoolean
-from ...OCP1.OcaFloat32 import OcaFloat32
-from ...OCP1.OcaFloat64 import OcaFloat64
-from ...OCP1.OcaObservationEventData import OcaObservationEventData
-from ...OCP1.OcaObserverState import OcaObserverState
-from ...OCP1.OcaProperty import OcaProperty
-from ...OCP1.OcaRelationalOperator import OcaRelationalOperator
+from ...ocp1.ocaboolean import OcaBoolean
+from ...ocp1.ocafloat32 import OcaFloat32
+from ...ocp1.ocafloat64 import OcaFloat64
+from ...ocp1.ocaobservationeventdata import OcaObservationEventData
+from ...ocp1.ocaobserverstate import OcaObserverState
+from ...ocp1.ocaproperty import OcaProperty
+from ...ocp1.ocarelationaloperator import OcaRelationalOperator
 from ..make_control_class import make_control_class
-from .OcaAgent import OcaAgent
+from .ocaagent import OcaAgent
 
 # Observer of a scalar numeric or boolean property ("target property") of a
 # specified object. Does not work for array, list, map, struct, or string

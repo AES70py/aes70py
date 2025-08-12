@@ -1,5 +1,5 @@
 from typing import Callable, Set, List, Any
-from aes70.types.OcaEvent import OcaEvent
+from aes70.types.ocaevent import OcaEvent
 
 class BaseEvent:
     def __init__(self, obj: Any, id: int, argument_types: List[type]):

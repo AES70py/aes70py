@@ -1,14 +1,14 @@
-from ...OCP1.OcaBlob import OcaBlob
-from ...OCP1.OcaList import OcaList
-from ...OCP1.OcaNetworkControlProtocol import OcaNetworkControlProtocol
-from ...OCP1.OcaNetworkLinkType import OcaNetworkLinkType
-from ...OCP1.OcaNetworkMediaProtocol import OcaNetworkMediaProtocol
-from ...OCP1.OcaNetworkStatistics import OcaNetworkStatistics
-from ...OCP1.OcaNetworkStatus import OcaNetworkStatus
-from ...OCP1.OcaNetworkSystemInterfaceID import OcaNetworkSystemInterfaceID
-from ...OCP1.OcaUint32 import OcaUint32
+from ...ocp1.ocablob import OcaBlob
+from ...ocp1.ocalist import OcaList
+from ...ocp1.ocanetworkcontrolprotocol import OcaNetworkControlProtocol
+from ...ocp1.ocanetworklinktype import OcaNetworkLinkType
+from ...ocp1.ocanetworkmediaprotocol import OcaNetworkMediaProtocol
+from ...ocp1.ocanetworkstatistics import OcaNetworkStatistics
+from ...ocp1.ocanetworkstatus import OcaNetworkStatus
+from ...ocp1.ocanetworksysteminterfaceid import OcaNetworkSystemInterfaceID
+from ...ocp1.ocauint32 import OcaUint32
 from ..make_control_class import make_control_class
-from .OcaAgent import OcaAgent
+from .ocaagent import OcaAgent
 
 # **DEPRECATED CLASS** *Replaced by class* **OcaControlNetwork ***in version 3
 # of Connection Management (CM3)* Abstract base class for defining network

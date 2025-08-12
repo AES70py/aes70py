@@ -2,16 +2,16 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from .OcaBlob import OcaBlob
-from .OcaLibVolIdentifier import OcaLibVolIdentifier
-from .OcaString import OcaString
-from .OcaTimeMode import OcaTimeMode
-from .OcaTimePTP import OcaTimePTP
-from .OcaUint16 import OcaUint16
-from .OcaUint32 import OcaUint32
-from .Struct import Struct
+from .ocablob import OcaBlob
+from .ocalibvolidentifier import OcaLibVolIdentifier
+from .ocastring import OcaString
+from .ocatimemode import OcaTimeMode
+from .ocatimeptp import OcaTimePTP
+from .ocauint16 import OcaUint16
+from .ocauint32 import OcaUint32
+from .struct import Struct
 
-from ..types.OcaTask import OcaTask as type
+from ..types.ocatask import OcaTask as type
 
 OcaTask = Struct(
   {

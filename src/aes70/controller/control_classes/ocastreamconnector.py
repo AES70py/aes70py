@@ -1,12 +1,12 @@
-from ...OCP1.OcaBlob import OcaBlob
-from ...OCP1.OcaMap import OcaMap
-from ...OCP1.OcaNetworkMediaSourceOrSink import OcaNetworkMediaSourceOrSink
-from ...OCP1.OcaStream import OcaStream
-from ...OCP1.OcaStreamConnectorStatus import OcaStreamConnectorStatus
-from ...OCP1.OcaUint16 import OcaUint16
-from ...OCP1.OcaUint32 import OcaUint32
+from ...ocp1.ocablob import OcaBlob
+from ...ocp1.ocamap import OcaMap
+from ...ocp1.ocanetworkmediasourceorsink import OcaNetworkMediaSourceOrSink
+from ...ocp1.ocastream import OcaStream
+from ...ocp1.ocastreamconnectorstatus import OcaStreamConnectorStatus
+from ...ocp1.ocauint16 import OcaUint16
+from ...ocp1.ocauint32 import OcaUint32
 from ..make_control_class import make_control_class
-from .OcaAgent import OcaAgent
+from .ocaagent import OcaAgent
 
 # **DEPRECATED CLASS** *Replaced by the* **OcaMediaSinkConnector ***and*
 # **OcaMediaSourceConnector ***datatypes in version 3 of Connection Management

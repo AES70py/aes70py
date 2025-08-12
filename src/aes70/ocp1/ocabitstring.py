@@ -1,6 +1,6 @@
 from struct import pack_into, unpack_from
 
-from ..OCP1.createType import create_type, Type
+from ..ocp1.createType import create_type, Type
 
 def toByteLength(length):
     return (length + 7) >> 3

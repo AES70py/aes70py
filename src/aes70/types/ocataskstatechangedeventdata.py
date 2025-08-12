@@ -2,8 +2,8 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from .OcaLibVolIdentifier import IOcaLibVolIdentifier, OcaLibVolIdentifier
-from .OcaTaskStatus import IOcaTaskStatus, OcaTaskStatus
+from .ocalibvolidentifier import IOcaLibVolIdentifier, OcaLibVolIdentifier
+from .ocataskstatus import IOcaTaskStatus, OcaTaskStatus
 
 
 class IOcaTaskStateChangedEventData:

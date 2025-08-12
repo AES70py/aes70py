@@ -1,8 +1,8 @@
-from ...OCP1.OcaPositionCoordinateSystem import OcaPositionCoordinateSystem
-from ...OCP1.OcaPositionDescriptor import OcaPositionDescriptor
-from ...OCP1.OcaPositionDescriptorFieldFlags import OcaPositionDescriptorFieldFlags
+from ...ocp1.ocapositioncoordinatesystem import OcaPositionCoordinateSystem
+from ...ocp1.ocapositiondescriptor import OcaPositionDescriptor
+from ...ocp1.ocapositiondescriptorfieldflags import OcaPositionDescriptorFieldFlags
 from ..make_control_class import make_control_class
-from .OcaAgent import OcaAgent
+from .ocaagent import OcaAgent
 
 # Physical position of device or an element of it. AES70 supports a variety of
 # positional coordinate systems. For details, see AES70-1, section 5.5.9.

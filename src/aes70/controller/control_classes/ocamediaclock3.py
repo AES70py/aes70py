@@ -1,11 +1,11 @@
-from ...OCP1.OcaList import OcaList
-from ...OCP1.OcaMap import OcaMap
-from ...OCP1.OcaMediaClockAvailability import OcaMediaClockAvailability
-from ...OCP1.OcaMediaClockRate import OcaMediaClockRate
-from ...OCP1.OcaTimePTP import OcaTimePTP
-from ...OCP1.OcaUint32 import OcaUint32
+from ...ocp1.ocalist import OcaList
+from ...ocp1.ocamap import OcaMap
+from ...ocp1.ocamediaclockavailability import OcaMediaClockAvailability
+from ...ocp1.ocamediaclockrate import OcaMediaClockRate
+from ...ocp1.ocatimeptp import OcaTimePTP
+from ...ocp1.ocauint32 import OcaUint32
 from ..make_control_class import make_control_class
-from .OcaAgent import OcaAgent
+from .ocaagent import OcaAgent
 
 # A media clock, internal or external. OCA Connection Management 3 (OCA-CM3)
 # version.

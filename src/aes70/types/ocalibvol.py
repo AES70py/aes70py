@@ -2,7 +2,7 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from .OcaLibVolMetadata import IOcaLibVolMetadata, OcaLibVolMetadata
+from .ocalibvolmetadata import IOcaLibVolMetadata, OcaLibVolMetadata
 
 
 class IOcaLibVol:

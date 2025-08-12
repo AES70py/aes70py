@@ -1,12 +1,12 @@
-from ...OCP1.OcaLibAccess import OcaLibAccess
-from ...OCP1.OcaLibVol import OcaLibVol
-from ...OCP1.OcaLibVolChangedEventData import OcaLibVolChangedEventData
-from ...OCP1.OcaLibVolType import OcaLibVolType
-from ...OCP1.OcaMap import OcaMap
-from ...OCP1.OcaUint16 import OcaUint16
-from ...OCP1.OcaUint32 import OcaUint32
+from ...ocp1.ocalibaccess import OcaLibAccess
+from ...ocp1.ocalibvol import OcaLibVol
+from ...ocp1.ocalibvolchangedeventdata import OcaLibVolChangedEventData
+from ...ocp1.ocalibvoltype import OcaLibVolType
+from ...ocp1.ocamap import OcaMap
+from ...ocp1.ocauint16 import OcaUint16
+from ...ocp1.ocauint32 import OcaUint32
 from ..make_control_class import make_control_class
-from .OcaAgent import OcaAgent
+from .ocaagent import OcaAgent
 
 # A **library** is an agent that holds a collection of datasets. We refer to
 # each dataset as a **Volume**. There are two kinds of volumes: **ParamSet**

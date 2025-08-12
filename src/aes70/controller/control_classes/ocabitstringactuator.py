@@ -1,8 +1,8 @@
-from ...OCP1.OcaBitstring import OcaBitstring
-from ...OCP1.OcaBoolean import OcaBoolean
-from ...OCP1.OcaUint16 import OcaUint16
+from ...ocp1.ocabitstring import OcaBitstring
+from ...ocp1.ocaboolean import OcaBoolean
+from ...ocp1.ocauint16 import OcaUint16
 from ..make_control_class import make_control_class
-from .OcaBasicActuator import OcaBasicActuator
+from .ocabasicactuator import OcaBasicActuator
 
 # Bitstring actuator. Maximum bitstring length is 65,536 bits.
 # @extends OcaBasicActuator

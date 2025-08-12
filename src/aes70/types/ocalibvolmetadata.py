@@ -2,8 +2,8 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from .OcaLibVolType import IOcaLibVolType, OcaLibVolType
-from .OcaTimePTP import IOcaTimePTP, OcaTimePTP
+from .ocalibvoltype import IOcaLibVolType, OcaLibVolType
+from .ocatimeptp import IOcaTimePTP, OcaTimePTP
 
 
 class IOcaLibVolMetadata:

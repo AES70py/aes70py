@@ -1,4 +1,4 @@
-from ..types.OcaPropertyId import OcaPropertyID
+from ..types.ocapropertyid import OcaPropertyID
 from promise import Promise
 import logging
 

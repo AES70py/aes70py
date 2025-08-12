@@ -1,6 +1,6 @@
-from ...OCP1.OcaBoolean import OcaBoolean
+from ...ocp1.ocaboolean import OcaBoolean
 from ..make_control_class import make_control_class
-from .OcaActuator import OcaActuator
+from .ocaactuator import OcaActuator
 
 # Represents a function that turns on some kind of human-detectable indicator
 # for purposes of device identification during network setup. Physical form of

@@ -2,12 +2,12 @@
 This file is part of aes70py.
 This file has been generated.
 """
-from .OcaDBr import OcaDBr
-from .OcaFloat32 import OcaFloat32
-from .OcaUint32 import OcaUint32
-from .Struct import Struct
+from .ocadbr import OcaDBr
+from .ocafloat32 import OcaFloat32
+from .ocauint32 import OcaUint32
+from .struct import Struct
 
-from ..types.OcaPilotToneDetectorSpec import OcaPilotToneDetectorSpec as type
+from ..types.ocapilottonedetectorspec import OcaPilotToneDetectorSpec as type
 
 OcaPilotToneDetectorSpec = Struct(
   {

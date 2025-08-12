@@ -1,8 +1,8 @@
-from ...OCP1.OcaFloat32 import OcaFloat32
-from ...OCP1.OcaLevelDetectionLaw import OcaLevelDetectionLaw
-from ...OCP1.OcaParameterMask import OcaParameterMask
+from ...ocp1.ocafloat32 import OcaFloat32
+from ...ocp1.ocaleveldetectionlaw import OcaLevelDetectionLaw
+from ...ocp1.ocaparametermask import OcaParameterMask
 from ..make_control_class import make_control_class
-from .OcaActuator import OcaActuator
+from .ocaactuator import OcaActuator
 
 # Dynamics element : side-chain detector.
 # @extends OcaActuator

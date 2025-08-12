@@ -1,5 +1,5 @@
 from ..make_control_class import make_control_class
-from .OcaActuator import OcaActuator
+from .ocaactuator import OcaActuator
 
 # Actuator with no control parameters, used as a simple node to represent
 # summations in block signal flows.
