@@ -32,7 +32,7 @@ class IOcaMediaSinkConnector:
     # certain pin identifier in this map means that the pin is empty (i.e. not
     # carrying a sink channel). A pin identifier cannot be part of the map more
     # than MaxChannelsPerPin times, unless MaxChannelsPerPin is zero.
-    ChannelPinMap: Dict[<int, list[IOcaPortID]]
+    ChannelPinMap: dict[int, list[IOcaPortID]]
     # Alignment level of the interface. Note that the dBFS value is referenced
     # to the *interface's* fullscale value, not to device's internal fullscale
     # value.
@@ -50,7 +50,7 @@ class OcaMediaSinkConnector(IOcaMediaSinkConnector):
     # Collected by **OcaMediaTransportNetwork**.
     @class OcaMediaSinkConnector
     """
-    def __init__(self, IDInternal: int, IDExternal: str, Connection: OcaMediaConnection, AvailableCodings: list[OcaMediaCoding], PinCount: int, ChannelPinMap: Dict[<int, list[OcaPortID]], AlignmentLevel: int, AlignmentGain: int, CurrentCoding: OcaMediaCoding):
+    def __init__(self, IDInternal: int, IDExternal: str, Connection: OcaMediaConnection, AvailableCodings: list[OcaMediaCoding], PinCount: int, ChannelPinMap: dict[int, list[OcaPortID]], AlignmentLevel: int, AlignmentGain: int, CurrentCoding: OcaMediaCoding):
         # Internal ID.
         self.IDInternal: int = IDInternal
         # Public name of connector. May be published to the media transport
@@ -74,7 +74,7 @@ class OcaMediaSinkConnector(IOcaMediaSinkConnector):
         # that the pin is empty (i.e. not carrying a sink channel). A pin
         # identifier cannot be part of the map more than MaxChannelsPerPin
         # times, unless MaxChannelsPerPin is zero.
-        self.ChannelPinMap: Dict[<int, list[OcaPortID]] = ChannelPinMap
+        self.ChannelPinMap: dict[int, list[OcaPortID]] = ChannelPinMap
         # Alignment level of the interface. Note that the dBFS value is
         # referenced to the *interface's* fullscale value, not to device's
         # internal fullscale value.

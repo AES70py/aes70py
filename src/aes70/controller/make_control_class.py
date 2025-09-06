@@ -3,7 +3,7 @@ from .property_event import PropertyEvent
 from .property_sync import PropertySync
 from .properties import Properties
 from ..ocp1.commandrrq import CommandRrq
-from ..ocp1.ocaeventid import OcaEventId
+from ..ocp1.ocaeventid import OcaEventID
 from aes70.types.ocapropertyid import OcaPropertyID
 from ..ocp1.encoded_arguments import EncodedArguments
 from ..ocp1.make_encoder import makeEncoder
@@ -98,7 +98,7 @@ def implement_event(cls, event):
         event_val = getattr(self, ev_name, None)
         if event_val:
             return event_val
-        event_instance = Event(self, OcaEventId(level, index), argumentTypes)
+        event_instance = Event(self, OcaEventID(level, index), argumentTypes)
         setattr(self, ev_name, event_instance)
         return event_instance
     setattr(cls, 'On' + name, property(get_event))

@@ -28,7 +28,7 @@ class IOcaMediaSourceConnector:
     # sent to the network. A pin is identified by an OcaUint16 with value
     # 1..MaxPinCount. Not having a certain pin identifier in this map means that
     # the pin is empty (i.e. not carrying a source channel).
-    ChannelPinMap: Dict[int, IOcaPortID]
+    ChannelPinMap: dict[int, IOcaPortID]
     # Alignment level of the interface. Note that the dBFS value is referenced
     # to the *interface's* fullscale value, not to device's internal fullscale
     # value.
@@ -43,7 +43,7 @@ class OcaMediaSourceConnector(IOcaMediaSourceConnector):
     # Collected by **OcaMediaTransportNetwork**.
     @class OcaMediaSourceConnector
     """
-    def __init__(self, IDInternal: int, IDExternal: str, Connection: OcaMediaConnection, AvailableCodings: list[OcaMediaCoding], PinCount: int, ChannelPinMap: Dict[int, OcaPortID], AlignmentLevel: int, CurrentCoding: OcaMediaCoding):
+    def __init__(self, IDInternal: int, IDExternal: str, Connection: OcaMediaConnection, AvailableCodings: list[OcaMediaCoding], PinCount: int, ChannelPinMap: dict[int, OcaPortID], AlignmentLevel: int, CurrentCoding: OcaMediaCoding):
         # Internal ID.
         self.IDInternal: int = IDInternal
         # Public name of connector. May be published to the media transport
@@ -62,7 +62,7 @@ class OcaMediaSourceConnector(IOcaMediaSourceConnector):
         # are sent to the network. A pin is identified by an OcaUint16 with
         # value 1..MaxPinCount. Not having a certain pin identifier in this map
         # means that the pin is empty (i.e. not carrying a source channel).
-        self.ChannelPinMap: Dict[int, OcaPortID] = ChannelPinMap
+        self.ChannelPinMap: dict[int, OcaPortID] = ChannelPinMap
         # Alignment level of the interface. Note that the dBFS value is
         # referenced to the *interface's* fullscale value, not to device's
         # internal fullscale value.

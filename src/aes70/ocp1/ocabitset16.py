@@ -1,4 +1,4 @@
-from .OcaUint16 import OcaUint16;
+from .ocauint16 import OcaUint16;
 
 '''
  A set of 16 1-bit boolean flags. Used to signify (m) of (n)

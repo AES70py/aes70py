@@ -1,6 +1,6 @@
 # Required dependencies and imports
 from aes70.utf8 import utf8_encoded_length, utf8_codepoint_length, buffer_to_utf8, utf8_to_buffer
-from .createType import Type, create_type
+from .createtype import Type, create_type
 from struct import pack_into, unpack_from
 
 def count_codepoints(value):

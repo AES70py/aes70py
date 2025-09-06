@@ -1,4 +1,4 @@
-from ...ocp1.String16 import String16
+from ...ocp1.string16 import String16
 from ...ocp1.ocablockmember import OcaBlockMember
 from ...ocp1.ocaglobaltypeidentifier import OcaGlobalTypeIdentifier
 from ...ocp1.ocalibvoldata_paramset import OcaLibVolData_ParamSet

@@ -1,5 +1,5 @@
 # Required dependencies and imports
-from .createType import Type, create_type
+from .createtype import Type, create_type
 from struct import pack_into, unpack_from
 
 def count_codepoints(value):
@@ -35,7 +35,7 @@ def _decode_length(dataView: bytearray, pos):
     pos += 2
     return pos + length
 
-OcaString = create_type(Type(
+OcaBlob = create_type(Type(
     is_constant_length= False,
     decode_length = _decode_length,
     encode_to =  _encode_to,

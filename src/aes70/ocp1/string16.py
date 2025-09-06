@@ -1,4 +1,4 @@
-from .createType import Type, create_type
+from .createtype import Type, create_type
 from struct import pack_into, unpack_from
 
 

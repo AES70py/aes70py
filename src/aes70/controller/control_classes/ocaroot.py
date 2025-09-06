@@ -1,11 +1,11 @@
-from ...ocp1.String16 import String16
+from ...ocp1.string16 import String16
 from ...ocp1.ocaboolean import OcaBoolean
 from ...ocp1.ocaclassidentification import OcaClassIdentification
 from ...ocp1.ocastring import OcaString
 from ...ocp1.ocauint16 import OcaUint16
 from ...ocp1.ocauint32 import OcaUint32
 from ..make_control_class import make_control_class
-from ..object_base.js import ObjectBase
+from ..object_base import ObjectBase
 
 # The abstract root class of which all OCA classes derive. It offers basic OCA
 # functionality such as locking an object and generalized data access.

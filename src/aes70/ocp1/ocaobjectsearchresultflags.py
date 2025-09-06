@@ -1,3 +1,3 @@
-from aes70.OCP1.ocabitset16 import OcaBitset16
+from aes70.ocp1.ocabitset16 import OcaBitSet16
 
-OcaObjectSearchResultFlags = Bitset16;
+OcaObjectSearchResultFlags = OcaBitSet16;

@@ -1,9 +1,7 @@
 import array
-from .createType import Type, create_type
+from .createtype import Type, create_type
 from struct import pack_into, unpack_from
-
-def isTypedArray(x):
-    return isinstance(x, (bytearray, memoryview, array.array))
+from .is_typed_array import is_typed_array
 
 def OcaListConstantLength(_type):
     encodedLengthConst = _type.encoded_length(None)
@@ -11,7 +9,7 @@ def OcaListConstantLength(_type):
     decodeFunc = _type.decode_from
 
     def encoded_length(value):
-        if not (isinstance(value, list) or isTypedArray(value)):
+        if not (isinstance(value, list) or is_typed_array(value)):
             raise TypeError('Expected array.')
         length = len(value)
         if length > 0xffff:
@@ -56,7 +54,7 @@ def OcaListDynamicLength(_type):
     decodeLengthFunc = _type.decode_length
 
     def encoded_length(value):
-        if not (isinstance(value, list) or isTypedArray(value)):
+        if not (isinstance(value, list) or is_typed_array(value)):
             raise TypeError('Expected array.')
         length = len(value)
         if length > 0xffff:

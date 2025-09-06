@@ -1,5 +1,5 @@
 import array
-from .createType import Type, create_type
+from .createtype import Type, create_type
 
 # Encode an array in which each element may be independently typed.
 
@@ -43,10 +43,10 @@ def Tuple(*Types):
 
         return pos
 
-    return create_type({
-        'isConstantLength': False,
-        'encodedLength': encodedLength,
-        'encodeTo': encodeTo,
-        'decodeFrom': decodeFrom,
-        'decodeLength': decodeLength,
-    })
+    return create_type(Type(
+        is_constant_length= False,
+        encoded_length= encodedLength,
+        encode_to= encodeTo,
+        decode_from= decodeFrom,
+        decode_length= decodeLength,
+    ))

@@ -1,6 +1,6 @@
 import typing
 from typing import Any, Callable, Dict
-from .createType import create_type, Type
+from .createtype import create_type, Type
 
 def Enum(data_type: typing.Type, base: Type) -> Type:
     encode_to = base.encode_to
