@@ -21,10 +21,17 @@ In your terminal use the following:
 
 ```
 python3 -m venv aes70-project
+```
+```
 cd aes70-project
+```
+```
 source bin/activate
+```
+```
 python3 -m pip install https://github.com/AES70py/aes70py/releases/download/1.0.2/aes70py-1.0.2-py3-none-any.whl
 ```
+
 Copy the examples/connect_toggle_mute.py into the aes70-project directory, run:
 
 ```
