@@ -36,23 +36,23 @@ OcaCodingManager = make_control_class(
 # value indicates success of the retrieval.
 #
 # @method OcaCodingManager#GetAvailableEncodingSchemes
-# @returns {Promise<Dict[int, str]>}
-#   A promise which resolves to a single value of type ``Dict[int, str]``.
+# @returns {Promise<dict[int, str]>}
+#   A promise which resolves to a single value of type ``dict[int, str]``.
 # Retrieves the map of available decoding schemes, indexed by scheme ID. Return
 # value indicates success of the retrieval.
 #
 # @method OcaCodingManager#GetAvailableDecodingSchemes
-# @returns {Promise<Dict[int, str]>}
-#   A promise which resolves to a single value of type ``Dict[int, str]``.
+# @returns {Promise<dict[int, str]>}
+#   A promise which resolves to a single value of type ``dict[int, str]``.
 # This event is emitted when the property ``AvailableEncodingSchemes`` changes in the remote object.
 # The property ``AvailableEncodingSchemes`` is described in the AES70 standard as follows.
 # Map of names of media encoding schemes the device supports, indexed by scheme
 # ID.
 #
-# @member {PropertyEvent<Dict[int, str]>} OcaCodingManager#OnAvailableEncodingSchemesChanged
+# @member {PropertyEvent<dict[int, str]>} OcaCodingManager#OnAvailableEncodingSchemesChanged
 # This event is emitted when the property ``AvailableDecodingSchemes`` changes in the remote object.
 # The property ``AvailableDecodingSchemes`` is described in the AES70 standard as follows.
 # Map of names of media decoding schemes the device supports, indexed by scheme
 # ID.
 #
-# @member {PropertyEvent<Dict[int, str]>} OcaCodingManager#OnAvailableDecodingSchemesChanged
+# @member {PropertyEvent<dict[int, str]>} OcaCodingManager#OnAvailableDecodingSchemesChanged

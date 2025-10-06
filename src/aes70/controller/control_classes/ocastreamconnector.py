@@ -129,14 +129,14 @@ OcaStreamConnector = make_control_class(
 # indicates success of operation.
 #
 # @method OcaStreamConnector#GetStreams
-# @returns {Promise<Dict[int, OcaStream]>}
-#   A promise which resolves to a single value of type ``Dict[int, OcaStream]``.
+# @returns {Promise<dict[int, OcaStream]>}
+#   A promise which resolves to a single value of type ``dict[int, OcaStream]``.
 # Gets the list of object numbers of **OcaNetworkSignalChannel** objects
 # connected to this connector. Return status indicates success of operation.
 #
 # @method OcaStreamConnector#GetPins
-# @returns {Promise<Dict[int, int]>}
-#   A promise which resolves to a single value of type ``Dict[int, int]``.
+# @returns {Promise<dict[int, int]>}
+#   A promise which resolves to a single value of type ``dict[int, int]``.
 # Gets the value of the Status property. Return status indicates success of
 # operation.
 #
@@ -170,7 +170,7 @@ OcaStreamConnector = make_control_class(
 # The list of **OcaStream** data objects contained in (i.e. connected to) this
 # connector.
 #
-# @member {PropertyEvent<Dict[int, OcaStream]>} OcaStreamConnector#OnStreamsChanged
+# @member {PropertyEvent<dict[int, OcaStream]>} OcaStreamConnector#OnStreamsChanged
 # This event is emitted when the property ``Pins`` changes in the remote object.
 # The property ``Pins`` is described in the AES70 standard as follows.
 # The map of connector pin indexes to **OcaNetworkSignalChannel[Source|Sink]**
@@ -179,7 +179,7 @@ OcaStreamConnector = make_control_class(
 # the connector is created). If a certain pin in the connector is currently not
 # attached the OcaONo of that index is 0.
 #
-# @member {PropertyEvent<Dict[int, int]>} OcaStreamConnector#OnPinsChanged
+# @member {PropertyEvent<dict[int, int]>} OcaStreamConnector#OnPinsChanged
 # This event is emitted when the property ``Status`` changes in the remote object.
 # The property ``Status`` is described in the AES70 standard as follows.
 # Status of this terminus.

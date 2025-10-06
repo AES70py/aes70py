@@ -89,8 +89,8 @@ OcaMediaClock3 = make_control_class(
 # return value indicates whether the list was successfully retrieved.
 #
 # @method OcaMediaClock3#GetSupportedRates
-# @returns {Promise<Dict[int, list[OcaMediaClockRate]]>}
-#   A promise which resolves to a single value of type ``Dict[int, list[OcaMediaClockRate]]``.
+# @returns {Promise<dict[int, list[OcaMediaClockRate]]>}
+#   A promise which resolves to a single value of type ``dict[int, list[OcaMediaClockRate]]``.
 # This event is emitted when the property ``Availability`` changes in the remote object.
 # The property ``Availability`` is described in the AES70 standard as follows.
 # Availability of media clock.
@@ -119,4 +119,4 @@ OcaMediaClock3 = make_control_class(
 # supported time source; value is list of supported clock rates for the given
 # time source. Private parameter, does not generate property-change events.
 #
-# @member {PropertyEvent<Dict[int, list[OcaMediaClockRate]]>} OcaMediaClock3#OnSupportedRatesChanged
+# @member {PropertyEvent<dict[int, list[OcaMediaClockRate]]>} OcaMediaClock3#OnSupportedRatesChanged

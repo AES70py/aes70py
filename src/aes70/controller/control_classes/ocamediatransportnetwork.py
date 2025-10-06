@@ -207,7 +207,7 @@ OcaMediaTransportNetwork = make_control_class(
 #
 # @method OcaMediaTransportNetwork#SetSourceConnectorPinMap
 # @param {int} ConnectorID
-# @param {Dict[int, IOcaPortID]} ChannelPinMap
+# @param {dict[int, IOcaPortID]} ChannelPinMap
 #
 # @returns {Promise<None>}
 # Sets a sink connector's channel pin map. Return status indicates the success
@@ -215,7 +215,7 @@ OcaMediaTransportNetwork = make_control_class(
 #
 # @method OcaMediaTransportNetwork#SetSinkConnectorPinMap
 # @param {int} ConnectorID
-# @param {Dict[<int, list[IOcaPortID]]} ChannelPinMap
+# @param {dict[int, list[IOcaPortID]]} ChannelPinMap
 #
 # @returns {Promise<None>}
 # Sets a connector's **Connection** property. Return status indicates the

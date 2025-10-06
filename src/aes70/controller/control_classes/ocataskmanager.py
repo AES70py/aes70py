@@ -130,8 +130,8 @@ OcaTaskManager = make_control_class(
 # successfully retrieved.
 #
 # @method OcaTaskManager#GetTasks
-# @returns {Promise<Dict[int, OcaTask]>}
-#   A promise which resolves to a single value of type ``Dict[int, OcaTask]``.
+# @returns {Promise<dict[int, OcaTask]>}
+#   A promise which resolves to a single value of type ``dict[int, OcaTask]``.
 # Retrieves a Task. Return value indicates whether Task was successfully
 # retrieved.
 #
@@ -165,4 +165,4 @@ OcaTaskManager = make_control_class(
 # The property ``Tasks`` is described in the AES70 standard as follows.
 # Task collection
 #
-# @member {PropertyEvent<Dict[int, OcaTask]>} OcaTaskManager#OnTasksChanged
+# @member {PropertyEvent<dict[int, OcaTask]>} OcaTaskManager#OnTasksChanged

@@ -1,4 +1,3 @@
-from ...ocp1.string16 import String16
 from ...ocp1.ocablockmember import OcaBlockMember
 from ...ocp1.ocaglobaltypeidentifier import OcaGlobalTypeIdentifier
 from ...ocp1.ocalibvoldata_paramset import OcaLibVolData_ParamSet
@@ -13,6 +12,7 @@ from ...ocp1.ocastring import OcaString
 from ...ocp1.ocastringcomparisontype import OcaStringComparisonType
 from ...ocp1.ocauint16 import OcaUint16
 from ...ocp1.ocauint32 import OcaUint32
+from ...ocp1.string16 import String16
 from ..make_control_class import make_control_class
 from .ocaworker import OcaWorker
 
@@ -123,14 +123,14 @@ OcaBlock = make_control_class(
 # return value indicates whether the list was successfully retrieved.
 #
 # @method OcaBlock#GetSignalPaths
-# @returns {Promise<Dict[int, OcaSignalPath]>}
-#   A promise which resolves to a single value of type ``Dict[int, OcaSignalPath]``.
+# @returns {Promise<dict[int, OcaSignalPath]>}
+#   A promise which resolves to a single value of type ``dict[int, OcaSignalPath]``.
 # Gets the mapof signal paths in the block. Recurses inner blocks. The return
 # value indicates whether the list was successfully retrieved.
 #
 # @method OcaBlock#GetSignalPathsRecursive
-# @returns {Promise<Dict[int, OcaSignalPath]>}
-#   A promise which resolves to a single value of type ``Dict[int, OcaSignalPath]``.
+# @returns {Promise<dict[int, OcaSignalPath]>}
+#   A promise which resolves to a single value of type ``dict[int, OcaSignalPath]``.
 # Gets the identifier of the paramset most recently applied to this block.
 #
 # @method OcaBlock#GetMostRecentParamSetIdentifier
@@ -169,8 +169,8 @@ OcaBlock = make_control_class(
 # successfully retrieved. **Added in version 2 of this class.**
 #
 # @method OcaBlock#GetONoMap
-# @returns {Promise<Dict[int, int]>}
-#   A promise which resolves to a single value of type ``Dict[int, int]``.
+# @returns {Promise<dict[int, int]>}
+#   A promise which resolves to a single value of type ``dict[int, int]``.
 # Returns object identifications of all objects in the block that match the
 # given Role search string and Class ID. Return value indicates whether the
 # method succeeded. **Added in version 2 of this class.**
@@ -225,7 +225,7 @@ OcaBlock = make_control_class(
 # The property ``SignalPaths`` is described in the AES70 standard as follows.
 # List of signal paths in the block.
 #
-# @member {PropertyEvent<Dict[int, OcaSignalPath]>} OcaBlock#OnSignalPathsChanged
+# @member {PropertyEvent<dict[int, OcaSignalPath]>} OcaBlock#OnSignalPathsChanged
 # This event is emitted when the property ``MostRecentParamSetIdentifier`` changes in the remote object.
 # The property ``MostRecentParamSetIdentifier`` is described in the AES70 standard as follows.
 # Library volume identifier of the paramset most recently applied to this block.

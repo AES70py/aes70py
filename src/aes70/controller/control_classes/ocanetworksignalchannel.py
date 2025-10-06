@@ -85,8 +85,8 @@ OcaNetworkSignalChannel = make_control_class(
 # Return status indicates success of operation.
 #
 # @method OcaNetworkSignalChannel#GetConnectorPins
-# @returns {Promise<Dict[int, int]>}
-#   A promise which resolves to a single value of type ``Dict[int, int]``.
+# @returns {Promise<dict[int, int]>}
+#   A promise which resolves to a single value of type ``dict[int, int]``.
 # Adds the object number of the stream connector object to which this media port
 # belongs, and specifies on what index of the stream connector this channel can
 # be found. Return status indicates success of operation.
@@ -160,7 +160,7 @@ OcaNetworkSignalChannel = make_control_class(
 # perform mixing. **OcaNetworkSignalChannel** objects of type **Source** can
 # have multiple entries in the map.
 #
-# @member {PropertyEvent<Dict[int, int]>} OcaNetworkSignalChannel#OnConnectorPinsChanged
+# @member {PropertyEvent<dict[int, int]>} OcaNetworkSignalChannel#OnConnectorPinsChanged
 # This event is emitted when the property ``RemoteChannelID`` changes in the remote object.
 # The property ``RemoteChannelID`` is described in the AES70 standard as follows.
 # External ID of ultimate source or destination of signal.

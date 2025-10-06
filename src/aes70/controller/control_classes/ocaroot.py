@@ -1,9 +1,9 @@
-from ...ocp1.string16 import String16
 from ...ocp1.ocaboolean import OcaBoolean
 from ...ocp1.ocaclassidentification import OcaClassIdentification
 from ...ocp1.ocastring import OcaString
 from ...ocp1.ocauint16 import OcaUint16
 from ...ocp1.ocauint32 import OcaUint32
+from ...ocp1.string16 import String16
 from ..make_control_class import make_control_class
 from ..object_base import ObjectBase
 
