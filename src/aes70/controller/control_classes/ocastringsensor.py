@@ -13,12 +13,12 @@ OcaStringSensor = make_control_class(
     2,
     OcaBasicSensor,
     [
-        ['GetString', 5, 1, [], [OcaString]],
+        ['GetString', 5, 1, [], [OcaString], ["GetReading"]],
         ['GetMaxLen', 5, 2, [], [OcaUint16]],
         ['SetMaxLen', 5, 3, [OcaUint16], []],
     ],
     [
-      ['String', [OcaString], 5, 1, False, False, None],
+      ['String', [OcaString], 5, 1, False, False, ['Reading']],
       ['MaxLen', [OcaUint16], 5, 2, False, False, None],
     ],
     []
@@ -28,6 +28,13 @@ OcaStringSensor = make_control_class(
 # retrieval.
 #
 # @method OcaStringSensor#GetString
+# @returns {Promise<str>}
+#   A promise which resolves to a single value of type ``str``.
+# Gets the entire string. Return status indicates success or failure of the
+# retrieval.
+# An alias for GetString.
+#
+# @method OcaStringSensor#GetReading
 # @returns {Promise<str>}
 #   A promise which resolves to a single value of type ``str``.
 # Gets the maximum number of bytes that may be returned. Returned status
@@ -48,6 +55,9 @@ OcaStringSensor = make_control_class(
 # The string.
 #
 # @member {PropertyEvent<str>} OcaStringSensor#OnStringChanged
+# An alias for OnStringChanged
+#
+# @member {PropertyEvent<str>} OcaStringSensor#OnReadingChanged
 # This event is emitted when the property ``MaxLen`` changes in the remote object.
 # The property ``MaxLen`` is described in the AES70 standard as follows.
 # Maximum length of the returned string. May be readonly in some

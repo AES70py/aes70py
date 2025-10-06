@@ -16,10 +16,10 @@ OcaBitstringSensor = make_control_class(
     [
         ['GetNrBits', 5, 1, [], [OcaUint16]],
         ['GetBit', 5, 2, [OcaUint16], [OcaUint8]],
-        ['GetBitString', 5, 3, [], [OcaBitstring]],
+        ['GetBitString', 5, 3, [], [OcaBitstring], ["GetReading"]],
     ],
     [
-      ['BitString', [OcaBitstring], 5, 1, False, False, None],
+      ['BitString', [OcaBitstring], 5, 1, False, False, ['Reading']],
     ],
     []
 )
@@ -44,8 +44,18 @@ OcaBitstringSensor = make_control_class(
 # @method OcaBitstringSensor#GetBitString
 # @returns {Promise<list[bool]>}
 #   A promise which resolves to a single value of type ``list[bool]``.
+# Gets the entire bitstring. Return status indicates success or failure of the
+# retrieval.
+# An alias for GetBitString.
+#
+# @method OcaBitstringSensor#GetReading
+# @returns {Promise<list[bool]>}
+#   A promise which resolves to a single value of type ``list[bool]``.
 # This event is emitted when the property ``BitString`` changes in the remote object.
 # The property ``BitString`` is described in the AES70 standard as follows.
 # The bitstring.
 #
 # @member {PropertyEvent<list[bool]>} OcaBitstringSensor#OnBitStringChanged
+# An alias for OnBitStringChanged
+#
+# @member {PropertyEvent<list[bool]>} OcaBitstringSensor#OnReadingChanged

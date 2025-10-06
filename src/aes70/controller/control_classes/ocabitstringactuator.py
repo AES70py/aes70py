@@ -17,11 +17,11 @@ OcaBitstringActuator = make_control_class(
         ['GetNrBits', 5, 1, [], [OcaUint16]],
         ['GetBit', 5, 2, [OcaUint16], [OcaBoolean]],
         ['SetBit', 5, 3, [OcaUint16, OcaBoolean], []],
-        ['GetBitstring', 5, 4, [], [OcaBitstring]],
-        ['SetBitstring', 5, 5, [OcaBitstring], []],
+        ['GetBitstring', 5, 4, [], [OcaBitstring], ["GetSetting"]],
+        ['SetBitstring', 5, 5, [OcaBitstring], [], ["SetSetting"]],
     ],
     [
-      ['Bitstring', [OcaBitstring], 5, 1, False, False, None],
+      ['Bitstring', [OcaBitstring], 5, 1, False, False, ['Setting']],
     ],
     []
 )
@@ -54,10 +54,25 @@ OcaBitstringActuator = make_control_class(
 # @method OcaBitstringActuator#GetBitstring
 # @returns {Promise<list[bool]>}
 #   A promise which resolves to a single value of type ``list[bool]``.
+# Gets the entire bitstring.The return value indicates whether the property was
+# successfully gathered.
+# An alias for GetBitstring.
+#
+# @method OcaBitstringActuator#GetSetting
+# @returns {Promise<list[bool]>}
+#   A promise which resolves to a single value of type ``list[bool]``.
 # Sets the entire bitstring. The return value indicates whether the property was
 # successfully set.
 #
 # @method OcaBitstringActuator#SetBitstring
+# @param {list[bool]} BitString
+#
+# @returns {Promise<None>}
+# Sets the entire bitstring. The return value indicates whether the property was
+# successfully set.
+# An alias for SetBitstring.
+#
+# @method OcaBitstringActuator#SetSetting
 # @param {list[bool]} BitString
 #
 # @returns {Promise<None>}
@@ -66,3 +81,6 @@ OcaBitstringActuator = make_control_class(
 # The bitstring data.
 #
 # @member {PropertyEvent<list[bool]>} OcaBitstringActuator#OnBitstringChanged
+# An alias for OnBitstringChanged
+#
+# @member {PropertyEvent<list[bool]>} OcaBitstringActuator#OnSettingChanged
