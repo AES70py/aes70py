@@ -11,7 +11,6 @@ from .ocabasicsensor import OcaBasicSensor
 from .ocabitstringactuator import OcaBitstringActuator
 from .ocabitstringsensor import OcaBitstringSensor
 from .ocablock import OcaBlock
-from .ocablockfactory import OcaBlockFactory
 from .ocabooleanactuator import OcaBooleanActuator
 from .ocabooleansensor import OcaBooleanSensor
 from .ocacodingmanager import OcaCodingManager
@@ -25,7 +24,6 @@ from .ocadiagnosticmanager import OcaDiagnosticManager
 from .ocadynamics import OcaDynamics
 from .ocadynamicscurve import OcaDynamicsCurve
 from .ocadynamicsdetector import OcaDynamicsDetector
-from .ocaeventhandler import OcaEventHandler
 from .ocafilterarbitrarycurve import OcaFilterArbitraryCurve
 from .ocafilterclassical import OcaFilterClassical
 from .ocafilterfir import OcaFilterFIR
@@ -53,7 +51,6 @@ from .ocaint64sensor import OcaInt64Sensor
 from .ocaint8actuator import OcaInt8Actuator
 from .ocaint8sensor import OcaInt8Sensor
 from .ocalevelsensor import OcaLevelSensor
-from .ocalibrary import OcaLibrary
 from .ocalibrarymanager import OcaLibraryManager
 from .ocamanager import OcaManager
 from .ocamatrix import OcaMatrix
@@ -168,14 +165,11 @@ __all__ = [
     "OcaBasicSensor",
     "OcaUint64Sensor",
     "OcaBlock",
-    "OcaBlockFactory",
     "OcaMatrix",
     "OcaGrouper",
     "OcaRamper",
     "OcaNumericObserver",
-    "OcaLibrary",
     "OcaPowerSupply",
-    "OcaEventHandler",
     "OcaNumericObserverList",
     "OcaMediaClock3",
     "OcaTimeSource",
