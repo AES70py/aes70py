@@ -10,6 +10,7 @@ Current features
 2. Near complete coverage of Open Specification of AES70 2018
 3. Asynchronous communication
 4. TCP protocol connection support
+5. Basic subscription support
 
 Installation
 ============
