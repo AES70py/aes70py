@@ -1,4 +1,5 @@
 import asyncio
+from time import sleep
 
 from aes70.controller.remote_error import RemoteError
 from aes70.connection import Connection
@@ -51,10 +52,10 @@ class PendingCommand:
                 reject(err)
 
 def event_to_key(event):
-    ono = event.emitter_o_no
-    id = event.event_id
+    ono = event.EmitterONo
+    id = event.EventID
 
-    return f"{ono},{id.def_level},{id.event_index}"
+    return f"{ono},{id.DefLevel},{id.EventIndex}"
 
 
 class ClientConnection(Connection):
@@ -65,14 +66,24 @@ class ClientConnection(Connection):
         self._subscribers = {}
 
     def cleanup(self):
-        super().cleanup()
+        subscribers = self._subscribers
         self._subscribers = None
 
         pending_commands = self._pending_commands
-        self._pending_commands = None
         e = Exception('closed')
-        for pending_command in pending_commands.values():
-            pending_command.reject(e)
+        if pending_commands != None:
+          for pending_command in pending_commands.values():
+              pending_command.reject(e)
+        if(subscribers != None):
+            for subscriber in subscribers:
+                subscribers[subscriber](False, e)
+
+        # we need to provide a moment for in-flight messages to complete
+        sleep(0.2)
+
+        super().cleanup()
+
+        self._pending_commands = None
 
     def _add_subscriber(self, event, callback):
         key = event_to_key(event)
@@ -86,6 +97,9 @@ class ClientConnection(Connection):
     def _remove_subscriber(self, event):
         key = event_to_key(event)
         subscribers = self._subscribers
+
+        if not subscribers:
+            return
 
         if key not in subscribers:
             raise Exception('Unknown subscriber.')
@@ -115,6 +129,7 @@ class ClientConnection(Connection):
             self._pending_commands[handle] = pending_command
 
             pending_command.last_sent = self._estimate_next_tx_time()
+
             self.send(command)
 
         if callback:
@@ -152,7 +167,7 @@ class ClientConnection(Connection):
                 cb = self._subscribers.get(key)
 
                 if cb:
-                    cb(o)
+                    cb(True, o)
             elif isinstance(o, KeepAlive):
                 if not (o.time > 0):
                     raise Exception('Bad keepalive timeout.')

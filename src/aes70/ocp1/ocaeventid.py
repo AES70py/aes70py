@@ -7,7 +7,7 @@ from .struct import Struct
 
 from ..types.ocaeventid import OcaEventID as type
 
-OcaEventID = Struct(
+OcaEventID =Struct(
   {
     "DefLevel": OcaUint16,
     "EventIndex": OcaUint16,

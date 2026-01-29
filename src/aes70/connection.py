@@ -27,14 +27,18 @@ class Connection(Events):
 
         self._message_generator = MessageGenerator(self.batchSize, self.write)
 
+        self.on('close', self.onClose)
+        self.on('error', self.onError)
 
+    def onError(self, conn, exception):
+        if self.is_closed():
+            return
+        self.emit('close')
 
-        self.on('close', self.x)
-        self.on('error', self.x)
-
-    def x(self, s, r = None):
-        self.remove_event_listener('close', self.x)
-        self.remove_event_listener('error', self.x)
+    def onClose(self, conn):
+        # print('Closing connection')
+        if self.is_closed() :
+            return
         self.cleanup()
 
     # @property
@@ -115,9 +119,10 @@ class Connection(Events):
 
     def cleanup(self):
         if self.is_closed():
-            raise Exception("cleanup() called twice.")
+          return
         self.set_keepalive_interval(0)
-        self._message_generator.dispose()
+        if self._message_generator is not None:
+            self._message_generator.dispose()
         self._message_generator = None
         self.remove_all_event_listeners()
 
@@ -141,7 +146,8 @@ class Connection(Events):
             self.flush()
 
     def flush(self):
-        self._message_generator.flush()
+        if self._message_generator is not None:
+            self._message_generator.flush()
 
     def set_keepalive_interval(self, seconds):
         #print("set_keepalive_interval ", seconds)

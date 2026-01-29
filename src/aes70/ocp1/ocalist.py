@@ -61,6 +61,7 @@ def OcaListDynamicLength(_type):
             raise Exception('Array too long for OcaList OCP.1 encoding')
         result = 2
         for i in range(length):
+            print("calling encodedLengthFunc")
             result += encodedLengthFunc(value[i])
         return result
 

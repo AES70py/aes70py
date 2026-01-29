@@ -10,6 +10,13 @@ class Type():
     def __str__(self):
         return repr(self)
 
+    # def __getitem__(self, key):
+    #     print("getitem ", key)
+    #     return self.__dict__[key]
+    # def __setitem__(self, key, value):
+    #     self.__dict__[key] = value
+    # # def __call__(self, *args, **kwargs):
+    #     print('whee')
 
 # if we call this with a constant length type, we don't have to worry about returning tuples
 # or the decoded length. otherwise, we have to return a tuple from decode_from and calculate the decoded length
@@ -20,6 +27,10 @@ def create_type(type):
     encoded_length = type.encoded_length()
     decode_from = type.decode_from
     encode_to = type.encode_to
+    if hasattr(type, 'can_encode'):
+        can_encode = type.can_encode
+    else:
+        can_encode = True
 
     def type_decode_from(data: bytearray, pos: int):
 #        print("fixed length decode from")

@@ -20,8 +20,6 @@ def encode_message_to(dst: bytearray, pos: int, pdus, offset=0, end=None):
         end = len(pdus)
     
     count = end - offset
-    #print("sending " + str(count) + " pdus")
-    #print("pos is ", pos)
     if not (count <= 0xFFFF):
         raise ValueError('Too many PDUs.')
     

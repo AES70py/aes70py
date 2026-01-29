@@ -3,61 +3,63 @@ from .property_event import PropertyEvent
 from .property_sync import PropertySync
 from .properties import Properties
 from ..ocp1.commandrrq import CommandRrq
-from ..ocp1.ocaeventid import OcaEventID
+from aes70.types.ocaeventid import OcaEventID
 from aes70.types.ocapropertyid import OcaPropertyID
 from ..ocp1.encoded_arguments import EncodedArguments
 from ..ocp1.make_encoder import makeEncoder
 from .property import Property
 
-def createPropertySync(control_class):
-    o = object.__new__(PropertySync)  # Equivalent to Object.create(PropertySync.prototype)
-    blue_print = object.__new__(control_class)  # Equivalent to Object.create(control_class.prototype)
-
-    index = 0
-
-    # Iterate over each property returned by control_class.get_properties()
-    for prop in control_class.get_properties():
-        has_setter = bool(prop.setter(blue_print, True))
-        has_getter = bool(prop.getter(blue_print, True))
-
-        def make_getter(i):
-            def getter(self):
-                return self.values[i]
-            return getter
-
-        def make_setter(setter):
-            def setter_func(self, val):
-                setter(self.o, val)
-                return val
-            return setter_func
-
-        if not has_getter:
-            continue
-
-        # Create property descriptor using Python's property
-        if has_setter:
-            prop_descriptor = property(make_getter(index), make_setter(prop.setter(blue_print, True)))
-        else:
-            prop_descriptor = property(make_getter(index))
-        setattr(o, prop.name, prop_descriptor)
-        index += 1
-
-    # Define the constructor function
-    def __init__(self, o_arg):
-        self.init(o_arg)
-
-    # Copy all attributes from object o into a dictionary for the class
-    class_dict = dict(o.__dict__)
-    class_dict['__init__'] = __init__
-    PropertySyncConstructor = type('PropertySyncConstructor', (object,), class_dict)
-    return PropertySyncConstructor
+# def createPropertySync(control_class):
+#     o = object.__new__(PropertySync)  # Equivalent to Object.create(PropertySync.prototype)
+#     blue_print = object.__new__(control_class)  # Equivalent to Object.create(control_class.prototype)
+#
+#     index = 0
+#
+#     # Iterate over each property returned by control_class.get_properties()
+#     for prop in control_class.get_properties():
+#         has_setter = bool(prop.setter(blue_print, True))
+#         has_getter = bool(prop.getter(blue_print, True))
+#
+#         def make_getter(i):
+#             def getter(self):
+#                 return self.values[i]
+#             return getter
+#
+#         def make_setter(setter):
+#             def setter_func(self, val):
+#                 setter(self.o, val)
+#                 return val
+#             return setter_func
+#
+#         if not has_getter:
+#             continue
+#
+#         # Create property descriptor using Python's property
+#         if has_setter:
+#             prop_descriptor = property(make_getter(index), make_setter(prop.setter(blue_print, True)))
+#         else:
+#             prop_descriptor = property(make_getter(index))
+#
+#         print("adding " + prop.name)
+#         setattr(o, prop.name, prop_descriptor)
+#         index += 1
+#
+#     # Define the constructor function
+#     def __init__(self, o_arg):
+#         self.init(o_arg)
+#
+#     # Copy all attributes from object o into a dictionary for the class
+#     class_dict = dict(o.__dict__)
+#     class_dict['__init__'] = __init__
+#     PropertySyncConstructor = type('PropertySyncConstructor', (object,), class_dict)
+#     return PropertySyncConstructor
 
 # method = [ name, level, index, argumentTypes, returnTypes, aliases ]
 def implement_method(cls, method):
     if not method or not len(method):
         return
 
-    name, level, index, argumentTypes, returnTypes = method
+    name, level, index, argumentTypes, returnTypes, *x = method
     if len(method) == 6:
         aliases = method[5]
     else:
@@ -66,7 +68,6 @@ def implement_method(cls, method):
     def method_func(self, *args):
         argumentCount = len(argumentTypes)
         callback = None
-
         # If there are too few arguments, this might mean
         #
         # - that some of them use the default encoding (e.g. 0)
@@ -141,7 +142,7 @@ def make_property(o):
     if isinstance(o, list):
         if not isinstance(o[1], object) or type(o[1]) in (int, float, str, bool):
             o[1] = makeEncoder(o[1])
-        #print('making property from ' + str(o[1]))
+#        print('making property ' + str(o[0]) + ' from ' + str(o[1]))
         return Property(*o)
 
     raise Exception('Bad property.')
@@ -184,13 +185,13 @@ def make_control_class(name, level, class_id, class_version, baseclass, methods,
             if _properties is None:
                 _properties = Properties(properties, level, baseclass.get_properties(self))
             return _properties
-
-        @staticmethod
-        def GetPropertySync():
-            nonlocal property_sync
-            if property_sync is None:
-                property_sync = createPropertySync(ControlClass)
-            return property_sync
+        #
+        # @staticmethod
+        # def GetPropertySync():
+        #     nonlocal property_sync
+        #     if property_sync is None:
+        #         property_sync = createPropertySync(ControlClass)
+        #     return property_sync
 
         def __init__(self, device, ono):
             super(ControlClass, self).__init__(device, ono)

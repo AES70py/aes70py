@@ -57,7 +57,6 @@ class Command(PDU):
         return pos
 
     def encoded_length(self) -> int:
-
         return 17 + (self.parameters.byte_length if self.param_count > 0 else 0)
 
     def decode_from(self, data: bytes, pos: int, data_len: int) -> int:

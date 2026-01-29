@@ -6,6 +6,7 @@ from ...ocp1.ocauint32 import OcaUint32
 from ...ocp1.string16 import String16
 from ..make_control_class import make_control_class
 from ..object_base import ObjectBase
+from  ...ocp1.ocapropertychangedeventdata import OcaPropertyChangedEventData
 
 # The abstract root class of which all OCA classes derive. It offers basic OCA
 # functionality such as locking an object and generalized data access.
@@ -33,7 +34,9 @@ OcaRoot = make_control_class(
       ['Role', [OcaString], 1, 5, True, False, None],
     ],
     [
+        ['PropertyChanged', 1, 1, [OcaPropertyChangedEventData]]
     ]
+
 )
 
 # Gets the class identification, a structure that contains the ClassID and

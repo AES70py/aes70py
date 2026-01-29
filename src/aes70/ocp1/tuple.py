@@ -19,27 +19,27 @@ def Tuple(*Types):
         length = 0
 
         for i in range(Length):
-            length += Types[i].encodedLength(value[i])
+            length += Types[i].encoded_length(value[i])
 
         return length
 
     def encodeTo(dataView, pos, value):
         for i in range(Length):
-            pos = Types[i].encodeTo(dataView, pos, value[i])
+            pos = Types[i].encode_to(dataView, pos, value[i])
         return pos
 
     def decodeFrom(dataView, pos):
         result = [None] * Length
 
         for i in range(Length):
-            pos, tmp = Types[i].decodeFrom(dataView, pos)
+            pos, tmp = Types[i].decode_from(dataView, pos)
             result[i] = tmp
 
         return pos, result
 
     def decodeLength(dataView, pos):
         for i in range(Length):
-            pos = Types[i].decodeLength(dataView, pos)
+            pos = Types[i].decode_length(dataView, pos)
 
         return pos
 

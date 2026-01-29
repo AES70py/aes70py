@@ -25,3 +25,6 @@ class OcaEvent(IOcaEvent):
         self.EmitterONo: int = EmitterONo
         # Event ID of the subscribed event.
         self.EventID: OcaEventID = EventID
+
+    def __getitem__(self, item):
+        return getattr(self, item)

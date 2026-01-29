@@ -2,7 +2,7 @@ from typing import Optional
 from struct import pack, unpack
 
 from aes70.ocp1.pdu import PDU
-from aes70.types.ocaevent import OcaEvent
+from aes70.ocp1.ocaevent import OcaEvent
 from aes70.ocp1.encoded_arguments import EncodedArguments
 
 class Notification(PDU):
@@ -15,7 +15,7 @@ class Notification(PDU):
     parameters: Optional[bytes]
     message_type: int = 2
 
-    def __init__(self, target: int, method_level: int, method_index: int, context, event: OcaEvent, param_count:int, parameters) -> None:
+    def __init__(self, target: int = 0, method_level: int = 0, method_index: int = 0, context = None, event: OcaEvent = None, param_count:int = 0, parameters = None) -> None:
         self.target = target
         self.method_level = method_level or 0
         self.method_index = method_index or 0

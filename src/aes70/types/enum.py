@@ -46,7 +46,7 @@ def Enum(values):
             # If value is a string, retrieve the corresponding enum using the class attribute.
             if isinstance(value, str):
                 if value not in values:
-                    raise Exception('No such enum value.')
+                    raise Exception('new: No such enum value.')
                 return getattr(cls, value)
             # If a blueprint already exists for this value, return it.
             if blueprints is not None and value in blueprints:
@@ -76,14 +76,14 @@ def Enum(values):
         def getName(value):
             name = getName(value)
             if name is None:
-                raise Exception('No such enum value.')
+                raise Exception('getName: No such enum value.')
             return name
 
         @staticmethod
         def getValue(name):
             value = getValue(name)
             if value is None:
-                raise Exception('No such enum value.')
+                raise Exception('getValue: No such enum value.')
             return value
 
         @staticmethod

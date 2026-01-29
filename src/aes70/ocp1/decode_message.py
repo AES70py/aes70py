@@ -60,7 +60,9 @@ def decode_message(data: bytearray, pos: int, ret: List) -> int:
         raise ValueError('Bad KeepAlive message count.')
 
     for i in range(message_count):
-        ret[i] = pdu_type()
+        pdu = pdu_type()
+        ret[i] = pdu
+
         pos = ret[i].decode_from(data, pos, message_offset)
 
     if pos != (startpos + 10 + message_offset):

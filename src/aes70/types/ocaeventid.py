@@ -25,3 +25,6 @@ class OcaEventID(IOcaEventID):
         self.DefLevel: int = DefLevel
         # Index of the event (in the class description).
         self.EventIndex: int = EventIndex
+
+    def __getitem__(self, item):
+        return getattr(self, item)

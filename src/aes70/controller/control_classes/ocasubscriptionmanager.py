@@ -37,6 +37,8 @@ OcaSubscriptionManager = make_control_class(
         ['AddPropertyChangeSubscription', 3, 5, [OcaUint32, OcaPropertyID, OcaMethod, OcaBlob, OcaNotificationDeliveryMode, OcaBlob], []],
         ['RemovePropertyChangeSubscription', 3, 6, [OcaUint32, OcaPropertyID, OcaMethod], []],
         ['GetMaximumSubscriberContextLength', 3, 7, [], [OcaUint16]],
+        ['AddSubscription2', 3, 8, [OcaEvent, OcaNotificationDeliveryMode, OcaBlob], []],
+        ['RemoveSubscription2', 3, 9, [OcaEvent, OcaNotificationDeliveryMode, OcaBlob], []],
     ],
     [
       ['State', [OcaSubscriptionManagerState], 3, 1, False, False, None],

@@ -20,7 +20,8 @@ def _encode_to(dataView: bytearray, pos, value):
     pos += 2
 
     # set the bytes into the underlying buffer at position (dataView.byteOffset + pos)
-    dataView.append(value)
+    if(length > 0):
+        dataView.append(value)
     return pos + length
 
 def _decode_from(dataView: bytearray, pos):

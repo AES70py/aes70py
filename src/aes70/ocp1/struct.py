@@ -21,13 +21,18 @@ def Struct(types: Dict[str, Any], data_type: Any = None) -> Any:
         return pos, s
 
     def struct_decode_length(data: bytearray, pos: int) -> int:
-        return sum(types[name]['decode_length'](data, pos) for name in types)
+        return sum(types[name].decode_length(data, pos) for name in types)
 
     def struct_encode_to(data: bytearray, pos: int, value) -> int:
-        return sum(types[name]['encode_to'](data, pos, value[name]) for name in types)
+        for name in types:
+            ncoder = types[name]
+            val = value[name]
+            pos = ncoder.encode_to(data, pos, val)
+#        newpos =  sum(types[name].encode_to(data, pos, value[name]) for name in types)
+        return pos
 
     def struct_encoded_length(value) -> int:
-        return sum(types[name]['encode_length'](value[name]) for name in types)
+        return sum(types[name].encoded_length(value[name]) for name in types)
 
     count_types = len(types)
 
@@ -45,11 +50,11 @@ def Struct(types: Dict[str, Any], data_type: Any = None) -> Any:
     else:
         DataType = data_type
 
-    return create_type(Type(
+    return Type(
         type=DataType,
         is_constant_length=False,
         encoded_length=struct_encoded_length,
         encode_to=struct_encode_to,
         decode_from=struct_decode_from,
         decode_length=struct_decode_length)
-        )
+
