@@ -1,17 +1,25 @@
 
 package:
-	python3 -m pip install --upgrade build
-	python3 -m build
+	python3 -mvenv testvenv
+	. testvenv/bin/activate && \
+        python3 -m pip install --upgrade hatchling && \
+        hatchling build && \
+        rm -rf testenv
 	ls -l dist
 
 clean:
-	rm dist/*
+	-rm dist/*
 
 verify: clean test package
 
 # Run all tests with pytest
 test:
-	python3 -m pytest tests/ -v
+	python3 -mvenv testvenv
+	. testvenv/bin/activate && \
+        pip install pytest && \
+        pip install . && \
+	python3 -mpytest tests/ -v && \
+        rm -rf testenv
 	# Alternative: python3 -m pytest tests/ --cov=src/aes70
 
 upload_test: package

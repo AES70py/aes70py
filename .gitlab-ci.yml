@@ -1,0 +1,22 @@
+image: python:3.12.12-slim-trixie
+  
+# Change cache directories to be inside the project directory since GitLab can only cache local items.
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+cache:
+  paths:
+    - .cache/pip
+stages:
+ - test
+before_script:
+ - apt-get update
+ - apt-get -y install make
+job:
+  stage: test
+  tags:
+    - docker
+  script:
+    - "PATH=$PATH:/root/.local/bin make verify"
+  artifacts:
+    paths:
+      - dist/*
