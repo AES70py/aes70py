@@ -7,12 +7,19 @@ package:
 clean:
 	rm dist/*
 
+verify: clean test package
+
+# Run all tests with pytest
+test:
+	python3 -m pytest tests/ -v
+	# Alternative: python3 -m pytest tests/ --cov=src/aes70
+
 upload_test: package
 	python -m pip install --upgrade twine
 	python -m twine upload --repository testpypi dist/*
 
 upload:	package
-	python -m pip install --upgrade twine
+	python3 -m pip install --upgrade twine
 	python -m twine upload dist/*
 
 test_install:

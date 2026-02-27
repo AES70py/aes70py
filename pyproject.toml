@@ -1,6 +1,6 @@
 [project]
 name = "aes70py"
-version = "1.0.2"
+version = "1.0.2.1"
 authors = [
   { name="William Welliver", email="william@welliver.org" },
   { name="Arne Goedeke", email="arne@deuso.de" }
@@ -15,6 +15,9 @@ classifiers = [
 license = "MIT"
 license-files = ["LICEN[CS]E*"]
 dependencies = [ "promise", "zeroconf" ]
+
+[project.optional-dependencies]
+dev = [ "pytest>=7.0", "pytest-cov" ]
 
 [project.urls]
 Homepage = "https://github.com/aes70py"
