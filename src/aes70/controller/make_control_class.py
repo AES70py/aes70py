@@ -57,10 +57,10 @@ def implement_method(cls, method):
     if not method or not len(method):
         return
 
-    name, level, index, argumentTypes, returnTypes = method
     if len(method) == 6:
-        aliases = method[5]
+        name, level, index, argumentTypes, returnTypes, aliases = method
     else:
+        name, level, index, argumentTypes, returnTypes = method
         aliases = None
 
     def method_func(self, *args):
