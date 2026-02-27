@@ -18,15 +18,24 @@ class Event(BaseEvent):
             if not self.handlers or len(self.handlers) == 0:
                 return
 
-            args = [None] * len(argumentTypes)
-            # Events without arguments have parameters = null
-            data = memoryview(notification.parameters if notification.parameters is not None else emptyBuffer)
 
+            args = [None] * (len(argumentTypes) + 1)
+
+
+
+
+            data = memoryview(notification.parameters if notification.parameters is not None else emptyBuffer)
+            args[0] = notification.event
             pos = 0
             for i in range(len(argumentTypes)):
-                # Each decodeFrom returns a tuple of (new pos, tmp)
-                pos, tmp = argumentTypes[i].decodeFrom(data, pos)
-                args[i] = tmp
+
+                pos, tmp = argumentTypes[i].decode_from(data, pos)
+                args[i + 1] = tmp
+
+
+
+
+
 
             obj = self.object
             for cb in self.handlers:

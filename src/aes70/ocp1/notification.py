@@ -46,11 +46,11 @@ class Notification(PDU):
         else:
             dst[pos:pos+2] = pack('!H', 0)
             pos += 2
-        dst[pos:pos+4] = pack('!I', self.event.emitter_o_no)
+        dst[pos:pos+4] = pack('!I', self.event.EmitterONo)
         pos += 4
-        dst[pos:pos+2] = pack('!H', self.event.event_id.def_level)
+        dst[pos:pos+2] = pack('!H', self.event.EventID.def_level)
         pos += 2
-        dst[pos:pos+2] = pack('!H', self.event.event_id.event_index)
+        dst[pos:pos+2] = pack('!H', self.event.EventID.event_index)
         pos += 2
         if self.param_count > 1:
             if isinstance(self.parameters, EncodedArguments):

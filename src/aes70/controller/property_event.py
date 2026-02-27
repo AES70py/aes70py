@@ -14,10 +14,30 @@ logger = logging.getLogger(__name__)
 class PropertyEvent(BaseEvent):
     def __init__(self, object, id, propertyType):
         super().__init__(object, id, propertyType)
-        def callback(args):
-            id_arg, dataView, changeType = args
-            if (id_arg.DefLevel != self.id.DefLevel or
-                id_arg.PropertyIndex != self.id.PropertyIndex):
+
+        
+        def callback(eventId, propertyId, data, changeType):
+            # TODO must be a better way to express this arg
+            # propertyId = arg[0]
+            # data = arg[1]
+            # changeType = arg[2]
+
+            if (propertyId.DefLevel != self.id.DefLevel or
+                propertyId.PropertyIndex != self.id.PropertyIndex):
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 return
 
             value = propertyType[0].decodeFrom(dataView, 0)[1]

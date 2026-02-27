@@ -107,7 +107,46 @@ classes.
         # The Diagnostic manager object. An instance of :class:`OcaDiagnosticManager`
         # """
         # self.DiagnosticManager = OcaDiagnosticManager(OcaManagerDefaultObjectNumbers.DiagnosticManager, self)
-        #
+        # Event subscription helper class
+class EventSubscription:
+    """Manages callbacks for an event subscription."""
+    
+    def __init__(self, event, callback):
+        self.event = event
+        self._callback = callback
+        self._callbacks = set()
+        self.version = 0
+    
+    def add_callback(self, callback):
+        """Add a callback to this subscription."""
+        self._callbacks.add(callback)
+    
+    def delete_callback(self, callback):
+        """Remove a callback from this subscription."""
+        self._callbacks.discard(callback)
+    
+    def has_subscribers(self):
+        """Check if there are any active subscribers."""
+        return len(self._callbacks) > 0
+    
+    def emit(self, ok, notification):
+        """Emit an event to all subscribers."""
+        for cb in self._callbacks:
+            try:
+                cb(ok, notification)
+            except Exception as e:
+                logger.error(f"Error in subscription callback: {e}")
+    
+    def emit_error(self, err):
+        """Emit an error to all subscribers."""
+        for cb in list(self._callbacks):
+            try:
+                cb(False, err)
+            except Exception as e:
+                logger.error(f"Error in subscription error handler: {e}")
+        self._callbacks.clear()
+
+#
 
 class RemoteDevice(Events):
     # # The device manager object.
@@ -194,70 +233,123 @@ class RemoteDevice(Events):
         stack = traceback.format_stack() if self._stackDebug else None
         return self.connection.send_command(cmd, returnType, callback, stack)
 
-    # def _doSubscribe(self, event):
-    #     return self.SubscriptionManager.AddSubscription(
-    #         event,
-    #         subscriberMethod,
-    #         bytes(),
-    #         OcaNotificationDeliveryMode.Reliable,
-    #         bytes()
-    #     )
-    #
-    # async def add_subscription(self, event, callback):
-    #     if self.connection.is_closed():
-    #         raise Exception('Connection was closed.')
-    #
-    #     key = eventToKey(event)
-    #     subscriptions = self.subscriptions
-    #
-    #     info = subscriptions.get(key)
-    #     if info:
-    #         info["callbacks"].add(callback)
-    #         return True
-    #
-    #     # do the actual subscription
-    #     def cb(o):
-    #         S = self.subscriptions.get(key)
-    #         if not S:
-    #             logger.warn('Subscription lost.')
-    #             return
-    #         a = S["callbacks"]
-    #         for cb_func in a:
-    #             try:
-    #                 cb_func(o)
-    #             except Exception as e:
-    #                 logger.error(e)
-    #
-    #     self.connection._addSubscriber(event, cb)
-    #
-    #     info = {
-    #         "callbacks": set([callback]),
-    #         "callback": cb,
-    #     }
-    #     subscriptions[key] = info
-    #
-    #     try:
-    #         await self._doSubscribe(event)
-    #     except Exception as err:
-    #         del subscriptions[key]
-    #         raise err
-    #
-    # async def remove_subscription(self, event, callback):
-    #     key = eventToKey(event)
-    #
-    #     info = self.subscriptions.get(key)
-    #     if not info:
-    #         raise Exception('Callback not registered.')
-    #
-    #     a = info["callbacks"]
-    #     a.discard(callback)
-    #
-    #     if not a:
-    #         self.connection._removeSubscriber(event)
-    #         del self.subscriptions[key]
-    #         return await self.SubscriptionManager.RemoveSubscription(event, subscriberMethod)
-    #
-    #     return True
+
+
+    async def _doSubscribe(self, event):
+        if self._checkEV2Promise:
+            await self._checkEV2Promise
+        if self._supportsEV2 is None or self._supportsEV2:
+            p = self.SubscriptionManager.AddSubscription2(
+                event,
+                OcaNotificationDeliveryMode.Reliable,
+                bytes()
+            )
+
+            try:
+                if self._supportsEV2 is None:
+                    self._checkEV2Promise = p
+                await p
+                if self._supportsEV2 is None:
+                    self._supportsEV2 = True
+                return 2
+            except Exception as err:
+                from .remote_error import RemoteError
+                if not isinstance(err, RemoteError):
+                    raise err
+                self._supportsEV2 = False
+            finally:
+                if self._supportsEV2 is None:
+                    self._checkEV2Promise = None
+        
+        await self.SubscriptionManager.AddSubscription(
+            event,
+            subscriberMethod,
+            bytes(),
+            OcaNotificationDeliveryMode.Reliable,
+            bytes()
+        )
+        return 1
+
+    def add_subscription(self, event, callback):
+        if self.connection.is_closed():
+            raise Exception('Connection was closed.')
+        print("adding subscription")
+        key = eventToKey(event)
+        subscriptions = self.subscriptions
+
+        info = subscriptions.get(key)
+        if info:
+            info.add_callback(callback)
+            return
+
+        def drop_subscribers():
+            self.subscriptions.pop(key, None)
+            self.connection._remove_subscriber(event)
+
+        def cb(ok, notification):
+            S = self.subscriptions.get(key)
+            if not S:
+                logger.warning('Subscription lost.')
+                return
+            S.emit(ok, notification)
+
+            if not ok or (hasattr(notification, 'exception') and notification.exception):
+                drop_subscribers()
+            elif S.version > 0 and not S.has_subscribers():
+                drop_subscribers()
+                self._doUnsubscribe(S, event)
+
+        self.connection._add_subscriber(event, cb)
+
+        info = EventSubscription(event, cb)
+        info.add_callback(callback)
+        subscriptions[key] = info
+
+        async def do_subscribe():
+            try:
+                version = await self._doSubscribe(event)
+                info.version = version
+            except Exception as err:
+                info.emit_error(err)
+                drop_subscribers()
+
+        asyncio.create_task(do_subscribe())
+
+    def remove_subscription(self, event, callback):
+        key = eventToKey(event)
+
+        info = self.subscriptions.get(key)
+        if not info:
+            raise Exception('Callback not registered.')
+
+        info.delete_callback(callback)
+
+    def _doUnsubscribe(self, info, event):
+        async def do_unsubscribe():
+            try:
+                if info.version == 2:
+                    await self.SubscriptionManager.RemoveSubscription2(
+                        event,
+                        OcaNotificationDeliveryMode.Reliable,
+                        bytes()
+                    )
+                elif info.version == 1:
+                    await self.SubscriptionManager.RemoveSubscription(event, subscriberMethod)
+            except Exception as error:
+                #logger.error(f'Unsubscribe failed: {error}')
+                traceback = error.__traceback__
+                while traceback:
+                    print("{}: {}".format(traceback.tb_frame.f_code.co_filename, traceback.tb_lineno))
+                    traceback = traceback.tb_next
+                print("fail")
+                raise error
+            finally:
+                print("end")
+        
+        if info.version > 0:
+            asyncio.run(do_unsubscribe())
+
+
 
     def find_best_class(self, id):
         #print("class ID:", id)

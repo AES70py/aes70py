@@ -9,6 +9,21 @@ class BaseEvent:
         self.result = None
         self.argument_types = argument_types
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     def get_oca_event(self) -> OcaEvent:
         return OcaEvent(self.object.ObjectNumber, self.id)
 
