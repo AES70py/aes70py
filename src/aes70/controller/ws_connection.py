@@ -49,7 +49,13 @@ class WebSocketConnection(ClientConnection):
         return time.perf_counter()
 
 
-def connect(host, port, **options):
-    ws = websocket.create_connection(f"ws://{host}:{port}")
-    ws.settimeout(1)
-    return WebSocketConnection(ws, options)
+def connect(**kwargs):
+    def onerror(ev):
+        raise ev
+
+    try:
+        ws = websocket.create_connection(f"ws://{kwargs['host']}:{kwargs['port']}")
+        ws.settimeout(1)
+        return WebSocketConnection(ws, kwargs["options"])
+    except Exception as e:
+        onerror(e)
