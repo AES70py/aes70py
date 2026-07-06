@@ -1,6 +1,7 @@
 import time
 import threading
 import websocket
+from websocket import ABNF
 from aes70.controller.client_connection import ClientConnection
 
 
@@ -10,13 +11,13 @@ class WebSocketConnection(ClientConnection):
     def handle_recv(self) -> None:
         while True:
             try:
-                data = self._ws.recv()
+                opcode, data = self._ws.recv_data()
             except websocket.WebSocketTimeoutException:
                 self._check_keepalive()
                 continue
             except (websocket.WebSocketConnectionClosedException, OSError):
                 break
-            if not data:
+            if opcode == ABNF.OPCODE_CLOSE:
                 break
             if isinstance(data, str):
                 data = data.encode()
