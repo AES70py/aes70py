@@ -14,7 +14,11 @@ classifiers = [
 ]
 license = "MIT"
 license-files = ["LICEN[CS]E*"]
-dependencies = [ "promise", "zeroconf" ]
+dependencies = [
+ "promise",
+ "websocket-client>=1.9.0",
+ "zeroconf",
+]
 
 [project.urls]
 Homepage = "https://github.com/aes70py"
