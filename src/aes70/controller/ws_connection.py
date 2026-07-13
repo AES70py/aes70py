@@ -51,11 +51,22 @@ class WebSocketConnection(ClientConnection):
 
 
 def connect(**kwargs):
+    """
+    To use a secure WebSocket connection, pass `secure=True`
+    """
+
     def onerror(ev):
         raise ev
 
     try:
-        ws = websocket.create_connection(f"ws://{kwargs['host']}:{kwargs['port']}")
+        protocol = "ws://"
+        if kwargs.get("secure"):
+            protocol = "wss://"
+        sslopt = kwargs.get("sslopt")
+
+        ws = websocket.create_connection(
+            url=f"{protocol}{kwargs['host']}:{kwargs['port']}", sslopt=sslopt
+        )
         ws.settimeout(1)
         return WebSocketConnection(ws, kwargs["options"])
     except Exception as e:
