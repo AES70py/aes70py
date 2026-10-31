@@ -1,4 +1,3 @@
-import sys
 import time
 import socket
 import threading
@@ -8,22 +7,25 @@ class TCPConnection(ClientConnection):
     sock = None
 
     def handle_client_recv(self) -> None:
-        while True:
-            try:
-                data = self.sock.recv(10)
-            except (TimeoutError):
-                self._check_keepalive()
-                continue
-            except (OSError):
-                #TODO this should be handled more cleanly.
-                #print("Connection closed")
-                break
-            if not data:
-                print('Bye')
-                break
-            else:
-                #print('got data')
+        # whichever way the loop ends (peer EOF or a socket error),
+        # close the connection, so cleanup() rejects every command still in
+        # _pending_commands instead of leaving its future unsettled forever.
+        try:
+            while True:
+                try:
+                    data = self.sock.recv(10)
+                except TimeoutError:
+                    self._check_keepalive()
+                    continue
+                except OSError as err:
+                    if not self.is_closed():
+                        self.error(err)
+                    return
+                if not data:
+                    return
                 self.read(data)
+        finally:
+            self.close()
 
     def __init__(self, sock, options):
         super().__init__(options)
@@ -35,11 +37,15 @@ class TCPConnection(ClientConnection):
 
     def cleanup(self):
         super().cleanup()
+        self._close_socket()
+
+    def _close_socket(self):
         try:
             #print('Close the connection')
             self.sock.close()
-        except:
-            print(repr('error closing connection: ' + sys.exception()))
+        except OSError as err:
+            # was `'...' + sys.exception()`, a str + exception TypeError.
+            print(f'error closing connection: {err!r}')
 
     def write(self, buf: bytearray):
         #print('>> write: ' + str(buf))
@@ -48,7 +54,7 @@ class TCPConnection(ClientConnection):
 
     def close(self):
         super().close()
-        self.sock.close()
+        self._close_socket()
 
     def _now(self):
         return time.perf_counter()

@@ -21,6 +21,10 @@ class Command(PDU):
         self.method_level = method_level or 0
         self.method_index = method_index or 0
         self.param_count = param_count or 0
+        # OCP.1 carries the parameter count in one Uint8 (AES70-3);
+        # refuse what cannot be encoded rather than fail deep inside encode_to.
+        if not 0 <= self.param_count <= 0xff:
+            raise ValueError(f'OCP.1 parameter count must be 0..255, got {self.param_count}.')
         self.parameters = parameters or None
         self.handle = 0
 
@@ -40,8 +44,7 @@ class Command(PDU):
         pos += 2
         dst[pos:pos+2] = pack('!H', self.method_index)
         pos += 2
-        # TODO ensure we're not overflowing this value
-        dst[pos] = self.param_count #pack('B', self.param_count)
+        dst[pos:pos+1] = pack('!B', self.param_count)
         pos += 1
         #TODO This needs attention
         if self.param_count > 0:
