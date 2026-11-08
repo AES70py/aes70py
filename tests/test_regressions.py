@@ -7,8 +7,12 @@ import socket
 import threading
 import time
 
+import pytest
+
 from aes70.controller.tcp_connection import TCPConnection
+from aes70.ocp1.command import Command
 from aes70.ocp1.commandrrq import CommandRrq
+from aes70.ocp1.encoded_arguments import EncodedArguments
 
 
 def wait_closed(conn, timeout=5):
@@ -79,3 +83,17 @@ def test_cleanup_survives_socket_close_error(capsys):
     assert "OSError('boom')" in capsys.readouterr().out
     ours.close()
     peer.close()
+
+
+def test_command_param_count_limits():
+    """OCP.1 parameter count is one Uint8: 255 encodes, 256 is refused clearly."""
+    # EncodedArguments([], []) intentionally encodes zero bytes of actual
+    # parameter data here; param_count=255 only needs to exercise the Uint8
+    # boundary of the byte-level encoding, not a real matching argument list.
+    cmd = Command(1, 1, 1, 255, EncodedArguments([], []))
+    buf = bytearray(cmd.encoded_length())
+    cmd.encode_to(buf, 0)
+    assert buf[16] == 255
+
+    with pytest.raises(ValueError, match='0..255'):
+        Command(1, 1, 1, 256, EncodedArguments([], []))
