@@ -140,7 +140,46 @@ classes.
         # The Diagnostic manager object. An instance of :class:`OcaDiagnosticManager`
         # """
         # self.DiagnosticManager = OcaDiagnosticManager(OcaManagerDefaultObjectNumbers.DiagnosticManager, self)
-        #
+        # Event subscription helper class
+class EventSubscription:
+    """Manages callbacks for an event subscription."""
+    
+    def __init__(self, event, callback):
+        self.event = event
+        self._callback = callback
+        self._callbacks = set()
+        self.version = 0
+    
+    def add_callback(self, callback):
+        """Add a callback to this subscription."""
+        self._callbacks.add(callback)
+    
+    def delete_callback(self, callback):
+        """Remove a callback from this subscription."""
+        self._callbacks.discard(callback)
+    
+    def has_subscribers(self):
+        """Check if there are any active subscribers."""
+        return len(self._callbacks) > 0
+    
+    def emit(self, ok, notification):
+        """Emit an event to all subscribers."""
+        for cb in self._callbacks:
+            try:
+                cb(ok, notification)
+            except Exception as e:
+                logger.error(f"Error in subscription callback: {e}")
+    
+    def emit_error(self, err):
+        """Emit an error to all subscribers."""
+        for cb in list(self._callbacks):
+            try:
+                cb(False, err)
+            except Exception as e:
+                logger.error(f"Error in subscription error handler: {e}")
+        self._callbacks.clear()
+
+#
 
 class RemoteDevice(Events):
     # # The device manager object.
