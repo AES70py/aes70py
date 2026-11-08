@@ -10,7 +10,7 @@ class TCPConnection(ClientConnection):
     def handle_client_recv(self) -> None:
         while True:
             try:
-                data = self.sock.recv(10)
+                data = self.sock.recv(65536)
             except (TimeoutError):
                 self._check_keepalive()
                 continue
