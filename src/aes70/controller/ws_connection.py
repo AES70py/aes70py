@@ -68,6 +68,6 @@ def connect(**kwargs):
             url=f"{protocol}{kwargs['host']}:{kwargs['port']}", sslopt=sslopt
         )
         ws.settimeout(1)
-        return WebSocketConnection(ws, kwargs["options"])
+        return WebSocketConnection(ws, kwargs)
     except Exception as e:
         onerror(e)
