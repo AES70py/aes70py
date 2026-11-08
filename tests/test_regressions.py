@@ -3,18 +3,50 @@ Regression tests — one per defect fixed in this change set
 (LOOSE-controller-tcp-connection-18). Not part of the upstream 1.0.3 sdist;
 see SRC/upstream.json "fork" for the list of changes.
 """
+import queue
 import socket
 import threading
 import time
 
 import pytest
+import websocket
+from websocket import ABNF
 
 from aes70.controller.tcp_connection import TCPConnection
+from aes70.controller.ws_connection import WebSocketConnection
 from aes70.ocp1.command import Command
 from aes70.ocp1.commandrrq import CommandRrq
 from aes70.ocp1.encoded_arguments import EncodedArguments
 from aes70.ocp1 import string16
 from aes70.ocp1.string16 import String16
+
+
+class FakeWebSocket:
+    """Minimal stand-in for websocket.WebSocket, just enough to drive
+    WebSocketConnection's receive thread without a real socket."""
+
+    def __init__(self):
+        self.closed = False
+        self.sent = []
+        self._queue = queue.Queue()
+
+    def push(self, item):
+        self._queue.put(item)
+
+    def recv_data(self):
+        try:
+            item = self._queue.get(timeout=0.05)
+        except queue.Empty:
+            raise websocket.WebSocketTimeoutException()
+        if isinstance(item, BaseException):
+            raise item
+        return item
+
+    def send_binary(self, data):
+        self.sent.append(bytes(data))
+
+    def close(self):
+        self.closed = True
 
 
 def wait_closed(conn, timeout=5):
@@ -85,6 +117,55 @@ def test_cleanup_survives_socket_close_error(capsys):
     assert "OSError('boom')" in capsys.readouterr().out
     ours.close()
     peer.close()
+
+
+def test_ws_close_frame_settles_command_in_flight():
+    """Receive thread ending on a close frame must reject every pending command."""
+    ws = FakeWebSocket()
+    conn = WebSocketConnection(ws, {})
+    settled = threading.Event()
+    outcome = []
+
+    def callback(ok, result):
+        outcome.append((ok, result))
+        settled.set()
+
+    conn.send_command(CommandRrq(1, 1, 1, 0, None), None, callback=callback)
+    conn.flush()
+    assert ws.sent  # the command reached the fake transport
+    ws.push((ABNF.OPCODE_CLOSE, b''))
+
+    assert settled.wait(5), 'command in flight never settled after close frame'
+    ok, err = outcome[0]
+    assert ok is False and str(err) == 'closed'
+    assert wait_closed(conn)
+    assert conn._pending_commands is None
+
+
+def test_ws_error_settles_command_in_flight():
+    """Receive thread ending on a websocket/socket error must also reject pending commands."""
+    ws = FakeWebSocket()
+    conn = WebSocketConnection(ws, {})
+    settled = threading.Event()
+    conn.send_command(CommandRrq(1, 1, 1, 0, None), None,
+                      callback=lambda ok, r: settled.set())
+    conn.flush()
+    ws.push(websocket.WebSocketConnectionClosedException('gone'))
+    assert settled.wait(5)
+    assert wait_closed(conn)
+
+
+def test_ws_cleanup_survives_close_error(capsys):
+    """cleanup() must not raise if closing the underlying websocket fails."""
+    ws = FakeWebSocket()
+    conn = WebSocketConnection(ws, {})
+
+    def boom():
+        raise OSError('boom')
+
+    ws.close = boom
+    conn.cleanup()  # must not raise
+    assert "OSError('boom')" in capsys.readouterr().out
 
 
 def test_command_param_count_limits():

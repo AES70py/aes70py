@@ -9,19 +9,26 @@ class WebSocketConnection(ClientConnection):
     _ws = None
 
     def handle_recv(self) -> None:
-        while True:
-            try:
-                opcode, data = self._ws.recv_data()
-            except websocket.WebSocketTimeoutException:
-                self._check_keepalive()
-                continue
-            except (websocket.WebSocketConnectionClosedException, OSError):
-                break
-            if opcode == ABNF.OPCODE_CLOSE:
-                break
-            if isinstance(data, str):
-                data = data.encode()
-            self.read(data)
+        # ensure that we close the connection, so cleanup()
+        # rejects every command still in _pending_commands rather than
+        # leaving them hanging forever
+        try:
+            while True:
+                try:
+                    opcode, data = self._ws.recv_data()
+                except websocket.WebSocketTimeoutException:
+                    self._check_keepalive()
+                    continue
+                except (websocket.WebSocketConnectionClosedException, OSError) as err:
+                    self.error(err)
+                    return
+                if opcode == ABNF.OPCODE_CLOSE:
+                    return
+                if isinstance(data, str):
+                    data = data.encode()
+                self.read(data)
+        finally:
+            self.close()
 
     def __init__(self, ws, options):
         super().__init__(options)
@@ -34,17 +41,16 @@ class WebSocketConnection(ClientConnection):
 
     def cleanup(self):
         super().cleanup()
+        self._close_ws()
+
+    def _close_ws(self):
         try:
             self._ws.close()
-        except Exception:
-            pass
+        except (OSError, websocket.WebSocketException) as err:
+            print(f'error closing connection: {err!r}')
 
     def close(self):
         super().close()
-        try:
-            self._ws.close()
-        except Exception:
-            pass
 
     def _now(self):
         return time.perf_counter()
