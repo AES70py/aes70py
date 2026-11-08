@@ -1,4 +1,3 @@
-import sys
 import time
 import socket
 import threading
@@ -8,23 +7,22 @@ class TCPConnection(ClientConnection):
     sock = None
 
     def handle_client_recv(self) -> None:
-        while True:
-            try:
-                data = self.sock.recv(65536)
-            except (TimeoutError):
-                self._check_keepalive()
-                continue
-            except (OSError):
-                #TODO this should be handled more cleanly.
-                #print("Connection closed")
-                break
-            if not data:
-                print('Bye')
-                break
-            else:
-                #print('got data')
+        try:
+            while True:
+                try:
+                    data = self.sock.recv(65536)
+                except (TimeoutError):
+                    self._check_keepalive()
+                    continue
+                except OSError as err:
+                    self.error(err)
+                    return
+                if not data:
+                    return
                 self.read(data)
-
+        finally:
+            self.close()
+            
     def __init__(self, sock, options):
         super().__init__(options)
         self.sock = sock
@@ -35,11 +33,15 @@ class TCPConnection(ClientConnection):
 
     def cleanup(self):
         super().cleanup()
+        self._close_socket()
+
+    def _close_socket(self):
         try:
             #print('Close the connection')
             self.sock.close()
-        except:
-            print(repr('error closing connection: ' + sys.exception()))
+        except OSError as err:
+            # was `'...' + sys.exception()`, a str + exception TypeError.
+            print(f'error closing connection: {err!r}')
 
     def write(self, buf: bytearray):
         #print('>> write: ' + str(buf))
@@ -47,8 +49,10 @@ class TCPConnection(ClientConnection):
         super().write(buf)
 
     def close(self):
+        # super().close() emits 'close', which onClose (registered on this
+        # same event) handles synchronously by calling cleanup(), which
+        # already runs _close_socket() — nothing left to do here afterwards.
         super().close()
-        self.sock.close()
 
     def _now(self):
         return time.perf_counter()
