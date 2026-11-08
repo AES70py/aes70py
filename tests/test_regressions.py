@@ -13,6 +13,8 @@ from aes70.controller.tcp_connection import TCPConnection
 from aes70.ocp1.command import Command
 from aes70.ocp1.commandrrq import CommandRrq
 from aes70.ocp1.encoded_arguments import EncodedArguments
+from aes70.ocp1 import string16
+from aes70.ocp1.string16 import String16
 
 
 def wait_closed(conn, timeout=5):
@@ -97,3 +99,28 @@ def test_command_param_count_limits():
 
     with pytest.raises(ValueError, match='0..255'):
         Command(1, 1, 1, 256, EncodedArguments([], []))
+
+
+@pytest.mark.parametrize('value', ['', 'OcaRoot', 'café', 'a\U0001F600b'])
+def test_string16_round_trip(value):
+    n = string16.encoded_length(value)
+    buf = bytearray(n)
+    assert string16.encode_to(buf, 0, value) == n
+    assert string16.decode_length(buf, 0) == n
+    assert string16.decode_from(buf, 0) == (n, value)
+
+
+def test_string16_astral_is_a_surrogate_pair():
+    """Above U+FFFF: two UTF-16 code units, counted as two (as aes70.js does)."""
+    buf = bytearray(string16.encoded_length('\U0001F600'))
+    string16.encode_to(buf, 0, '\U0001F600')
+    assert bytes(buf) == bytes.fromhex('0002d83dde00')
+
+
+def test_string16_sizes_as_an_argument():
+    """EncodedArguments needs String16.encoded_length (upstream lacked it)."""
+    args = EncodedArguments([String16], ['ab'])
+    assert args.byte_length == 6
+    buf = bytearray(6)
+    assert args.encode_to(buf, 0) == 6
+    assert bytes(buf) == bytes.fromhex('000200610062')
