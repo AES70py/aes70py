@@ -34,8 +34,11 @@ def decode_message(data: bytearray, pos: int, ret: List) -> int:
 
     # todo this seems more complicated logically than necessary.
     #print('marker: ' + str(startpos))
-    # message size doesn't include the sync byte, so header is 9 bytes long
-    message_offset = startpos - 9 + message_size
+    # message size doesn't include the sync byte, so header is 9 bytes long.
+    # message_offset is the number of content bytes following the 10-byte
+    # header; it must not depend on startpos, or parsing a second (or later)
+    # message out of the same buffer will miscompute it.
+    message_offset = message_size - 9
     #print('message size ' + str(message_size))
 
     #print('offset ' + str(message_offset))
