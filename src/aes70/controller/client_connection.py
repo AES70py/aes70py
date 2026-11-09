@@ -6,6 +6,7 @@ from aes70.connection import Connection
 from aes70.ocp1.response import Response
 from aes70.ocp1.keepalive import KeepAlive
 from aes70.ocp1.notification import Notification
+from aes70.ocp1.notification2 import Notification2
 from aes70.controller.arguments import Arguments
 from concurrent.futures import Future
 
@@ -162,7 +163,7 @@ class ClientConnection(Connection):
                         continue
 
                 pending_command.response(o)
-            elif isinstance(o, Notification):
+            elif isinstance(o, (Notification, Notification2)):
                 key = event_to_key(o.event)
                 cb = self._subscribers.get(key)
 

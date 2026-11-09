@@ -3,10 +3,11 @@ from aes70.ocp1.commandrrq import CommandRrq
 from aes70.ocp1.notification import Notification
 from aes70.ocp1.response import Response
 from aes70.ocp1.keepalive import KeepAlive
+from aes70.ocp1.notification2 import Notification2
 
 from typing import List
 
-PDU_TYPES = [Command, CommandRrq, Notification, Response, KeepAlive]
+PDU_TYPES = [Command, CommandRrq, Notification, Response, KeepAlive, Notification2]
 
 
 def decode_message(data: bytearray, pos: int, ret: List) -> int:
@@ -54,10 +55,10 @@ def decode_message(data: bytearray, pos: int, ret: List) -> int:
     ret.clear()
     ret.extend([None] * message_count)
 
-    pdu_type = PDU_TYPES[message_type]
-
-    if pdu_type is None:
+    if message_type >= len(PDU_TYPES):
         raise ValueError('Bad Message Type')
+
+    pdu_type = PDU_TYPES[message_type]
 
     if pdu_type is KeepAlive and message_count != 1:
         raise ValueError('Bad KeepAlive message count.')

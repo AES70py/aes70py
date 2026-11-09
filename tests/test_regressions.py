@@ -8,13 +8,20 @@ import socket
 import threading
 import time
 
+import asyncio
+
 import pytest
 import websocket
 from websocket import ABNF
 
+from aes70.controller.control_classes.ocamute import OcaMute
+from aes70.controller.remote_device import RemoteDevice
 from aes70.controller.tcp_connection import TCPConnection
 from aes70.controller.ws_connection import WebSocketConnection
 from aes70.ocp1.command import Command
+from aes70.ocp1.encode_message import calculate_message_length, encode_message_to
+from aes70.ocp1.response import Response
+from aes70.types.ocamutestate import OcaMuteState
 from aes70.ocp1.commandrrq import CommandRrq
 from aes70.ocp1.encoded_arguments import EncodedArguments
 from aes70.ocp1 import string16
@@ -205,3 +212,44 @@ def test_string16_sizes_as_an_argument():
     buf = bytearray(6)
     assert args.encode_to(buf, 0) == 6
     assert bytes(buf) == bytes.fromhex('000200610062')
+
+
+def test_property_event_over_notification2():
+    """A device that accepts AddSubscription2 sends events as Notification2
+    (message type 5). They must reach the subscriber, and the connection must
+    stay open."""
+    ours, peer = socket.socketpair()
+    conn = TCPConnection(ours, {})
+    device = RemoteDevice(conn)
+    mute = OcaMute(4115, device)
+
+    def fake_device():
+        # Answer the AddSubscription2 command, then send one captured event.
+        # The command PDU starts after the 10-byte message header: a uint32 size,
+        # then the uint32 handle.
+        buf = b""
+        while len(buf) < 18:
+            buf += peer.recv(4096)
+        assert buf[7] == 1  # CommandRrq
+        response = Response(int.from_bytes(buf[14:18], "big"), 0, 0)
+        out = bytearray(calculate_message_length([response]))
+        encode_message_to(out, 0, [response])
+        peer.sendall(out)
+        peer.sendall(bytes.fromhex(
+            "3b00040000001c05000100000013000010130001000100000400010101"))
+
+    async def run():
+        received = asyncio.get_running_loop().create_future()
+        loop = asyncio.get_running_loop()
+        mute.OnStateChanged.subscribe(
+            lambda value, *_: loop.call_soon_threadsafe(received.set_result, value))
+        threading.Thread(target=fake_device, daemon=True).start()
+        return await asyncio.wait_for(received, 5)
+
+    try:
+        assert asyncio.run(run()) == OcaMuteState.Muted
+        assert device._supportsEV2 is True
+        assert not conn.is_closed()
+    finally:
+        conn.close()
+        peer.close()
