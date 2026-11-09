@@ -151,7 +151,9 @@ class Connection(Events):
 
     def set_keepalive_interval(self, seconds):
         #print("set_keepalive_interval ", seconds)
-        t = seconds * 1000
+        # KeepAlive is encoded as whole seconds or whole milliseconds, so this
+        # must be an int, also when seconds is a float.
+        t = round(seconds * 1000)
 
         if self._keepalive_interval_id is not None:
             self._keepalive_interval_id.cancel()
