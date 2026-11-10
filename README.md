@@ -21,11 +21,12 @@ Installation
 
 AES70py is a pure python library that has 2 external dependencies: promise and mdns-sd. To install it just use `pip`...
 
+## Run Utility
+
 Dependency: package `python3-venv`
 
 Tip: If you are on Windows Git-bash, the default cp1252 encoding can catch scripts with unicode, use `PYTHONIOENCODING=utf-8 ./run.sh` or remove the unicode.
 
-## Run Utility
 In the `examples/tools` folder `run.sh` is a helper bash script for quickly testing python scripts. Use `run.sh` inside a new folder alongside the desired python example(s) scripts for installing the environment and running the python.
 
 1. Make a new directory `mkdir`, then copy the python script and `run.sh` into that new directory, (myproject).
