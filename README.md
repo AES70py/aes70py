@@ -21,7 +21,23 @@ Installation
 
 AES70py is a pure python library that has 2 external dependencies: promise and mdns-sd. To install it just use `pip`...
 
-## Steps
+## Run Utility
+In the `examples/tools` folder `run.sh` is a helper bash script for quickly testing python scripts. Use `run.sh` inside a new folder alongside the desired python example(s) scripts for installing the environment and running the python.
+
+1. Make a new directory `mkdir`, then copy the python script and `run.sh` into that new directory, (myproject).
+2. You may need to `chmod +x` on run.sh
+3. Run the setup project:
+```
+cd myproject/
+./run.sh --help
+./run.sh --install --script-name <script_name>.py
+./run.sh --status
+./run.sh --list
+./run.sh
+```
+4. It is possible to have multiple scripts, but for now it is a helper for fast tracking the manual instructions below.
+
+## Manual Steps for testing examples
 In your terminal use the following (this sets up a virtual environment to keep all of the python libraries 
 in a private location):
 
@@ -51,4 +67,4 @@ python3 connect_toggle_mute.py
 
 Post any and all requests to the issues, many thanks.
 
-AES70py Team
+The AES70py Team
