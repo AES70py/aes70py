@@ -20,6 +20,7 @@ Installation
 ============
 
 AES70py is a pure python library that has 2 external dependencies: promise and mdns-sd. To install it just use `pip`...
+Dependency: package `python3-venv`
 
 ## Run Utility
 In the `examples/tools` folder `run.sh` is a helper bash script for quickly testing python scripts. Use `run.sh` inside a new folder alongside the desired python example(s) scripts for installing the environment and running the python.

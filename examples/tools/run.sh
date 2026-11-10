@@ -317,13 +317,27 @@ show_status() {
 ensure_venv() {
   local py
   if py="$(venv_python)"; then
-    echo "$py"
-    return 0
+    if "$py" -m pip --version >/dev/null 2>&1; then
+      echo "$py"
+      return 0
+    fi
+    echo "Removing environment that has no pip..." >&2
+    rm -rf venv
   fi
   discover_base_python
+  if ! "${BASE_PYTHON[@]}" -c 'import ensurepip' >/dev/null 2>&1; then
+    die "Python cannot install pip into a new environment. On Ubuntu run: sudo apt install python3-venv"
+  fi
   echo "Creating the private Python environment..." >&2
-  "${BASE_PYTHON[@]}" -m venv venv
-  venv_python
+  if ! "${BASE_PYTHON[@]}" -m venv venv; then
+    rm -rf venv
+    die "The environment was not created. On Ubuntu run: sudo apt install python3-venv"
+  fi
+  if ! py="$(venv_python)" || ! "$py" -m pip --version >/dev/null 2>&1; then
+    rm -rf venv
+    die "The environment was not created. On Ubuntu run: sudo apt install python3-venv"
+  fi
+  echo "$py"
 }
 
 aes70_installed() {
