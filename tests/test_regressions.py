@@ -15,6 +15,8 @@ from websocket import ABNF
 from aes70.controller.tcp_connection import TCPConnection
 from aes70.controller.ws_connection import WebSocketConnection
 from aes70.ocp1.command import Command
+from aes70.ocp1.decode_message import decode_message
+from aes70.ocp1.keepalive import KeepAlive
 from aes70.ocp1.commandrrq import CommandRrq
 from aes70.ocp1.encoded_arguments import EncodedArguments
 from aes70.ocp1 import string16
@@ -205,3 +207,31 @@ def test_string16_sizes_as_an_argument():
     buf = bytearray(6)
     assert args.encode_to(buf, 0) == 6
     assert bytes(buf) == bytes.fromhex('000200610062')
+
+
+@pytest.mark.parametrize("seconds, millis", [(1, 1000), (1.0, 1000), (1.5, 1500), (0.25, 250)])
+def test_keepalive_interval_accepts_float(seconds, millis):
+    """A float interval used to reach KeepAlive.encode_to as a float, raise
+    struct.error on the receive thread, and close the connection."""
+    ours, peer = socket.socketpair()
+    conn = TCPConnection(ours, {})
+    try:
+        conn.set_keepalive_interval(seconds)
+        assert conn.keepalive_interval == millis
+
+        peer.settimeout(5)
+        ret = []
+        assert decode_message(bytearray(peer.recv(100)), 0, ret) > 0
+        assert isinstance(ret[0], KeepAlive)
+        assert ret[0].time == millis
+
+        # Let the receive thread run its keepalive check a few times, which is
+        # where the error used to surface.
+        deadline = time.monotonic() + max(1.0, seconds)
+        while time.monotonic() < deadline:
+            peer.sendall(bytes([0x3b, 0, 1, 0, 0, 0, 11, 4, 0, 1]) + (1).to_bytes(2, "big"))
+            time.sleep(0.1)
+        assert not conn.is_closed()
+    finally:
+        conn.close()
+        peer.close()
