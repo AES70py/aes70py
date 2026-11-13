@@ -7,6 +7,9 @@ from aes70.ocp1.response import Response
 from aes70.ocp1.command import Command
 from aes70.ocp1.encode_message import encode_message_to, calculate_message_length
 from aes70.ocp1.decode_message import decode_message
+from aes70.ocp1.notification2 import Notification2
+from aes70.types.ocaevent import OcaEvent
+from aes70.types.ocaeventid import OcaEventID
 
 
 class TestKeepAlive:
@@ -183,3 +186,60 @@ class TestMessageDecoding:
         assert isinstance(ret[0], Response)
         assert ret[0].handle == 42
         assert ret[0].status_code == 0
+
+
+# Captured from a device: OnStateChanged on an OcaMute (ONo 4115) after AddSubscription2.
+# Event data: property 4.1, value Muted (1), change type CurrentChanged (1).
+NOTIFICATION2_MUTE = bytes.fromhex(
+    "3b00040000001c05000100000013000010130001000100000400010101")
+
+
+class TestNotification2:
+    """Test Notification2 (message type 5) encoding and decoding."""
+
+    def test_decode_captured_message(self):
+        ret = []
+        pos = decode_message(NOTIFICATION2_MUTE, 0, ret)
+
+        assert pos == len(NOTIFICATION2_MUTE)
+        assert len(ret) == 1
+        n = ret[0]
+        assert isinstance(n, Notification2)
+        assert n.event.EmitterONo == 4115
+        assert n.event.EventID.DefLevel == 1
+        assert n.event.EventID.EventIndex == 1
+        assert n.exception is False
+        assert bytes(n.parameters) == bytes.fromhex("000400010101")
+
+    @pytest.mark.parametrize("exception", [False, True])
+    def test_roundtrip(self, exception):
+        event = OcaEvent(4115, OcaEventID(1, 1))
+        n = Notification2(event, exception, bytes.fromhex("000400010101"))
+        dst = bytearray(calculate_message_length([n]))
+        encode_message_to(dst, 0, [n])
+
+        if not exception:
+            # Skip the sync byte and protocol version, which the device sets differently.
+            assert bytes(dst[3:]) == NOTIFICATION2_MUTE[3:]
+
+        ret = []
+        decode_message(dst, 0, ret)
+        assert ret[0].event.EmitterONo == 4115
+        assert ret[0].exception is exception
+        assert bytes(ret[0].parameters) == bytes.fromhex("000400010101")
+
+    def test_without_data(self):
+        n = Notification2(OcaEvent(1, OcaEventID(1, 1)))
+        assert n.encoded_length() == 13
+        dst = bytearray(calculate_message_length([n]))
+        encode_message_to(dst, 0, [n])
+
+        ret = []
+        decode_message(dst, 0, ret)
+        assert ret[0].parameters is None
+
+    def test_unknown_message_type_raises_value_error(self):
+        data = bytearray(NOTIFICATION2_MUTE)
+        data[7] = 6
+        with pytest.raises(ValueError, match='Bad Message Type'):
+            decode_message(data, 0, [])
